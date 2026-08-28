@@ -246,9 +246,9 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
             onClick={onBackToHome}
-            className="group inline-flex items-center gap-2 text-xs font-bold font-mono tracking-widest text-slate-700 hover:text-[#D95B16] uppercase transition-all duration-300 cursor-pointer bg-white border border-slate-200 hover:border-orange-300 px-4 py-2 rounded-full shadow-sm hover:shadow-md"
+            className="group inline-flex items-center gap-2 text-xs font-bold font-mono tracking-widest text-slate-700 hover:text-[#0284C7] uppercase transition-all duration-300 cursor-pointer bg-white border border-slate-200 hover:border-sky-300 px-4 py-2 rounded-full shadow-sm hover:shadow-md"
           >
-            <ArrowLeft size={13} className="group-hover:-translate-x-1 transition-transform stroke-[2.5] text-[#D95B16]" />
+            <ArrowLeft size={13} className="group-hover:-translate-x-1 transition-transform stroke-[2.5] text-[#0284C7]" />
             <span>Return to Overview</span>
           </motion.button>
         </div>
@@ -257,14 +257,14 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
         <div className="text-left mb-12">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-8 border-b border-slate-200/80">
             <div className="max-w-3xl space-y-4">
-              <div className="inline-flex items-center gap-2 bg-orange-50 border border-orange-200/90 rounded-full px-4 py-1.5 text-[10px] text-[#D95B16] font-mono font-bold uppercase tracking-widest shadow-xs">
-                <Sparkles size={12} className="text-[#D95B16] animate-pulse" />
+              <div className="inline-flex items-center gap-2 bg-sky-50 border border-sky-200/90 rounded-full px-4 py-1.5 text-[10px] text-[#0284C7] font-mono font-bold uppercase tracking-widest shadow-xs">
+                <Sparkles size={12} className="text-[#0284C7] animate-pulse" />
                 <span>CERTIFIED TELECOM & SURVEILLANCE INFRASTRUCTURE</span>
               </div>
               
               <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-slate-900 tracking-tight leading-[1.08]">
                 Engineering Solutions & <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D95B16] via-orange-600 to-amber-600">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0284C7] via-sky-600 to-blue-600">
                   Infrastructure Catalog
                 </span>
               </h1>
@@ -282,7 +282,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               </div>
               <div className="h-9 w-px bg-slate-200" />
               <div>
-                <span className="block text-2xl sm:text-3xl font-black text-[#D95B16] tracking-tight">≤0.02dB</span>
+                <span className="block text-2xl sm:text-3xl font-black text-[#0284C7] tracking-tight">≤0.02dB</span>
                 <span className="text-[9px] font-mono uppercase tracking-wider text-slate-400 font-bold mt-1 block">Optic Loss Bound</span>
               </div>
               <div className="h-9 w-px bg-slate-200" />
@@ -307,7 +307,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                   onClick={() => setSelectedCategory(tab.id as any)}
                   className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold font-sans transition-all duration-200 cursor-pointer ${
                     isSelected 
-                      ? "bg-[#D95B16] text-white shadow-md shadow-orange-500/20 scale-[1.02]" 
+                      ? "bg-[#0284C7] text-white shadow-md shadow-sky-500/20 scale-[1.02]" 
                       : "bg-slate-50 text-slate-600 hover:bg-slate-100 hover:text-slate-900 border border-slate-100"
                   }`}
                 >
@@ -329,7 +329,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               placeholder="Search solutions or specs..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-slate-50 border border-slate-200 focus:border-[#D95B16] focus:bg-white rounded-xl pl-9 pr-4 py-2.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none transition-all font-medium"
+              className="w-full bg-slate-50 border border-slate-200 focus:border-[#0284C7] focus:bg-white rounded-xl pl-9 pr-4 py-2.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none transition-all font-medium"
             />
             {searchQuery && (
               <button 
@@ -351,7 +351,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               animate="show"
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-7 items-stretch"
             >
-              {filteredServices.map((service) => {
+              {filteredServices.map((service, idx) => {
                 const spec = serviceSpecs[service.id] || {
                   categoryLabel: "CERTIFIED SYSTEM",
                   badgeType: "ENTERPRISE",
@@ -367,138 +367,137 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                     variants={cardVariants}
                     whileHover={{ y: -6 }}
                     onClick={() => onSelectService(service)}
-                    className="group relative bg-white border border-slate-200/90 hover:border-orange-400/80 rounded-3xl overflow-hidden flex flex-col justify-between shadow-[0_4px_20px_rgba(15,23,42,0.03)] hover:shadow-[0_24px_50px_rgba(217,91,22,0.12),0_4px_12px_rgba(0,0,0,0.04)] transition-all duration-300 cursor-pointer select-none"
+                    className="group relative bg-white border border-slate-200/90 hover:border-[#0284C7] rounded-2xl overflow-hidden flex flex-col justify-between shadow-[0_4px_20px_rgba(15,23,42,0.03)] hover:shadow-[0_24px_50px_rgba(2,132,199,0.12),0_4px_12px_rgba(0,0,0,0.04)] transition-all duration-300 cursor-pointer select-none"
                   >
-                    {/* Glowing Top Accent Indicator */}
-                    <div className="absolute top-0 inset-x-0 h-[3.5px] bg-transparent group-hover:bg-gradient-to-r group-hover:from-[#D95B16] group-hover:via-orange-500 group-hover:to-amber-500 transition-all duration-300 z-30" />
+                    {/* Top Decorative Precision Line */}
+                    <div className="absolute top-0 inset-x-0 h-[3px] bg-slate-100 group-hover:bg-[#0284C7] transition-colors duration-300 z-30" />
 
                     <div>
-                      {/* Premium Media Header Frame */}
-                      <div className="relative w-full h-48 overflow-hidden bg-slate-950">
+                      {/* Media Header with Signature Clean Frame */}
+                      <div className="relative w-full h-44 overflow-hidden bg-slate-950 border-b border-slate-100">
                         <img 
                           src={service.imageUrl} 
                           alt={service.title} 
-                          className="w-full h-full object-cover group-hover:scale-106 transition-transform duration-700 ease-out filter brightness-[0.95] group-hover:brightness-100"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out filter brightness-[0.95] group-hover:brightness-100"
                         />
                         
-                        {/* Dual Dark Gradient Overlays for High-Contrast Reading */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/25 to-slate-950/45 pointer-events-none" />
+                        {/* Gradient Scrim */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-black/30 pointer-events-none" />
                         
-                        {/* Top-Left Category Badge */}
-                        <div className="absolute top-3.5 left-3.5 flex items-center gap-1.5 bg-slate-900/85 backdrop-blur-md border border-white/20 px-2.5 py-1 rounded-full shadow-md">
+                        {/* Top Category Code */}
+                        <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-black/70 backdrop-blur-md border border-white/20 px-2.5 py-0.5 rounded-md shadow-xs">
                           <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
                           <span className="text-[8px] font-mono font-bold text-white uppercase tracking-wider">
                             {spec.categoryLabel}
                           </span>
                         </div>
 
-                        {/* Top-Right Hot / Quality Badge */}
-                        {service.hot ? (
-                          <div className="absolute top-3.5 right-3.5 bg-gradient-to-r from-[#D95B16] to-[#EA580C] text-white px-2.5 py-1 rounded-full text-[8.5px] font-mono font-extrabold uppercase tracking-wide shadow-md flex items-center gap-1">
-                            <Flame size={11} className="text-amber-200 fill-amber-200" />
-                            <span>POPULAR</span>
-                          </div>
-                        ) : (
-                          <div className="absolute top-3.5 right-3.5 bg-black/60 backdrop-blur-md text-slate-200 border border-white/10 px-2.5 py-1 rounded-full text-[8.5px] font-mono font-semibold uppercase tracking-wider">
-                            <span>{spec.badgeType}</span>
-                          </div>
-                        )}
+                        {/* Top-Right Tag */}
+                        <div className="absolute top-3 right-3">
+                          {service.hot ? (
+                            <span className="bg-[#0284C7] text-white px-2 py-0.5 rounded text-[8px] font-mono font-extrabold uppercase tracking-wide shadow-xs flex items-center gap-1">
+                              <Flame size={10} className="fill-white" />
+                              <span>POPULAR</span>
+                            </span>
+                          ) : (
+                            <span className="bg-black/60 backdrop-blur-md text-white/90 border border-white/20 px-2 py-0.5 rounded text-[8px] font-mono font-bold uppercase tracking-wider">
+                              {spec.badgeType}
+                            </span>
+                          )}
+                        </div>
 
-                        {/* Title & Icon Header Overlay inside Media */}
-                        <div className="absolute bottom-3.5 left-4 right-4 text-left flex items-end justify-between gap-3">
-                          <div className="pr-1">
-                            <h3 className="font-display font-black text-lg text-white tracking-tight leading-snug drop-shadow-md group-hover:text-orange-200 transition-colors">
+                        {/* Title Overlay in Media Header */}
+                        <div className="absolute bottom-3 left-3.5 right-3.5 flex items-end justify-between gap-2">
+                          <div>
+                            <span className="text-[8.5px] font-mono text-sky-400 font-bold uppercase tracking-widest block mb-0.5">
+                              MODULE // 0{idx + 1}
+                            </span>
+                            <h3 className="font-['Open_Sans_Condensed'] font-bold text-xl text-white tracking-wide uppercase leading-tight group-hover:text-sky-300 transition-colors drop-shadow-sm">
                               {service.title}
                             </h3>
                           </div>
-                          
-                          <div className="h-8 w-8 rounded-xl bg-white/15 backdrop-blur-md border border-white/25 flex items-center justify-center text-white shrink-0 group-hover:bg-[#D95B16] group-hover:border-transparent group-hover:scale-108 transition-all duration-300 shadow-sm">
-                            <LucideIcon name={service.iconName} size={15} />
+                          <div className="h-7 w-7 rounded-lg bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white shrink-0 group-hover:bg-[#0284C7] group-hover:border-transparent transition-all shadow-xs">
+                            <LucideIcon name={service.iconName} size={13} />
                           </div>
                         </div>
                       </div>
 
-                      {/* Card Body Information */}
-                      <div className="p-5 text-left space-y-4">
-                        <p className="text-slate-600 text-xs leading-relaxed line-clamp-3 min-h-[52px] font-normal">
+                      {/* Card Content Body */}
+                      <div className="p-4 space-y-3.5 text-left">
+                        <p className="text-slate-600 text-xs leading-relaxed line-clamp-2 min-h-[34px] font-['Open_Sans']">
                           {service.description}
                         </p>
 
-                        {/* Feature Tags / Micro-Chips */}
-                        {spec.chips && spec.chips.length > 0 && (
-                          <div className="flex flex-wrap gap-1.5 pt-0.5">
-                            {spec.chips.map((chip, cIdx) => (
-                              <span 
-                                key={cIdx} 
-                                className={`text-[10px] font-sans font-medium px-2.5 py-1 rounded-lg border transition-all inline-flex items-center gap-1.5 ${
-                                  chip.highlight 
-                                    ? "bg-orange-50/80 border-orange-200/90 text-[#D95B16] font-semibold shadow-2xs" 
-                                    : "bg-slate-50 border-slate-200/80 text-slate-600 group-hover:border-slate-300"
-                                }`}
-                              >
-                                <span className={`h-1 w-1 rounded-full shrink-0 ${chip.highlight ? "bg-[#D95B16]" : "bg-slate-400"}`} />
-                                <span>{chip.label}</span>
-                              </span>
-                            ))}
-                          </div>
-                        )}
-
-                        {/* Telemetry Technical Specs Table */}
+                        {/* Technical Telemetry Grid Table */}
                         {spec.telemetry && spec.telemetry.length > 0 && (
-                          <div className="space-y-1.5 pt-2.5 bg-slate-50/70 p-3 rounded-2xl border border-slate-200/70 group-hover:border-orange-200/70 transition-colors">
-                            <div className="flex items-center justify-between text-[9px] font-mono font-bold text-slate-400 uppercase tracking-wider pb-1 border-b border-slate-200/60">
-                              <span className="flex items-center gap-1 text-slate-500">
-                                <Cpu size={10} className="text-[#D95B16]" />
-                                <span>TELEMETRY METRICS</span>
-                              </span>
-                              <span className="text-emerald-600 font-bold">● VERIFIED SLA</span>
+                          <div className="bg-slate-50 border border-slate-200/80 rounded-xl p-2.5 space-y-1.5 font-mono text-[10px] group-hover:border-sky-200 transition-colors">
+                            <div className="flex items-center justify-between text-[8px] font-bold text-slate-400 uppercase tracking-widest pb-1 border-b border-slate-200">
+                              <span>Hardware Specs</span>
+                              <span className="text-emerald-600 font-bold">● VERIFIED</span>
                             </div>
-                            {spec.telemetry.map((t, idx) => (
-                              <div key={idx} className="flex items-center justify-between text-[10.5px] font-mono pt-0.5">
-                                <span className="text-slate-400 font-medium">{t.label}:</span>
+                            {spec.telemetry.map((t, tIdx) => (
+                              <div key={tIdx} className="flex items-center justify-between text-[9.5px]">
+                                <span className="text-slate-500 font-normal">{t.label}:</span>
                                 <span className="font-bold text-slate-800 text-right truncate ml-2">{t.val}</span>
                               </div>
                             ))}
                           </div>
                         )}
+
+                        {/* Micro Feature Chips */}
+                        {spec.chips && (
+                          <div className="flex flex-wrap gap-1.5 pt-1">
+                            {spec.chips.map((chip, cIdx) => (
+                              <span 
+                                key={cIdx} 
+                                className={`text-[9px] font-mono px-2 py-0.5 rounded border transition-all ${
+                                  chip.highlight 
+                                    ? "bg-sky-50 border-sky-200 text-[#0284C7] font-bold" 
+                                    : "bg-white border-slate-200 text-slate-600"
+                                }`}
+                              >
+                                {chip.label}
+                              </span>
+                            ))}
+                          </div>
+                        )}
                       </div>
                     </div>
 
-                    {/* Bottom Action Footer with Multi-Action Controls */}
-                    <div className="p-5 pt-0">
-                      <div className="pt-3.5 border-t border-slate-100 flex items-center gap-2">
+                    {/* Bottom Action Footer */}
+                    <div className="p-4 pt-0">
+                      <div className="pt-3 border-t border-slate-100 flex items-center gap-2">
                         {/* Primary Explore Action Button */}
                         <button 
                           onClick={(e) => { e.stopPropagation(); onSelectService(service); }}
-                          className="flex-1 inline-flex items-center justify-center gap-1.5 bg-slate-900 hover:bg-[#D95B16] active:scale-98 text-white text-xs font-bold uppercase tracking-wider py-2.5 px-3 rounded-xl transition-all duration-200 shadow-xs hover:shadow-md cursor-pointer group/btn"
+                          className="flex-1 inline-flex items-center justify-center gap-1.5 bg-black group-hover:bg-[#0284C7] active:scale-98 text-white text-xs font-['Open_Sans'] font-bold uppercase tracking-wider py-2.5 px-3 rounded-xl transition-all duration-200 shadow-xs cursor-pointer"
                         >
-                          <span>Explore Specs</span>
-                          <ChevronRight size={13} className="stroke-[3] group-hover/btn:translate-x-1 transition-transform" />
+                          <span>Explore Blueprint</span>
+                          <ChevronRight size={13} className="stroke-[3]" />
                         </button>
 
-                        {/* Quick Quote Trigger Button */}
+                        {/* Instant Quote Button */}
                         <button 
                           onClick={(e) => { e.stopPropagation(); onTriggerQuote(service.id); }}
-                          className="inline-flex items-center justify-center p-2.5 rounded-xl border border-orange-200 bg-orange-50/80 text-[#D95B16] hover:bg-[#D95B16] hover:text-white transition-all duration-200 shadow-xs hover:shadow-md hover:scale-105 active:scale-95 cursor-pointer"
-                          title="Instant AI Quote Calculator"
+                          className="inline-flex items-center justify-center p-2.5 rounded-xl border border-sky-200 bg-sky-50 text-[#0284C7] hover:bg-[#0284C7] hover:text-white transition-all shadow-xs cursor-pointer"
+                          title="Instant Quote Simulator"
                         >
-                          <Calculator size={15} />
+                          <Calculator size={14} />
                         </button>
                         
-                        {/* WhatsApp Instant Quote Button */}
+                        {/* WhatsApp Support Button */}
                         <a 
-                          href={`https://wa.me/923064422550?text=${encodeURIComponent(`Hello CoreVision, I would like to inquire about ${service.title}.`)}`}
+                          href={`https://wa.me/923064422550?text=${encodeURIComponent(`Hello Core Vision Pakistan, I would like to inquire about ${service.title}.`)}`}
                           target="_blank"
                           rel="noreferrer"
                           onClick={(e) => e.stopPropagation()}
-                          className="inline-flex items-center justify-center p-2.5 rounded-xl border border-emerald-200 bg-emerald-50 text-[#25D366] hover:bg-[#25D366] hover:text-white transition-all duration-200 shadow-xs hover:shadow-md hover:scale-105 active:scale-95"
-                          title="Instant WhatsApp Support"
+                          className="inline-flex items-center justify-center p-2.5 rounded-xl border border-emerald-200 bg-emerald-50 text-[#25D366] hover:bg-[#25D366] hover:text-white transition-all shadow-xs"
+                          title="WhatsApp Inquiry"
                         >
-                          <MessageCircle size={15} />
+                          <MessageCircle size={14} />
                         </a>
                       </div>
                     </div>
-
                   </motion.div>
                 );
               })}
@@ -509,7 +508,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               animate={{ opacity: 1, scale: 1 }}
               className="text-center py-20 bg-white border border-slate-200 rounded-3xl max-w-xl mx-auto mt-6 shadow-sm"
             >
-              <div className="h-12 w-12 rounded-2xl bg-orange-50 border border-orange-100 text-[#D95B16] flex items-center justify-center mx-auto mb-4">
+              <div className="h-12 w-12 rounded-2xl bg-sky-50 border border-sky-100 text-[#0284C7] flex items-center justify-center mx-auto mb-4">
                 <ShieldAlert size={22} />
               </div>
               <h3 className="text-slate-900 font-bold text-base mb-1.5">No matching services found</h3>
@@ -518,7 +517,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               </p>
               <button 
                 onClick={() => { setSearchQuery(""); setSelectedCategory("all"); }}
-                className="mt-5 bg-[#D95B16] hover:bg-[#C2410C] text-white px-5 py-2.5 rounded-xl text-xs font-bold uppercase transition-all tracking-wider cursor-pointer shadow-sm"
+                className="mt-5 bg-[#0284C7] hover:bg-[#0369A1] text-white px-5 py-2.5 rounded-xl text-xs font-bold uppercase transition-all tracking-wider cursor-pointer shadow-sm"
               >
                 Reset Filters
               </button>
@@ -540,16 +539,22 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             </h4>
           </div>
           
-          <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-xs text-slate-400 font-mono font-bold tracking-widest">
-            <span className="hover:text-[#D95B16] transition-colors cursor-pointer">HIKVISION</span>
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs text-slate-500 font-mono font-bold tracking-widest">
+            <span className="hover:text-emerald-600 transition-colors cursor-pointer">ZKTECO</span>
+            <span>•</span>
+            <span className="hover:text-red-600 transition-colors cursor-pointer">HIKVISION</span>
             <span>•</span>
             <span className="hover:text-[#D95B16] transition-colors cursor-pointer">DAHUA</span>
             <span>•</span>
-            <span className="hover:text-[#D95B16] transition-colors cursor-pointer">FUJIKURA</span>
+            <span className="hover:text-amber-600 transition-colors cursor-pointer">IMOU</span>
             <span>•</span>
-            <span className="hover:text-[#D95B16] transition-colors cursor-pointer">UBIQUITI</span>
+            <span className="hover:text-rose-600 transition-colors cursor-pointer">HUAWEI</span>
             <span>•</span>
-            <span className="hover:text-[#D95B16] transition-colors cursor-pointer">CISCO</span>
+            <span className="hover:text-cyan-600 transition-colors cursor-pointer">CISCO</span>
+            <span>•</span>
+            <span className="hover:text-sky-600 transition-colors cursor-pointer">VIVANCO</span>
+            <span>•</span>
+            <span className="hover:text-indigo-600 transition-colors cursor-pointer">CORNING</span>
           </div>
         </div>
 

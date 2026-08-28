@@ -112,7 +112,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ contactInfo, onTrigger
         {/* HERO TITLE */}
         <div className="text-left mb-16 max-w-4xl">
           <h1 className="font-display font-black text-4xl sm:text-6xl text-slate-900 tracking-tight leading-none mb-6">
-            Corporate <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D95B16] to-[#EA580C]">Contact Hub</span>
+            Corporate <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0284C7] to-[#0EA5E9]">Contact Hub</span>
           </h1>
           <p className="text-slate-600 text-base sm:text-xl leading-relaxed font-sans">
             Ready to deploy professional security systems, optical fiber fusion splicing, or biometrics on-site? Fill out our streamlined priority request for custom engineering.
@@ -132,31 +132,31 @@ export const ContactPage: React.FC<ContactPageProps> = ({ contactInfo, onTrigger
 
               <div className="space-y-4">
                 <div className="flex items-center gap-4 bg-slate-50/80 border border-slate-100 p-4 rounded-2xl">
-                  <div className="h-11 w-11 rounded-xl bg-orange-50 border border-orange-100 flex items-center justify-center text-[#D95B16] shadow-sm shrink-0">
+                  <div className="h-11 w-11 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center text-[#0284C7] shadow-sm shrink-0">
                     <Phone size={16} />
                   </div>
                   <div>
                     <span className="block text-[8px] font-mono uppercase tracking-wider text-slate-400 font-bold">Hotline Desk</span>
-                    <a href={`tel:${contactInfo.phone.replace(/\s+/g, "")}`} className="text-sm font-bold text-slate-800 hover:text-[#D95B16] transition-colors font-mono">
+                    <a href={`tel:${contactInfo.phone.replace(/\s+/g, "")}`} className="text-sm font-bold text-slate-800 hover:text-[#0284C7] transition-colors font-mono">
                       {contactInfo.phone}
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-4 bg-slate-50/80 border border-slate-100 p-4 rounded-2xl">
-                  <div className="h-11 w-11 rounded-xl bg-orange-50 border border-orange-100 flex items-center justify-center text-[#D95B16] shadow-sm shrink-0">
+                  <div className="h-11 w-11 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center text-[#0284C7] shadow-sm shrink-0">
                     <Mail size={16} />
                   </div>
                   <div>
                     <span className="block text-[8px] font-mono uppercase tracking-wider text-slate-400 font-bold">Mail Channel</span>
-                    <a href={`mailto:${contactInfo.email}`} className="text-sm font-bold text-slate-800 hover:text-[#D95B16] transition-colors">
+                    <a href={`mailto:${contactInfo.email}`} className="text-sm font-bold text-slate-800 hover:text-[#0284C7] transition-colors">
                       {contactInfo.email}
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-4 bg-slate-50/80 border border-slate-100 p-4 rounded-2xl">
-                  <div className="h-11 w-11 rounded-xl bg-orange-50 border border-orange-100 flex items-center justify-center text-[#D95B16] shadow-sm shrink-0">
+                  <div className="h-11 w-11 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center text-[#0284C7] shadow-sm shrink-0">
                     <MapPin size={16} />
                   </div>
                   <div>
@@ -171,20 +171,20 @@ export const ContactPage: React.FC<ContactPageProps> = ({ contactInfo, onTrigger
 
             {/* GPS Telemetry Block */}
             <div className="bg-slate-50 border border-slate-100 rounded-2xl p-5 font-mono text-[10px] space-y-2 relative overflow-hidden">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(217,91,22,0.02),transparent_100%)]" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(2,132,199,0.02),transparent_100%)]" />
               <div className="text-slate-500">LATITUDE COORD: <span className="text-slate-800 font-bold">{contactInfo.latitude}</span></div>
               <div className="text-slate-500">LONGITUDE COORD: <span className="text-slate-800 font-bold">{contactInfo.longitude}</span></div>
-              <div className="text-slate-500">STATUS: <span className="text-[#D95B16] font-bold">ONLINE (ISLAMABAD SECTOR RUNTIME)</span></div>
+              <div className="text-slate-500">STATUS: <span className="text-[#0284C7] font-bold">ONLINE (ISLAMABAD SECTOR RUNTIME)</span></div>
             </div>
           </div>
 
           {/* Right Column: Dynamic Form */}
           <div className="lg:col-span-7 bg-white border border-slate-100 rounded-3xl p-8 relative shadow-md">
-            <div className="absolute top-0 right-0 h-32 w-32 rounded-full bg-orange-500/5 blur-3xl pointer-events-none" />
+            <div className="absolute top-0 right-0 h-32 w-32 rounded-full bg-sky-500/5 blur-3xl pointer-events-none" />
             
             <h3 className="font-display font-black text-2xl text-slate-900 mb-2 tracking-tight">Request Engineering Quote</h3>
             <p className="text-xs text-slate-500 mb-8 font-sans leading-relaxed">
-              Fill out your corporate details below. A certified CoreGuard site inspector will contact you to discuss camera placements, fiber trunk spans, or network architecture.
+              Fill out your corporate details below. A certified Core Vision Pakistan site inspector will contact you to discuss camera placements, fiber trunk spans, or network architecture.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -192,7 +192,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ contactInfo, onTrigger
               {/* Full Name Input */}
               <div className="space-y-2 text-left">
                 <label className="block text-[10px] font-mono uppercase tracking-widest text-slate-500 font-extrabold flex items-center gap-1.5">
-                  <User size={12} className="text-[#D95B16]" />
+                  <User size={12} className="text-[#0284C7]" />
                   <span>Full Name</span>
                 </label>
                 <div className="relative">
@@ -202,7 +202,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ contactInfo, onTrigger
                     placeholder="Enter your first and last name"
                     value={formName}
                     onChange={(e) => setFormName(e.target.value)}
-                    className="w-full bg-slate-50 border border-slate-100 focus:border-[#D95B16] focus:bg-white focus:ring-1 focus:ring-[#D95B16] rounded-xl py-3.5 px-4 text-base md:text-xs font-semibold text-slate-800 outline-none transition-all placeholder:text-slate-400"
+                    className="w-full bg-slate-50 border border-slate-100 focus:border-[#0284C7] focus:bg-white focus:ring-1 focus:ring-[#0284C7] rounded-xl py-3.5 px-4 text-base md:text-xs font-semibold text-slate-800 outline-none transition-all placeholder:text-slate-400"
                   />
                 </div>
               </div>
@@ -210,7 +210,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ contactInfo, onTrigger
               {/* Email Address Input */}
               <div className="space-y-2 text-left">
                 <label className="block text-[10px] font-mono uppercase tracking-widest text-slate-500 font-extrabold flex items-center gap-1.5">
-                  <Mail size={12} className="text-[#D95B16]" />
+                  <Mail size={12} className="text-[#0284C7]" />
                   <span>Email Address</span>
                 </label>
                 <div className="relative">
@@ -220,7 +220,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ contactInfo, onTrigger
                     placeholder="Enter your email address (e.g. name@company.com)"
                     value={formEmail}
                     onChange={(e) => setFormEmail(e.target.value)}
-                    className="w-full bg-slate-50 border border-slate-100 focus:border-[#D95B16] focus:bg-white focus:ring-1 focus:ring-[#D95B16] rounded-xl py-3.5 px-4 text-base md:text-xs font-semibold text-slate-800 outline-none transition-all placeholder:text-slate-400"
+                    className="w-full bg-slate-50 border border-slate-100 focus:border-[#0284C7] focus:bg-white focus:ring-1 focus:ring-[#0284C7] rounded-xl py-3.5 px-4 text-base md:text-xs font-semibold text-slate-800 outline-none transition-all placeholder:text-slate-400"
                   />
                 </div>
               </div>
@@ -228,7 +228,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ contactInfo, onTrigger
               {/* Phone Number Input */}
               <div className="space-y-2 text-left">
                 <label className="block text-[10px] font-mono uppercase tracking-widest text-slate-500 font-extrabold flex items-center gap-1.5">
-                  <Hash size={12} className="text-[#D95B16]" />
+                  <Hash size={12} className="text-[#0284C7]" />
                   <span>Phone Number</span>
                 </label>
                 <div className="relative">
@@ -244,7 +244,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ contactInfo, onTrigger
                     className={`w-full bg-slate-50 border focus:bg-white focus:ring-1 rounded-xl py-3.5 px-4 text-base md:text-xs font-semibold text-slate-800 outline-none transition-all placeholder:text-slate-400 ${
                       phoneError 
                         ? "border-red-500/50 focus:border-red-500 focus:ring-red-500" 
-                        : "border-slate-100 focus:border-[#D95B16] focus:ring-[#D95B16]"
+                        : "border-slate-100 focus:border-[#0284C7] focus:ring-[#0284C7]"
                     }`}
                   />
                 </div>
@@ -264,14 +264,14 @@ export const ContactPage: React.FC<ContactPageProps> = ({ contactInfo, onTrigger
               {/* Service Selection Dropdown */}
               <div className="space-y-2 text-left">
                 <label className="block text-[10px] font-mono uppercase tracking-widest text-slate-500 font-extrabold flex items-center gap-1.5">
-                  <Cpu size={12} className="text-[#D95B16]" />
+                  <Cpu size={12} className="text-[#0284C7]" />
                   <span>Interested Service Solution</span>
                 </label>
                 <div className="relative">
                   <select
                     value={selectedServiceId}
                     onChange={(e) => setSelectedServiceId(e.target.value)}
-                    className="w-full bg-slate-50 border border-slate-100 focus:border-[#D95B16] focus:bg-white focus:ring-1 focus:ring-[#D95B16] rounded-xl py-3.5 px-4 text-xs font-semibold text-slate-800 outline-none transition-all appearance-none cursor-pointer"
+                    className="w-full bg-slate-50 border border-slate-100 focus:border-[#0284C7] focus:bg-white focus:ring-1 focus:ring-[#0284C7] rounded-xl py-3.5 px-4 text-xs font-semibold text-slate-800 outline-none transition-all appearance-none cursor-pointer"
                   >
                     {SERVICES.map(srv => (
                       <option key={srv.id} value={srv.id} className="bg-white text-slate-800">
@@ -288,8 +288,8 @@ export const ContactPage: React.FC<ContactPageProps> = ({ contactInfo, onTrigger
               </div>
 
               {/* Security Advisory Notice */}
-              <div className="bg-orange-50/50 border border-orange-100 rounded-2xl p-4 flex gap-3.5 text-left font-sans">
-                <ShieldCheck className="text-[#D95B16] shrink-0" size={18} />
+              <div className="bg-sky-50/50 border border-sky-100 rounded-2xl p-4 flex gap-3.5 text-left font-sans">
+                <ShieldCheck className="text-[#0284C7] shrink-0" size={18} />
                 <div className="space-y-1">
                   <span className="block text-xs font-bold text-slate-800">Encrypted Transmission</span>
                   <p className="text-[10px] text-slate-500 leading-normal font-medium">
@@ -302,7 +302,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ contactInfo, onTrigger
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-[#D95B16] hover:bg-[#C2410C] disabled:bg-slate-300 text-white font-black py-4 rounded-xl text-xs tracking-widest uppercase transition-all duration-300 shadow-sm hover:shadow-md hover:scale-[1.01] cursor-pointer flex items-center justify-center gap-2 border-none"
+                className="w-full bg-[#0284C7] hover:bg-[#0369A1] disabled:bg-slate-300 text-white font-black py-4 rounded-xl text-xs tracking-widest uppercase transition-all duration-300 shadow-sm hover:shadow-md hover:scale-[1.01] cursor-pointer flex items-center justify-center gap-2 border-none"
               >
                 {isSubmitting ? (
                   <div className="h-4.5 w-4.5 border-2 border-white border-t-transparent rounded-full animate-spin" />

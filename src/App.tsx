@@ -53,8 +53,9 @@ import { SuccessNotification } from "./components/SuccessNotification";
 import { CustomCursor } from "./components/CustomCursor";
 import { SophiaChat } from "./components/SophiaChat";
 import { HeroVideoBackground } from "./components/HeroVideoBackground";
-import { LiveOperationsHub } from "./components/LiveOperationsHub";
-import { QuickQuoteEstimator } from "./components/QuickQuoteEstimator";
+import { EngineeringShowcase } from "./components/EngineeringShowcase";
+import { PartnersShowcase } from "./components/PartnersShowcase";
+import { ShowroomCard3D } from "./components/ShowroomCard3D";
 import { motion, AnimatePresence } from "motion/react";
 
 export default function App() {
@@ -89,7 +90,7 @@ export default function App() {
     title: "Who We Are",
     tagline: "Secure. Connect. Protect.",
     headline: "Your Premier Infrastructure Systems Engineering Team",
-    description1: "CoreGuard has emerged as a premier technology solution provider, introducing extreme attention-to-detail into hardware installations. We service commercial buildings, residential hubs, and industrial warehouses, laying fast optical fibers and smart networks.",
+    description1: "Core Vision Pakistan has emerged as a premier technology solution provider, introducing extreme attention-to-detail into hardware installations. We service commercial buildings, residential hubs, and industrial warehouses, laying fast optical fibers and smart networks.",
     description2: "Our engineering guidelines bypass general shortcuts, delivering certified calibrations, neat cabling, and lifetime peace of mind. Let us protect what matters to you with the highest standard in security systems."
   });
 
@@ -411,7 +412,7 @@ export default function App() {
               <div className="w-20 h-20 bg-white rounded-full border border-slate-200 shadow-xl relative animate-bounce overflow-hidden flex items-center justify-center">
               <img
                 src={logo}
-                alt="CoreGuard Logo"
+                alt="Core Vision Pakistan Logo"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />
@@ -518,38 +519,8 @@ export default function App() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="bg-white min-h-screen text-black font-['Open_Sans']"
+            className="bg-white min-h-screen text-black font-['Open_Sans'] pt-16"
           >
-            {/* INOVE TOP HEADER LOGO (hlogo) */}
-            <div className="inove-hlogo pt-8 pb-4">
-              <div className="flex flex-col sm:flex-row items-center justify-between w-[85%] max-w-[1500px] mx-auto gap-4">
-                <div className="flex items-center gap-3.5">
-                  <div className="relative w-12 h-12 rounded-full overflow-hidden border border-slate-300 bg-white shadow-xs">
-                    <img src={logo} alt="CoreGuard" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="text-left">
-                    <h1 className="font-['Open_Sans_Condensed'] text-3xl sm:text-4xl font-light text-black tracking-wide uppercase leading-none">
-                      CORE<span className="text-[#D95B16] font-bold">GUARD</span>
-                    </h1>
-                    <span className="block font-['Open_Sans'] text-[10px] uppercase tracking-widest text-slate-500 font-semibold mt-1">
-                      PRECISION SURVEILLANCE & OPTICAL INFRASTRUCTURE
-                    </span>
-                  </div>
-                </div>
-
-                {/* Professional Operations Badge */}
-                <div className="hidden md:flex items-center gap-4 text-left font-mono text-[10px] border-l border-slate-200 pl-4 py-1">
-                  <div>
-                    <span className="flex items-center gap-1.5 font-bold text-slate-800 uppercase tracking-wider">
-                      <span className="h-2 w-2 rounded-full bg-emerald-500 animate-ping" />
-                      Field Dispatch Active
-                    </span>
-                    <span className="text-slate-400 block mt-0.5">Islamabad & Rawalpindi HQs</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
             {/* INOVE HEADER IMAGE / AI VIDEO SHOWCASE (himage) */}
             <div className="inove-himage shadow-xs">
               <HeroVideoBackground />
@@ -563,7 +534,7 @@ export default function App() {
                 <div className="whitespace-nowrap">to explore, learn and grow,</div>
                 <div className="whitespace-nowrap mb-5">to push the boundaries towards better things.</div>
                 <h2 className="font-['Open_Sans_Condensed'] text-3xl sm:text-4xl font-light text-black uppercase tracking-tight whitespace-nowrap">
-                  We are CoreGuard
+                  We are Core Vision Pakistan
                 </h2>
               </div>
 
@@ -595,14 +566,14 @@ export default function App() {
                   </a>
                   <a 
                     href={`tel:${contactInfo.phone.replace(/\D/g, "")}`} 
-                    className="p-2.5 rounded-xl border border-slate-300 hover:border-[#D95B16] hover:bg-orange-50 text-[#D95B16] transition-all shadow-xs"
+                    className="p-2.5 rounded-xl border border-slate-300 hover:border-[#0284C7] hover:bg-sky-50 text-[#0284C7] transition-all shadow-xs"
                     title="Priority Hotline"
                   >
                     <Phone size={18} />
                   </a>
                   <button 
                     onClick={() => triggerQuote()}
-                    className="p-2.5 rounded-xl border border-slate-300 hover:border-[#D95B16] hover:bg-orange-50 text-[#D95B16] transition-all shadow-xs cursor-pointer"
+                    className="p-2.5 rounded-xl border border-slate-300 hover:border-[#0284C7] hover:bg-sky-50 text-[#0284C7] transition-all shadow-xs cursor-pointer"
                     title="Launch Quote Simulator"
                   >
                     <Sparkles size={18} />
@@ -612,7 +583,7 @@ export default function App() {
                 {/* Micro-Metrics */}
                 <div className="mt-4 pt-3 border-t border-slate-200 text-[10px] font-mono text-slate-500 space-y-1">
                   <div>SLA: <b className="text-emerald-600 font-bold">100% Guaranteed</b></div>
-                  <div>LOSS BOUND: <b className="text-[#D95B16] font-bold">&le;0.02 dB</b></div>
+                  <div>LOSS BOUND: <b className="text-[#0284C7] font-bold">&le;0.02 dB</b></div>
                 </div>
               </div>
             </div>
@@ -622,30 +593,26 @@ export default function App() {
 
             {/* INOVE BLOCK 2: SHOWROOM GALLERY, CLIENTS & PROJECT TAGS (.block.tri.showroom) */}
             <div className="inove-block inove-tri showroom text-left">
-              {/* Column 1: Showroom Gallery (Strictly User's 8 Services) */}
+              {/* Column 1: Showroom Gallery (Strictly User's 8 Services with 3D Side Swipe-In) */}
               <div className="inove-bbox inove-gallery">
-                <h2 className="font-['Open_Sans_Condensed'] text-3xl sm:text-4xl font-light text-black mb-8">
+                <motion.h2 
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                  className="font-['Open_Sans_Condensed'] text-3xl sm:text-4xl font-light text-black mb-8"
+                >
                   Showroom Gallery
-                </h2>
+                </motion.h2>
 
-                <div className="space-y-3.5">
-                  {services.map((service) => (
-                    <div
+                <div className="space-y-1">
+                  {services.map((service, idx) => (
+                    <ShowroomCard3D
                       key={service.id}
-                      onClick={() => selectServiceDetail(service)}
-                      className="inove-btn group"
-                    >
-                      <div className="inove-btn-l">
-                        <span className="label font-['Open_Sans'] font-semibold text-xs uppercase tracking-wider group-hover:text-[#D95B16] transition-colors">
-                          {service.title}
-                        </span>
-                        <span className="text-[9px] text-slate-400 font-mono mt-0.5">&rarr; Inspect Specs</span>
-                      </div>
-                      <div 
-                        className="inove-btn-r group-hover:scale-102 transition-transform duration-300"
-                        style={{ backgroundImage: `url('${service.imageUrl}')` }}
-                      />
-                    </div>
+                      service={service}
+                      index={idx}
+                      onSelect={selectServiceDetail}
+                    />
                   ))}
                 </div>
               </div>
@@ -657,24 +624,26 @@ export default function App() {
                 </h2>
 
                 <div className="world">
-                  <div className="inove-topic">World OEM Hardware</div>
-                  <div className="grid grid-cols-2 gap-3 py-2 font-mono text-xs font-bold text-slate-700">
-                    <div className="p-3 border border-slate-200 bg-slate-50 text-center hover:border-orange-300 hover:text-[#D95B16] transition-all">HIKVISION 4K</div>
-                    <div className="p-3 border border-slate-200 bg-slate-50 text-center hover:border-orange-300 hover:text-[#D95B16] transition-all">FUJIKURA JAPAN</div>
-                    <div className="p-3 border border-slate-200 bg-slate-50 text-center hover:border-orange-300 hover:text-[#D95B16] transition-all">DAHUA MATRIX</div>
-                    <div className="p-3 border border-slate-200 bg-slate-50 text-center hover:border-orange-300 hover:text-[#D95B16] transition-all">UBIQUITI UNIFI</div>
-                    <div className="p-3 border border-slate-200 bg-slate-50 text-center hover:border-orange-300 hover:text-[#D95B16] transition-all">CISCO SYSTEMS</div>
-                    <div className="p-3 border border-slate-200 bg-slate-50 text-center hover:border-orange-300 hover:text-[#D95B16] transition-all">CORNING OPTICS</div>
+                  <div className="inove-topic">World OEM Hardware Partners</div>
+                  <div className="grid grid-cols-2 gap-2.5 py-2 font-mono text-[11px] font-bold text-slate-700">
+                    <div className="p-2.5 border border-slate-200 bg-slate-50 text-center hover:border-emerald-400 hover:text-emerald-600 transition-all rounded-lg">ZKTeco</div>
+                    <div className="p-2.5 border border-slate-200 bg-slate-50 text-center hover:border-red-400 hover:text-red-600 transition-all rounded-lg">HIKVISION</div>
+                    <div className="p-2.5 border border-slate-200 bg-slate-50 text-center hover:border-sky-400 hover:text-[#0284C7] transition-all rounded-lg">DAHUA</div>
+                    <div className="p-2.5 border border-slate-200 bg-slate-50 text-center hover:border-amber-400 hover:text-amber-600 transition-all rounded-lg">IMOU</div>
+                    <div className="p-2.5 border border-slate-200 bg-slate-50 text-center hover:border-rose-400 hover:text-rose-600 transition-all rounded-lg">HUAWEI</div>
+                    <div className="p-2.5 border border-slate-200 bg-slate-50 text-center hover:border-cyan-400 hover:text-cyan-600 transition-all rounded-lg">CISCO</div>
+                    <div className="p-2.5 border border-slate-200 bg-slate-50 text-center hover:border-sky-400 hover:text-sky-600 transition-all rounded-lg">VIVANCO</div>
+                    <div className="p-2.5 border border-slate-200 bg-slate-50 text-center hover:border-indigo-400 hover:text-indigo-600 transition-all rounded-lg">CORNING</div>
                   </div>
                 </div>
 
                 <div className="local mt-6">
                   <div className="inove-topic">Local Site Infrastructure</div>
                   <div className="grid grid-cols-2 gap-3 py-2 font-mono text-xs font-bold text-slate-700">
-                    <div className="p-3 border border-slate-200 bg-slate-50 text-center hover:border-orange-300 hover:text-[#D95B16] transition-all">Corporate HQs</div>
-                    <div className="p-3 border border-slate-200 bg-slate-50 text-center hover:border-orange-300 hover:text-[#D95B16] transition-all">Commercial Hubs</div>
-                    <div className="p-3 border border-slate-200 bg-slate-50 text-center hover:border-orange-300 hover:text-[#D95B16] transition-all">Datacenters</div>
-                    <div className="p-3 border border-slate-200 bg-slate-50 text-center hover:border-orange-300 hover:text-[#D95B16] transition-all">Industrial Campuses</div>
+                    <div className="p-3 border border-slate-200 bg-slate-50 text-center hover:border-sky-300 hover:text-[#0284C7] transition-all">Corporate HQs</div>
+                    <div className="p-3 border border-slate-200 bg-slate-50 text-center hover:border-sky-300 hover:text-[#0284C7] transition-all">Commercial Hubs</div>
+                    <div className="p-3 border border-slate-200 bg-slate-50 text-center hover:border-sky-300 hover:text-[#0284C7] transition-all">Datacenters</div>
+                    <div className="p-3 border border-slate-200 bg-slate-50 text-center hover:border-sky-300 hover:text-[#0284C7] transition-all">Industrial Campuses</div>
                   </div>
                 </div>
               </div>
@@ -707,7 +676,7 @@ export default function App() {
                 <div className="mt-8 pt-6 border-t border-slate-200">
                   <button
                     onClick={() => triggerQuote()}
-                    className="w-full bg-[#D95B16] hover:bg-[#C2410C] text-white font-['Open_Sans'] font-bold text-xs py-3.5 px-4 rounded-xl uppercase tracking-wider transition-all shadow-sm hover:shadow-md cursor-pointer text-center flex items-center justify-center gap-2"
+                    className="w-full bg-[#0284C7] hover:bg-[#0369A1] text-white font-['Open_Sans'] font-bold text-xs py-3.5 px-4 rounded-xl uppercase tracking-wider transition-all shadow-sm hover:shadow-md cursor-pointer text-center flex items-center justify-center gap-2"
                   >
                     <Sparkles size={14} />
                     <span>Generate Instant Quote</span>
@@ -719,23 +688,17 @@ export default function App() {
             {/* HORIZONTAL LINE DIVIDER */}
             <div className="inove-hline" />
 
-            {/* INTERACTIVE OPERATIONS HUB & LIVE SIMULATOR */}
-            <div className="py-12 bg-slate-50/50">
-              <LiveOperationsHub 
-                onTriggerQuote={(srvId) => triggerQuote(srvId)}
-                onExploreServices={() => navigateTo({ page: "services" })}
-              />
-            </div>
+            {/* OFFICIAL OEM PARTNERS & HARDWARE COMPLIANCE MARQUEE */}
+            <PartnersShowcase />
 
             {/* HORIZONTAL LINE DIVIDER */}
             <div className="inove-hline" />
 
-            {/* INTERACTIVE SCOPE ESTIMATOR */}
-            <div className="py-12 bg-white">
-              <QuickQuoteEstimator 
-                onTriggerQuote={(srvId) => triggerQuote(srvId)}
-              />
-            </div>
+            {/* CERTIFIED ENGINEERING SHOWCASE & DEPLOYMENT PROTOCOL */}
+            <EngineeringShowcase 
+              onTriggerQuote={(srvId) => triggerQuote(srvId)}
+              onExploreServices={() => navigateTo({ page: "services" })}
+            />
 
             {/* HORIZONTAL LINE DIVIDER */}
             <div className="inove-hline" />
@@ -743,16 +706,16 @@ export default function App() {
             {/* INOVE BLOCK 3: FOOTER (.block.footer) */}
             <div className="inove-block inove-footer text-center py-12 space-y-4">
               <a 
-                className="font-['Open_Sans'] text-sm sm:text-base text-black hover:text-[#D95B16] font-medium tracking-wide transition-colors block"
+                className="font-['Open_Sans'] text-sm sm:text-base text-black hover:text-[#0284C7] font-medium tracking-wide transition-colors block"
                 href={`mailto:${contactInfo.email}`}
               >
                 {contactInfo.email.replace("@", " @ ")}
               </a>
               <div className="w-12 h-12 mx-auto rounded-full overflow-hidden border border-slate-300 bg-white shadow-xs">
-                <img src={logo} alt="CoreGuard" className="w-full h-full object-cover" />
+                <img src={logo} alt="Core Vision Pakistan" className="w-full h-full object-cover" />
               </div>
               <div className="font-['Open_Sans'] text-xs text-slate-400 font-bold tracking-widest uppercase">
-                2026 &bull; CoreGuard Digital Infrastructure &bull; Islamabad HQ
+                2026 &bull; Core Vision Pakistan &bull; Islamabad HQ
               </div>
             </div>
           </motion.div>
@@ -772,24 +735,24 @@ export default function App() {
                 <div className="relative w-9 h-9 rounded-full border border-slate-200 overflow-hidden bg-white shrink-0 shadow-sm">
                   <img
                     src={logo}
-                    alt="CoreGuard Logo"
+                    alt="Core Vision Pakistan Logo"
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
                   />
                 </div>
                 <span className="font-display font-black text-lg text-slate-900 leading-none uppercase">
-                  Core<span className="text-[#D95B16]">Guard</span>
+                  Core <span className="text-[#0284C7]">Vision</span> Pakistan
                 </span>
               </div>
               <p className="text-slate-500 leading-relaxed text-xs font-medium">
                 A premium tech services provider specialized in corporate structured cabling trunkings, biometrics controls, smart optical fibers terminations, and high-definition CCTV security configurations.
               </p>
               <div className="flex gap-2.5 pt-2 text-[9px] font-mono uppercase tracking-wider font-bold">
-                <span className="text-[#D95B16] hover:underline cursor-pointer">secure</span>
+                <span className="text-[#0284C7] hover:underline cursor-pointer">secure</span>
                 <span className="text-slate-300">|</span>
-                <span className="text-[#D95B16] hover:underline cursor-pointer">connect</span>
+                <span className="text-[#0284C7] hover:underline cursor-pointer">connect</span>
                 <span className="text-slate-300">|</span>
-                <span className="text-[#D95B16] hover:underline cursor-pointer">protect</span>
+                <span className="text-[#0284C7] hover:underline cursor-pointer">protect</span>
               </div>
             </div>
 
@@ -797,11 +760,11 @@ export default function App() {
             <div className="lg:col-span-3 space-y-3.5">
               <h4 className="font-sans font-extrabold text-[11px] uppercase tracking-widest text-slate-800 font-bold">Portal Index</h4>
               <ul className="space-y-2 text-xs font-semibold text-slate-500 font-mono">
-                <li><button onClick={() => navigateTo({ page: "home" })} className="hover:text-[#D95B16] text-left transition-colors cursor-pointer">Home landing</button></li>
-                <li><button onClick={() => navigateTo({ page: "services" })} className="hover:text-[#D95B16] text-left transition-colors cursor-pointer">Solutions Catalog</button></li>
-                <li><button onClick={() => navigateTo({ page: "about" })} className="hover:text-[#D95B16] text-left transition-colors cursor-pointer">About Engineering</button></li>
-                <li><button onClick={() => navigateTo({ page: "why-us" })} className="hover:text-[#D95B16] text-left transition-colors cursor-pointer">Certified Promise</button></li>
-                <li><button onClick={() => navigateTo({ page: "contact" })} className="hover:text-[#D95B16] text-left transition-colors cursor-pointer">Security Dispatch</button></li>
+                <li><button onClick={() => navigateTo({ page: "home" })} className="hover:text-[#0284C7] text-left transition-colors cursor-pointer">Home landing</button></li>
+                <li><button onClick={() => navigateTo({ page: "services" })} className="hover:text-[#0284C7] text-left transition-colors cursor-pointer">Solutions Catalog</button></li>
+                <li><button onClick={() => navigateTo({ page: "about" })} className="hover:text-[#0284C7] text-left transition-colors cursor-pointer">About Engineering</button></li>
+                <li><button onClick={() => navigateTo({ page: "why-us" })} className="hover:text-[#0284C7] text-left transition-colors cursor-pointer">Certified Promise</button></li>
+                <li><button onClick={() => navigateTo({ page: "contact" })} className="hover:text-[#0284C7] text-left transition-colors cursor-pointer">Security Dispatch</button></li>
               </ul>
             </div>
 
@@ -809,10 +772,10 @@ export default function App() {
             <div className="lg:col-span-3 space-y-3.5">
               <h4 className="font-sans font-extrabold text-[11px] uppercase tracking-widest text-slate-800 font-bold">Key Solutions</h4>
               <ul className="space-y-2 text-xs text-slate-500 font-semibold font-mono">
-                <li><button onClick={() => triggerQuote("cctv-install")} className="hover:text-[#D95B16] text-left cursor-pointer transition-colors">CCTV HD Deployments</button></li>
-                <li><button onClick={() => triggerQuote("fiber-splicing")} className="hover:text-[#D95B16] text-left cursor-pointer transition-colors">Optical Fiber Splicing</button></li>
-                <li><button onClick={() => triggerQuote("network-setup")} className="hover:text-[#D95B16] text-left cursor-pointer transition-colors">Enterprise Setup Routing</button></li>
-                <li><button onClick={() => triggerQuote("biometric-system")} className="hover:text-[#D95B16] text-left cursor-pointer transition-colors">SSID & Biometric Loggers</button></li>
+                <li><button onClick={() => triggerQuote("cctv-install")} className="hover:text-[#0284C7] text-left cursor-pointer transition-colors">CCTV HD Deployments</button></li>
+                <li><button onClick={() => triggerQuote("fiber-splicing")} className="hover:text-[#0284C7] text-left cursor-pointer transition-colors">Optical Fiber Splicing</button></li>
+                <li><button onClick={() => triggerQuote("network-setup")} className="hover:text-[#0284C7] text-left cursor-pointer transition-colors">Enterprise Setup Routing</button></li>
+                <li><button onClick={() => triggerQuote("biometric-system")} className="hover:text-[#0284C7] text-left cursor-pointer transition-colors">SSID & Biometric Loggers</button></li>
               </ul>
             </div>
 
@@ -826,7 +789,7 @@ export default function App() {
               <div className="pt-2">
                 <a 
                   href={`tel:${contactInfo.phone}`}
-                  className="inline-flex items-center gap-1.5 bg-orange-50 border border-orange-200 hover:bg-orange-150 text-[#D95B16] py-2 px-3.5 rounded-full text-[10px] uppercase font-mono font-bold tracking-wider hover:shadow-md transition-all cursor-pointer"
+                  className="inline-flex items-center gap-1.5 bg-sky-50 border border-sky-200 hover:bg-sky-100 text-[#0284C7] py-2 px-3.5 rounded-full text-[10px] uppercase font-mono font-bold tracking-wider hover:shadow-md transition-all cursor-pointer"
                 >
                   <Phone size={10} /> Call Dispatch Priority
                 </a>
@@ -836,11 +799,11 @@ export default function App() {
           </div>
 
           <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-medium mt-8">
-            <span>Copyright © 2026 CoreGuard Technology Services Company. All Rights Reserved.</span>
+            <span>Copyright © 2026 Core Vision Pakistan Technology Services Company. All Rights Reserved.</span>
             <div className="flex gap-4 font-mono text-[9px] uppercase tracking-wider items-center">
-              <span className="hover:text-[#D95B16] cursor-pointer">Terms</span>
+              <span className="hover:text-[#0284C7] cursor-pointer">Terms</span>
               <span>•</span>
-              <span className="hover:text-[#D95B16] cursor-pointer">Privacy Protocol</span>
+              <span className="hover:text-[#0284C7] cursor-pointer">Privacy Protocol</span>
             </div>
           </div>
 

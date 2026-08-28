@@ -152,7 +152,7 @@ export const QuoteDialog: React.FC<QuoteDialogProps> = ({
             {/* Close Button */}
             <button 
               onClick={onClose}
-              className="absolute top-4 right-4 text-slate-400 hover:text-[#D95B16] transition-colors p-2 bg-slate-50 hover:bg-slate-100 border border-slate-200 hover:border-orange-200 rounded-xl cursor-pointer group z-50"
+              className="absolute top-4 right-4 text-slate-400 hover:text-[#0284C7] transition-colors p-2 bg-slate-50 hover:bg-slate-100 border border-slate-200 hover:border-sky-200 rounded-xl cursor-pointer group z-50"
               aria-label="Close dialog"
             >
               <X size={14} className="group-hover:scale-105 transition-transform" />
@@ -163,7 +163,7 @@ export const QuoteDialog: React.FC<QuoteDialogProps> = ({
                 
                 {/* Header Information */}
                 <div className="flex items-center gap-3.5 mb-5">
-                  <div className="p-2.5 bg-orange-50 border border-orange-100 rounded-xl text-[#D95B16]">
+                  <div className="p-2.5 bg-sky-50 border border-sky-100 rounded-xl text-[#0284C7]">
                     <Shield size={20} className="animate-pulse" />
                   </div>
                   <div>
@@ -184,22 +184,22 @@ export const QuoteDialog: React.FC<QuoteDialogProps> = ({
                     className="py-10 flex flex-col items-center justify-center text-center space-y-4 bg-slate-50 border border-slate-100 rounded-2xl p-5"
                   >
                     <div className="relative w-14 h-14 flex items-center justify-center">
-                      <div className="absolute inset-0 rounded-full border border-dashed border-[#D95B16]/40 animate-spin [animation-duration:6s]" />
-                      <div className="absolute inset-2 rounded-full border border-orange-100 animate-spin [animation-duration:10s] [animation-direction:reverse]" />
-                      <div className="absolute inset-3 rounded-full bg-orange-50 flex items-center justify-center">
-                        <Terminal size={18} className="text-[#D95B16]" />
+                      <div className="absolute inset-0 rounded-full border border-dashed border-[#0284C7]/40 animate-spin [animation-duration:6s]" />
+                      <div className="absolute inset-2 rounded-full border border-sky-100 animate-spin [animation-duration:10s] [animation-direction:reverse]" />
+                      <div className="absolute inset-3 rounded-full bg-sky-50 flex items-center justify-center">
+                        <Terminal size={18} className="text-[#0284C7]" />
                       </div>
                     </div>
 
                     <div className="space-y-1">
                       <p className="font-mono text-[9px] text-slate-400 tracking-wider">SECURE TRANSMISSION</p>
-                      <h4 className="text-[#D95B16] font-mono font-bold text-xs animate-pulse">
+                      <h4 className="text-[#0284C7] font-mono font-bold text-xs animate-pulse">
                         {submitPhase}
                       </h4>
                     </div>
 
                     <div className="w-full max-w-[200px] h-1 bg-slate-100 rounded-full overflow-hidden relative">
-                      <div className="absolute left-0 top-0 bottom-0 bg-gradient-to-r from-[#D95B16] to-[#EA580C] rounded-full animate-infinite-loading w-[40%]" />
+                      <div className="absolute left-0 top-0 bottom-0 bg-gradient-to-r from-[#0284C7] to-[#0EA5E9] rounded-full animate-infinite-loading w-[40%]" />
                     </div>
                   </motion.div>
                 ) : (
@@ -209,14 +209,14 @@ export const QuoteDialog: React.FC<QuoteDialogProps> = ({
                     {selectedService && (
                       <div className="bg-slate-50 border border-slate-100 rounded-xl px-3.5 py-2.5 flex items-center justify-between text-xs">
                         <span className="text-slate-500">Selected Solution:</span>
-                        <span className="text-[#D95B16] font-mono font-bold">{selectedService.title}</span>
+                        <span className="text-[#0284C7] font-mono font-bold">{selectedService.title}</span>
                       </div>
                     )}
 
                     {/* Full Name Input */}
                     <div className="space-y-1.5">
                       <label className="block text-[10px] font-mono uppercase tracking-wider text-slate-500 font-semibold flex items-center gap-1.5">
-                        <User size={11} className="text-[#D95B16]" /> Full Name
+                        <User size={11} className="text-[#0284C7]" /> Full Name
                       </label>
                       <input
                         type="text"
@@ -224,14 +224,14 @@ export const QuoteDialog: React.FC<QuoteDialogProps> = ({
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="John Doe"
-                        className="w-full bg-slate-50 border border-slate-100 focus:border-[#D95B16] focus:bg-white rounded-xl px-3.5 py-2.5 text-base md:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-[#D95B16]/5 transition-all duration-200 font-sans"
+                        className="w-full bg-slate-50 border border-slate-100 focus:border-[#0284C7] focus:bg-white rounded-xl px-3.5 py-2.5 text-base md:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-[#0284C7]/5 transition-all duration-200 font-sans"
                       />
                     </div>
 
                     {/* Email Input */}
                     <div className="space-y-1.5">
                       <label className="block text-[10px] font-mono uppercase tracking-wider text-slate-500 font-semibold flex items-center gap-1.5">
-                        <Mail size={11} className="text-[#D95B16]" /> Email Address
+                        <Mail size={11} className="text-[#0284C7]" /> Email Address
                       </label>
                       <input
                         type="email"
@@ -239,14 +239,14 @@ export const QuoteDialog: React.FC<QuoteDialogProps> = ({
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="john@example.com"
-                        className="w-full bg-slate-50 border border-slate-100 focus:border-[#D95B16] focus:bg-white rounded-xl px-3.5 py-2.5 text-base md:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-[#D95B16]/5 transition-all duration-200 font-sans"
+                        className="w-full bg-slate-50 border border-slate-100 focus:border-[#0284C7] focus:bg-white rounded-xl px-3.5 py-2.5 text-base md:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-[#0284C7]/5 transition-all duration-200 font-sans"
                       />
                     </div>
 
                     {/* Phone Number Input */}
                     <div className="space-y-1.5">
                       <label className="block text-[10px] font-mono uppercase tracking-wider text-slate-500 font-semibold flex items-center gap-1.5">
-                        <Phone size={11} className="text-[#D95B16]" /> Phone Number
+                        <Phone size={11} className="text-[#0284C7]" /> Phone Number
                       </label>
                       <input
                         type="tel"
@@ -254,7 +254,7 @@ export const QuoteDialog: React.FC<QuoteDialogProps> = ({
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="+92 300 1234567"
-                        className="w-full bg-slate-50 border border-slate-100 focus:border-[#D95B16] focus:bg-white rounded-xl px-3.5 py-2.5 text-base md:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-[#D95B16]/5 transition-all duration-200 font-sans"
+                        className="w-full bg-slate-50 border border-slate-100 focus:border-[#0284C7] focus:bg-white rounded-xl px-3.5 py-2.5 text-base md:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-[#0284C7]/5 transition-all duration-200 font-sans"
                       />
                     </div>
 
@@ -262,7 +262,7 @@ export const QuoteDialog: React.FC<QuoteDialogProps> = ({
                     <div className="pt-2">
                       <button
                         type="submit"
-                        className="w-full relative overflow-hidden group rounded-xl bg-[#D95B16] hover:bg-[#C2410C] text-white font-bold py-3 px-4 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer hover:shadow-[0_4px_12px_rgba(217,91,22,0.15)] active:scale-[0.98] border-none"
+                        className="w-full relative overflow-hidden group rounded-xl bg-[#0284C7] hover:bg-[#0369A1] text-white font-bold py-3 px-4 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer hover:shadow-[0_4px_12px_rgba(2,132,199,0.15)] active:scale-[0.98] border-none"
                       >
                         {/* Shimmer overlay */}
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shimmer pointer-events-none" />
@@ -282,12 +282,12 @@ export const QuoteDialog: React.FC<QuoteDialogProps> = ({
             ) : (
               /* Success View */
               <div className="py-4 text-center relative z-10">
-                <div className="relative mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-orange-50 border border-[#D95B16] text-[#D95B16] shadow-[0_0_15px_rgba(217,91,22,0.1)]">
+                <div className="relative mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-sky-50 border border-[#0284C7] text-[#0284C7] shadow-[0_0_15px_rgba(2,132,199,0.1)]">
                   <CheckCircle size={22} className="animate-pulse" />
                 </div>
                 
                 <h3 className="font-display text-lg font-bold text-slate-900 mb-1">Callback Requested!</h3>
-                <p className="text-[#D95B16] font-mono text-[9px] uppercase tracking-wider mb-4 font-semibold">
+                <p className="text-[#0284C7] font-mono text-[9px] uppercase tracking-wider mb-4 font-semibold">
                   Operator routing initialized
                 </p>
                 
@@ -299,7 +299,7 @@ export const QuoteDialog: React.FC<QuoteDialogProps> = ({
                     </div>
                     <div>
                       <span className="font-mono text-slate-400 block text-[8px] uppercase tracking-wider">Uplink Phone</span> 
-                      <span className="font-bold text-[#D95B16] font-mono text-xs">{formData.phone}</span>
+                      <span className="font-bold text-[#0284C7] font-mono text-xs">{formData.phone}</span>
                     </div>
                   </div>
 
@@ -313,7 +313,7 @@ export const QuoteDialog: React.FC<QuoteDialogProps> = ({
                   {selectedService && (
                     <div className="border-t border-slate-100 pt-2">
                       <span className="font-mono text-slate-400 block text-[8px] uppercase tracking-wider">Solution Selected</span> 
-                      <span className="text-[#D95B16] font-semibold text-[11px]">{selectedService.title}</span>
+                      <span className="text-[#0284C7] font-semibold text-[11px]">{selectedService.title}</span>
                     </div>
                   )}
 
@@ -325,7 +325,7 @@ export const QuoteDialog: React.FC<QuoteDialogProps> = ({
                 {/* Priority action link */}
                 <div>
                   <a
-                    href={`https://wa.me/923064422550?text=Hi%20CoreGuard,%20I%20just%20submitted%20a%20callback%20request%20for%20${encodeURIComponent(selectedService?.title || "security services")}`}
+                    href={`https://wa.me/923064422550?text=Hi%20Core%20Vision%20Pakistan,%20I%20just%20submitted%20a%20callback%20request%20for%20${encodeURIComponent(selectedService?.title || "security services")}`}
                     target="_blank"
                     rel="noreferrer"
                     className="w-full rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white py-2.5 px-3.5 text-xs font-bold font-mono tracking-wide flex items-center justify-center gap-2 transition-all shadow-[0_4px_12px_rgba(16,185,129,0.2)] border-none text-center justify-center"

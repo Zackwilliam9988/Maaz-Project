@@ -20,22 +20,22 @@ export const AboutPage: React.FC = () => {
       icon: Shield,
       title: "Absolute Protection",
       description: "We deploy defense-grade surveillance systems and rigorous protocols to protect digital and physical critical infrastructure.",
-      color: "from-[#D95B16]/10 to-[#EA580C]/10",
-      accentColor: "#D95B16"
+      color: "from-[#0284C7]/10 to-[#0EA5E9]/10",
+      accentColor: "#0284C7"
     },
     {
       icon: Cpu,
       title: "Pristine Calibration",
       description: "Our optical fiber splices and network cabling systems adhere to nanosecond response budgets and 100% loss-free validation.",
-      color: "from-[#EA580C]/10 to-[#F97316]/10",
-      accentColor: "#EA580C"
+      color: "from-[#0EA5E9]/10 to-[#2563EB]/10",
+      accentColor: "#0EA5E9"
     },
     {
       icon: Zap,
       title: "Rapid Deployment",
       description: "Enterprise operations require constant uptime. We provide rapid emergency support dispatch within 2 hours.",
-      color: "from-[#F97316]/10 to-[#D95B16]/10",
-      accentColor: "#F97316"
+      color: "from-[#2563EB]/10 to-[#0284C7]/10",
+      accentColor: "#2563EB"
     }
   ];
 
@@ -61,7 +61,7 @@ export const AboutPage: React.FC = () => {
   ];
 
   const milestones = [
-    { year: "2018", title: "Enterprise Conception", desc: "CoreGuard begins high-end commercial cabling & CCTV rollouts in Islamabad." },
+    { year: "2018", title: "Enterprise Conception", desc: "Core Vision Pakistan begins high-end commercial cabling & CCTV rollouts in Islamabad." },
     { year: "2020", title: "Fiber Splice Core", desc: "Acquired state-of-the-art OTDR core-alignment splicing units to service optical feeds." },
     { year: "2022", title: "Smart City Contract", desc: "Deployed integrated surveillance systems covering major commercial zones." },
     { year: "2025", title: "Biometric Integration Hub", desc: "Launched central biometric database syncing cloud metrics for 50+ enterprise sites." }
@@ -84,7 +84,7 @@ export const AboutPage: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-display font-black text-4xl sm:text-6xl text-slate-900 tracking-tight leading-none mb-6"
           >
-            Engineering Pristine <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D95B16] to-[#EA580C]">Security Landscapes</span>
+            Engineering Pristine <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0284C7] to-[#0EA5E9]">Security Landscapes</span>
           </motion.h1>
           
           <motion.p 
@@ -93,7 +93,7 @@ export const AboutPage: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-slate-600 text-base sm:text-xl leading-relaxed font-sans"
           >
-            CoreGuard is a specialized high-performance security systems integrator and infrastructure engineering collective. We service commercial buildings, residential hubs, and industrial warehouses, laying fast optical fibers, smart networks, and unified CCTV grids.
+            Core Vision Pakistan is a specialized high-performance security systems integrator and infrastructure engineering collective. We service commercial buildings, residential hubs, and industrial warehouses, laying fast optical fibers, smart networks, and unified CCTV grids.
           </motion.p>
         </div>
 
@@ -106,7 +106,7 @@ export const AboutPage: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="bg-white border border-slate-100 rounded-3xl p-8 relative overflow-hidden group shadow-md hover:shadow-lg transition-all duration-300"
           >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/5 blur-2xl pointer-events-none" />
+            <div className="absolute top-0 right-0 w-32 h-32 bg-sky-500/5 blur-2xl pointer-events-none" />
             <h3 className="text-2xl font-black font-sans mb-4 tracking-tight text-slate-900 mt-2">Our Mission</h3>
             <p className="text-slate-600 text-sm leading-relaxed font-sans">
               To engineer and maintain bulletproof security grids, high-speed networking paths, and automated bio-tracking modules that guarantee commercial clients continuous uptime, maximum asset protection, and streamlined oversight.
@@ -120,7 +120,7 @@ export const AboutPage: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="bg-white border border-slate-100 rounded-3xl p-8 relative overflow-hidden group shadow-md hover:shadow-lg transition-all duration-300"
           >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/5 blur-2xl pointer-events-none" />
+            <div className="absolute top-0 right-0 w-32 h-32 bg-sky-500/5 blur-2xl pointer-events-none" />
             <h3 className="text-2xl font-black font-sans mb-4 tracking-tight text-slate-900 mt-2">Our Vision</h3>
             <p className="text-slate-600 text-sm leading-relaxed font-sans">
               To be Pakistan's standard in mission-critical infrastructure integration. We envision automated commercial grids where biometric flow, 4K intelligent surveillance, and redundant fiber links seamlessly collaborate on a single secure platform.
@@ -132,7 +132,7 @@ export const AboutPage: React.FC = () => {
         <div className="mb-20">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-slate-900 mt-4 font-sans">
-              The Principles Behind CoreGuard
+              The Principles Behind Core Vision Pakistan
             </h2>
           </div>
 
@@ -147,7 +147,7 @@ export const AboutPage: React.FC = () => {
                   transition={{ duration: 0.5, delay: idx * 0.15 }}
                   className="bg-white border border-slate-100 rounded-2xl p-6 relative transition-all duration-300 group hover:scale-[1.02] shadow-sm hover:shadow-md"
                 >
-                  <h4 className="text-lg font-black text-slate-900 mb-2 mt-2 font-sans group-hover:text-[#D95B16] transition-colors">{value.title}</h4>
+                  <h4 className="text-lg font-black text-slate-900 mb-2 mt-2 font-sans group-hover:text-[#0284C7] transition-colors">{value.title}</h4>
                   <p className="text-xs text-slate-500 leading-relaxed font-sans">{value.description}</p>
                 </motion.div>
               );

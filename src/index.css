@@ -7,14 +7,14 @@
   --font-display: "Space Grotesk", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
   
-  --color-tech-primary: #D95B16;
-  --color-tech-secondary: #C2410C;
-  --color-tech-accent: #EA580C;
-  --color-tech-purple: #F97316;
+  --color-tech-primary: #0284C7;
+  --color-tech-secondary: #0369A1;
+  --color-tech-accent: #0EA5E9;
+  --color-tech-purple: #2563EB;
   --color-tech-bg: #FFFFFF;
-  --color-brand-cream: #FFF7ED;
-  --color-brand-coal: #1E293B;
-  --color-brand-gold: #D95B16;
+  --color-brand-cream: #F0F9FF;
+  --color-brand-coal: #0F172A;
+  --color-brand-gold: #0284C7;
 }
 
 html {
@@ -26,7 +26,7 @@ html {
 body {
   background-color: #FFFFFF;
   font-family: var(--font-sans);
-  color: #1E293B;
+  color: #0F172A;
   overflow-x: hidden;
 }
 
@@ -71,44 +71,44 @@ body {
 .glass-panel {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(217, 91, 22, 0.08);
+  border: 1px solid rgba(2, 132, 199, 0.08);
 }
 
 .glass-panel-dark {
-  background: rgba(255, 247, 237, 0.95);
+  background: rgba(240, 249, 255, 0.95);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(217, 91, 22, 0.06);
+  border: 1px solid rgba(2, 132, 199, 0.06);
 }
 
 /* Custom glow borders and shadows */
 .shadow-tech-cyan {
-  box-shadow: 0 4px 20px rgba(217, 91, 22, 0.08);
+  box-shadow: 0 4px 20px rgba(2, 132, 199, 0.08);
 }
 
 .shadow-tech-purple {
-  box-shadow: 0 4px 20px rgba(234, 88, 12, 0.08);
+  box-shadow: 0 4px 20px rgba(14, 165, 233, 0.08);
 }
 
 .shadow-tech-blue {
-  box-shadow: 0 4px 20px rgba(194, 65, 12, 0.08);
+  box-shadow: 0 4px 20px rgba(3, 105, 161, 0.08);
 }
 
 .border-glow-cyan {
-  border-color: rgba(217, 91, 22, 0.15);
+  border-color: rgba(2, 132, 199, 0.15);
 }
 
 .border-glow-cyan:hover {
-  border-color: rgba(217, 91, 22, 0.5);
-  box-shadow: 0 0 15px rgba(217, 91, 22, 0.15);
+  border-color: rgba(2, 132, 199, 0.5);
+  box-shadow: 0 0 15px rgba(2, 132, 199, 0.15);
 }
 
 .border-glow-purple {
-  border-color: rgba(234, 88, 12, 0.15);
+  border-color: rgba(14, 165, 233, 0.15);
 }
 
 .border-glow-purple:hover {
-  border-color: rgba(234, 88, 12, 0.5);
-  box-shadow: 0 0 15px rgba(234, 88, 12, 0.15);
+  border-color: rgba(14, 165, 233, 0.5);
+  box-shadow: 0 0 15px rgba(14, 165, 233, 0.15);
 }
 
 /* Hide scrollbar for clean modals */
@@ -285,9 +285,9 @@ body {
 }
 
 .inove-gallery .inove-btn:hover .inove-btn-l {
-  border-color: #D95B16;
-  color: #D95B16;
-  background-color: #FFF7ED;
+  border-color: #0284C7;
+  color: #0284C7;
+  background-color: #F0F9FF;
 }
 
 .inove-gallery .inove-btn .inove-btn-r {
@@ -306,7 +306,7 @@ body {
 }
 
 .inove-gallery .inove-btn:hover .inove-btn-r {
-  border-color: #D95B16;
+  border-color: #0284C7;
 }
 
 /* White Triangle Cut at bottom-right corner */
@@ -370,7 +370,7 @@ body {
 
 .inove-tags .inove-tag-list h4:hover,
 .inove-tags .inove-tag-list h5:hover {
-  color: #D95B16;
+  color: #0284C7;
 }
 
 @media (max-width: 900px) {

@@ -237,7 +237,7 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({ service, o
   const meta = serviceMetadata[service.id] || getFallbackMetadata(service.title);
 
   const openWhatsAppContact = () => {
-    const message = `Hello, I would like to contact CoreGuard about the ${service.title} service.`;
+    const message = `Hello, I would like to contact Core Vision Pakistan about the ${service.title} service.`;
     window.open(`https://wa.me/923064422550?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
   };
 
@@ -269,20 +269,20 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({ service, o
             <span>/</span>
             <span className="text-slate-400">Services</span>
             <span>/</span>
-            <span className="text-[#D95B16]">{service.title}</span>
+            <span className="text-[#0284C7]">{service.title}</span>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Hero Left Column */}
             <div className="lg:col-span-7 text-left space-y-6">
-              <div className="inline-flex items-center gap-2 bg-orange-50 border border-orange-100 rounded-full px-3.5 py-1.5 text-[10px] text-[#D95B16] font-mono font-bold uppercase tracking-widest">
-                <LucideIcon name={service.iconName} size={13} className="text-[#D95B16]" />
-                <span>COREGUARD SECURE SPECIFICATION</span>
+              <div className="inline-flex items-center gap-2 bg-sky-50 border border-sky-100 rounded-full px-3.5 py-1.5 text-[10px] text-[#0284C7] font-mono font-bold uppercase tracking-widest">
+                <LucideIcon name={service.iconName} size={13} className="text-[#0284C7]" />
+                <span>CORE VISION PAKISTAN SPECIFICATION</span>
               </div>
 
               <h1 className="font-display font-black text-3xl sm:text-5xl text-slate-900 tracking-tight leading-tight">
                 {service.title}
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#D95B16] to-[#EA580C] font-sans font-black uppercase text-lg sm:text-2xl mt-3 tracking-widest font-mono">
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#0284C7] to-[#0EA5E9] font-sans font-black uppercase text-lg sm:text-2xl mt-3 tracking-widest font-mono">
                   {meta.tagline}
                 </span>
               </h1>
@@ -301,7 +301,7 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({ service, o
                 </button>
                 <button 
                   onClick={onBack}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 hover:border-orange-200 font-mono font-bold py-3.5 px-5 rounded-2xl transition-all text-xs uppercase tracking-wider cursor-pointer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 hover:border-sky-200 font-mono font-bold py-3.5 px-5 rounded-2xl transition-all text-xs uppercase tracking-wider cursor-pointer"
                 >
                   <ArrowLeft size={13} />
                   Explore other solutions
@@ -320,18 +320,18 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({ service, o
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent" />
                 
                 {/* Active HUD calibration dots */}
-                <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-slate-900/80 border border-orange-100 px-3 py-1 rounded-full text-[8.5px] font-mono text-orange-400">
-                  <span className="w-1.5 h-1.5 rounded-full bg-rose-550 animate-ping" />
+                <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-slate-900/80 border border-sky-100 px-3 py-1 rounded-full text-[8.5px] font-mono text-sky-400">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping" />
                   <span>HUD LINK_ACTIVE</span>
                 </div>
 
                 <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md border border-slate-100 rounded-2xl p-4 flex items-center gap-3 shadow-md">
-                  <div className="p-2.5 bg-orange-50 border border-orange-100 text-[#D95B16] rounded-xl">
+                  <div className="p-2.5 bg-sky-50 border border-sky-100 text-[#0284C7] rounded-xl">
                     <LucideIcon name={service.iconName} size={18} />
                   </div>
                   <div className="text-left">
                     <span className="block text-[8px] font-mono uppercase text-slate-450 font-bold tracking-widest">SYSTEM ID MATRIX</span>
-                    <span className="block text-xs font-black text-[#D95B16] font-mono tracking-wider">#{service.id.toUpperCase()}</span>
+                    <span className="block text-xs font-black text-[#0284C7] font-mono tracking-wider">#{service.id.toUpperCase()}</span>
                   </div>
                 </div>
               </div>
@@ -361,7 +361,7 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({ service, o
               {/* Dynamic Engineering standards panel */}
               <div className="bg-slate-50 border border-slate-100 rounded-2xl p-6 shadow-sm text-left">
                 <h4 className="font-display font-black text-slate-900 mb-3.5 flex items-center gap-2 text-base">
-                  <Briefcase size={16} className="text-[#D95B16]" />
+                  <Briefcase size={16} className="text-[#0284C7]" />
                   <span>Engineering Standards Checklist</span>
                 </h4>
                 <p className="text-xs text-slate-500 mb-6 leading-relaxed font-sans">
@@ -369,19 +369,19 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({ service, o
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                   <div className="flex items-center gap-2.5 text-xs text-slate-600 font-sans">
-                    <CheckCircle size={14} className="text-[#D95B16] shrink-0" />
+                    <CheckCircle size={14} className="text-[#0284C7] shrink-0" />
                     <span>UL-Listed Weatherproof Cabling</span>
                   </div>
                   <div className="flex items-center gap-2.5 text-xs text-slate-600 font-sans">
-                    <CheckCircle size={14} className="text-[#D95B16] shrink-0" />
+                    <CheckCircle size={14} className="text-[#0284C7] shrink-0" />
                     <span>Regulated Surge Isolation Loops</span>
                   </div>
                   <div className="flex items-center gap-2.5 text-xs text-slate-600 font-sans">
-                    <CheckCircle size={14} className="text-[#D95B16] shrink-0" />
+                    <CheckCircle size={14} className="text-[#0284C7] shrink-0" />
                     <span>Micro-Loss Splicing Compliance</span>
                   </div>
                   <div className="flex items-center gap-2.5 text-xs text-slate-600 font-sans">
-                    <CheckCircle size={14} className="text-[#D95B16] shrink-0" />
+                    <CheckCircle size={14} className="text-[#0284C7] shrink-0" />
                     <span>1-Year Operations SLA Support</span>
                   </div>
                 </div>
@@ -390,16 +390,16 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({ service, o
 
             {/* Features Sidebar */}
             <div className="lg:col-span-5 text-left bg-white border border-slate-100 shadow-md rounded-3xl p-6 sm:p-8 space-y-6 relative overflow-hidden">
-              <div className="absolute top-0 right-0 h-24 w-24 rounded-full bg-orange-500/5 blur-2xl pointer-events-none" />
+              <div className="absolute top-0 right-0 h-24 w-24 rounded-full bg-sky-500/5 blur-2xl pointer-events-none" />
               <div>
                 <h3 className="font-display font-black text-lg text-slate-900">System Features</h3>
-                <p className="text-[10px] font-mono text-[#D95B16] uppercase tracking-widest font-extrabold mt-1">Physical Hardware Parameters</p>
+                <p className="text-[10px] font-mono text-[#0284C7] uppercase tracking-widest font-extrabold mt-1">Physical Hardware Parameters</p>
               </div>
 
               <div className="space-y-3 pt-2">
                 {meta.features.map((feature, idx) => (
-                  <div key={idx} className="flex items-start gap-3 p-3.5 bg-slate-50 rounded-xl border border-slate-100 transition-all hover:border-orange-150 hover:bg-orange-50/20 group">
-                    <div className="p-1.5 bg-orange-50 text-[#D95B16] rounded-lg group-hover:bg-[#D95B16] group-hover:text-white transition-colors">
+                  <div key={idx} className="flex items-start gap-3 p-3.5 bg-slate-50 rounded-xl border border-slate-100 transition-all hover:border-sky-200 hover:bg-sky-50/30 group">
+                    <div className="p-1.5 bg-sky-50 text-[#0284C7] rounded-lg group-hover:bg-[#0284C7] group-hover:text-white transition-colors">
                       <CheckCircle size={12} className="stroke-[2.5]" />
                     </div>
                     <div>
@@ -420,11 +420,11 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({ service, o
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-12">
           
           <div className="max-w-2xl mx-auto">
-            <span className="text-[10px] font-mono text-[#D95B16] uppercase tracking-widest font-black bg-orange-50 border border-orange-100 px-3.5 py-1.5 rounded-full inline-block">
+            <span className="text-[10px] font-mono text-[#0284C7] uppercase tracking-widest font-black bg-sky-50 border border-sky-100 px-3.5 py-1.5 rounded-full inline-block">
               Premium Corporate Benefits
             </span>
             <h2 className="font-display font-black text-2xl sm:text-4xl text-slate-900 tracking-tight mt-4">
-              Why Corporate Clients Choose CoreGuard
+              Why Corporate Clients Choose Core Vision Pakistan
             </h2>
           </div>
 
@@ -432,13 +432,13 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({ service, o
             {meta.benefits.map((benefit, idx) => (
               <div 
                 key={idx}
-                className="bg-white border border-slate-100 hover:border-orange-200 p-6.5 rounded-2xl flex flex-col items-center text-center hover:bg-slate-50/50 hover:shadow-lg transition-all duration-300 relative group"
+                className="bg-white border border-slate-100 hover:border-sky-200 p-6.5 rounded-2xl flex flex-col items-center text-center hover:bg-slate-50/50 hover:shadow-lg transition-all duration-300 relative group"
               >
-                <div className="p-3 bg-orange-50 border border-orange-100 text-[#D95B16] group-hover:bg-[#D95B16] group-hover:text-white rounded-xl shrink-0 mb-4 shadow-sm group-hover:scale-105 transition-transform duration-300">
+                <div className="p-3 bg-sky-50 border border-sky-100 text-[#0284C7] group-hover:bg-[#0284C7] group-hover:text-white rounded-xl shrink-0 mb-4 shadow-sm group-hover:scale-105 transition-transform duration-300">
                   <LucideIcon name={benefit.icon} size={20} />
                 </div>
                 
-                <h4 className="font-display font-black text-slate-900 mb-2 leading-snug text-base group-hover:text-[#D95B16] transition-colors">
+                <h4 className="font-display font-black text-slate-900 mb-2 leading-snug text-base group-hover:text-[#0284C7] transition-colors">
                   {benefit.title}
                 </h4>
                 <p className="text-slate-500 text-xs leading-relaxed font-sans">
@@ -456,7 +456,7 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({ service, o
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-12">
           
           <div className="max-w-2xl mx-auto">
-            <span className="text-[10px] font-mono text-[#D95B16] uppercase tracking-widest font-black bg-orange-50 border border-orange-100 px-3.5 py-1.5 rounded-full inline-block">
+            <span className="text-[10px] font-mono text-[#0284C7] uppercase tracking-widest font-black bg-sky-50 border border-sky-100 px-3.5 py-1.5 rounded-full inline-block">
               Operational Roadmap
             </span>
             <h2 className="font-display font-black text-2xl sm:text-4xl text-slate-900 tracking-tight mt-4">
@@ -466,12 +466,12 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({ service, o
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch relative">
             {meta.process.map((step, idx) => (
-              <div key={idx} className="bg-white border border-slate-100 p-6 rounded-2xl text-left shadow-md hover:border-orange-150 transition-all relative overflow-hidden group">
-                <span className="absolute top-2 right-4 text-4xl font-mono font-black text-slate-100 group-hover:text-orange-50 transition-colors">
+              <div key={idx} className="bg-white border border-slate-100 p-6 rounded-2xl text-left shadow-md hover:border-sky-200 transition-all relative overflow-hidden group">
+                <span className="absolute top-2 right-4 text-4xl font-mono font-black text-slate-100 group-hover:text-sky-50 transition-colors">
                   {step.step}
                 </span>
-                <div className="h-1 w-10 bg-[#D95B16] rounded-full mb-5 group-hover:w-16 transition-all" />
-                <h4 className="font-display font-black text-slate-900 text-sm mb-2 group-hover:text-[#D95B16] transition-colors">{step.title}</h4>
+                <div className="h-1 w-10 bg-[#0284C7] rounded-full mb-5 group-hover:w-16 transition-all" />
+                <h4 className="font-display font-black text-slate-900 text-sm mb-2 group-hover:text-[#0284C7] transition-colors">{step.title}</h4>
                 <p className="text-slate-500 text-xs leading-relaxed font-sans">{step.desc}</p>
               </div>
             ))}
@@ -485,10 +485,10 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({ service, o
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-br from-slate-50 via-white to-slate-50 border border-slate-100 rounded-3xl shadow-md p-8 sm:p-12 text-left relative overflow-hidden">
             <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[350px] w-[350px] bg-orange-500/5 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[350px] w-[350px] bg-sky-500/5 rounded-full blur-3xl pointer-events-none" />
 
             <div className="relative z-10 max-w-2xl space-y-5">
-              <span className="text-[9px] font-mono text-[#D95B16] uppercase tracking-widest font-black bg-orange-50 px-3 py-1 border border-orange-100 rounded-full inline-block">Secure Your Infrastructure Today</span>
+              <span className="text-[9px] font-mono text-[#0284C7] uppercase tracking-widest font-black bg-sky-50 px-3 py-1 border border-sky-100 rounded-full inline-block">Secure Your Infrastructure Today</span>
               <h2 className="font-display font-black text-3xl sm:text-4xl text-slate-900 tracking-tight leading-tight">
                 Ready to Initiate Certified Systems Setup?
               </h2>
@@ -499,7 +499,7 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({ service, o
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
                 <button 
                   onClick={openWhatsAppContact}
-                  className="bg-[#D95B16] hover:bg-[#C2410C] text-white font-mono font-black py-3 px-6 rounded-xl transition-all shadow-sm hover:scale-[1.02] cursor-pointer text-xs uppercase tracking-wider text-center border-none"
+                  className="bg-[#0284C7] hover:bg-[#0369A1] text-white font-mono font-black py-3 px-6 rounded-xl transition-all shadow-sm hover:scale-[1.02] cursor-pointer text-xs uppercase tracking-wider text-center border-none"
                 >
                   Contact
                 </button>

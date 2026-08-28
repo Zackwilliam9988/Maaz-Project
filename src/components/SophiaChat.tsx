@@ -554,7 +554,7 @@ export const SophiaChat: React.FC = () => {
                         <Sparkles size={8} className="animate-spin" style={{ animationDuration: "3s" }} /> AI ASSISTANT
                       </span>
                     </div>
-                    <span className="text-[10px] text-slate-400 font-medium">CoreGuard Technical Help</span>
+                    <span className="text-[10px] text-slate-400 font-medium">Core Vision Pakistan Technical Help</span>
                   </div>
                 </div>
 

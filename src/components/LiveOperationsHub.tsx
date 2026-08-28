@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { 
   Activity, 
   Camera, 
@@ -12,7 +12,11 @@ import {
   ArrowRight,
   CheckCircle2,
   Server,
-  Layers
+  Layers,
+  Play,
+  RotateCw,
+  Sliders,
+  Check
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -21,364 +25,304 @@ interface LiveOperationsHubProps {
   onExploreServices: () => void;
 }
 
+const cameraFeeds = [
+  {
+    id: "cam-1",
+    label: "CAM-01: HQ ENTRANCE",
+    zone: "Zone A // Main Gate",
+    res: "4K UHD 60FPS",
+    status: "RECORDING",
+    img: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=800&q=80",
+    bitrate: "14.2 Mbps",
+    temp: "38.2°C"
+  },
+  {
+    id: "cam-2",
+    label: "CAM-02: DATACENTER RACK",
+    zone: "Zone B // Server Room",
+    res: "4K UHD 60FPS",
+    status: "RECORDING",
+    img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80",
+    bitrate: "16.8 Mbps",
+    temp: "22.4°C"
+  },
+  {
+    id: "cam-3",
+    label: "CAM-03: FIBER ODF CORE",
+    zone: "Zone C // Optical Loop",
+    res: "4K UHD 60FPS",
+    status: "RECORDING",
+    img: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80",
+    bitrate: "12.5 Mbps",
+    temp: "26.1°C"
+  },
+  {
+    id: "cam-4",
+    label: "CAM-04: PERIMETER NORTH",
+    zone: "Zone D // Outer Fence",
+    res: "4K UHD 60FPS",
+    status: "RECORDING",
+    img: "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&w=800&q=80",
+    bitrate: "15.0 Mbps",
+    temp: "31.0°C"
+  }
+];
+
 export const LiveOperationsHub: React.FC<LiveOperationsHubProps> = ({
   onTriggerQuote,
   onExploreServices
 }) => {
-  const [activeTab, setActiveTab] = useState<"cctv" | "fiber" | "network">("cctv");
+  const [selectedCam, setSelectedCam] = useState(cameraFeeds[0]);
+  const [isScanning, setIsScanning] = useState(false);
+  const [pulseKey, setPulseKey] = useState(0);
+  const [activePort, setActivePort] = useState(4);
+
+  const runOtdrScan = () => {
+    setIsScanning(true);
+    setPulseKey(prev => prev + 1);
+    setTimeout(() => {
+      setIsScanning(false);
+    }, 1800);
+  };
 
   return (
-    <section className="py-20 bg-slate-900 text-white relative overflow-hidden border-y border-slate-800">
-      {/* Dynamic Background Network Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(217,91,22,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(217,91,22,0.06)_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none opacity-40" />
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[radial-gradient(circle_at_center,rgba(217,91,22,0.12),transparent_70%)] pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.08),transparent_70%)] pointer-events-none" />
+    <section className="py-20 bg-slate-950 text-white relative overflow-hidden border-y border-slate-800 text-left">
+      {/* Background Matrix Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(217,91,22,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(217,91,22,0.04)_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[radial-gradient(circle_at_center,rgba(217,91,22,0.1),transparent_70%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 text-left">
-          <div className="max-w-2xl space-y-3">
-            <div className="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/30 rounded-full px-3.5 py-1 text-[10.5px] font-mono text-[#D95B16] font-bold uppercase tracking-widest">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 border-b border-slate-800 pb-8">
+          <div className="space-y-3 max-w-2xl">
+            <div className="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/30 rounded-full px-3.5 py-1 text-[10px] font-mono text-[#D95B16] font-extrabold uppercase tracking-widest">
               <Activity size={12} className="animate-pulse text-[#D95B16]" />
               <span>LIVE OPERATIONS SIMULATOR</span>
             </div>
-            <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-tight">
+            <h2 className="font-['Open_Sans_Condensed'] font-light text-3xl sm:text-5xl text-white tracking-wide uppercase leading-none">
               Enterprise Telemetry & <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500">
-                Hardware Monitoring Matrix
-              </span>
+              <span className="text-[#D95B16] font-bold">Hardware Monitoring Matrix</span>
             </h2>
-            <p className="text-slate-400 text-sm leading-relaxed">
-              Experience the certified precision of our deployments in real time. We engineer zero-failure optical routes, encrypted multi-camera surveillance matrices, and high-throughput enterprise routing.
+            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed font-['Open_Sans']">
+              Live engineering telemetry simulation across 4K IP camera arrays, sub-decibel Fujikura optical fusion trunking, and 10G Gigabit routing infrastructure.
             </p>
           </div>
 
-          {/* Mode Switcher Tabs */}
-          <div className="flex items-center gap-2 bg-slate-950/80 p-1.5 rounded-2xl border border-slate-800 self-start lg:self-auto backdrop-blur-md">
+          <div className="flex items-center gap-3">
             <button
-              onClick={() => setActiveTab("cctv")}
-              className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all cursor-pointer ${
-                activeTab === "cctv"
-                  ? "bg-[#D95B16] text-white shadow-lg shadow-orange-500/20"
-                  : "text-slate-400 hover:text-white hover:bg-slate-800/50"
-              }`}
+              onClick={() => onTriggerQuote()}
+              className="bg-[#D95B16] hover:bg-[#C2410C] text-white px-5 py-3 rounded-xl font-['Open_Sans'] font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center gap-2 cursor-pointer"
             >
-              <Camera size={13} />
-              <span>4K SURVEILLANCE</span>
-            </button>
-            <button
-              onClick={() => setActiveTab("fiber")}
-              className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all cursor-pointer ${
-                activeTab === "fiber"
-                  ? "bg-[#D95B16] text-white shadow-lg shadow-orange-500/20"
-                  : "text-slate-400 hover:text-white hover:bg-slate-800/50"
-              }`}
-            >
-              <Cable size={13} />
-              <span>FIBER OTDR MATRIX</span>
-            </button>
-            <button
-              onClick={() => setActiveTab("network")}
-              className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all cursor-pointer ${
-                activeTab === "network"
-                  ? "bg-[#D95B16] text-white shadow-lg shadow-orange-500/20"
-                  : "text-slate-400 hover:text-white hover:bg-slate-800/50"
-              }`}
-            >
-              <Server size={13} />
-              <span>10G CORE NETWORK</span>
+              <Sparkles size={14} />
+              <span>Configure Site SLA</span>
             </button>
           </div>
         </div>
 
-        {/* Interactive HUD Matrix Display */}
-        <div className="bg-slate-950/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl backdrop-blur-xl relative overflow-hidden text-left">
+        {/* 3-Column Interactive Console Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
           
-          <AnimatePresence mode="wait">
-            {activeTab === "cctv" && (
-              <motion.div
-                key="cctv-hud"
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.25 }}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
+          {/* COLUMN 1: LIVE 4K SURVEILLANCE MATRIX SWITCHER */}
+          <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 flex flex-col justify-between space-y-4 hover:border-slate-700 transition-colors">
+            <div>
+              <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+                <div className="flex items-center gap-2">
+                  <Camera size={15} className="text-[#D95B16]" />
+                  <span className="font-mono text-xs font-bold text-white uppercase tracking-wider">4K CCTV Grid</span>
+                </div>
+                <span className="bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-[9px] font-mono font-bold px-2 py-0.5 rounded">
+                  ● 60 FPS LIVE
+                </span>
+              </div>
+
+              {/* Main Monitor Display */}
+              <div className="relative aspect-video rounded-xl overflow-hidden mt-4 border border-slate-800 bg-black group">
+                <img 
+                  src={selectedCam.img} 
+                  alt={selectedCam.label}
+                  className="w-full h-full object-cover filter brightness-90 group-hover:scale-105 transition-transform duration-500" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none" />
+
+                {/* Top overlay */}
+                <div className="absolute top-2 left-2 right-2 flex justify-between text-[8px] font-mono text-white">
+                  <span className="bg-black/70 px-2 py-0.5 rounded">{selectedCam.label}</span>
+                  <span className="bg-[#D95B16] px-1.5 py-0.5 rounded font-bold">{selectedCam.res}</span>
+                </div>
+
+                {/* Center Reticle */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <div className="border border-orange-500/60 w-24 h-16 rounded p-1 flex flex-col justify-between">
+                    <span className="text-[6.5px] font-mono text-orange-400">[NEURAL AI ACTIVE]</span>
+                    <span className="text-[6.5px] font-mono text-emerald-400 self-end">0.00% LOSS</span>
+                  </div>
+                </div>
+
+                {/* Bottom overlay */}
+                <div className="absolute bottom-2 left-2 right-2 flex justify-between text-[8px] font-mono text-slate-300">
+                  <span>ZONE: {selectedCam.zone}</span>
+                  <span>BITRATE: {selectedCam.bitrate}</span>
+                </div>
+              </div>
+
+              {/* Camera Selector Pills */}
+              <div className="grid grid-cols-2 gap-2 mt-4">
+                {cameraFeeds.map((cam) => (
+                  <button
+                    key={cam.id}
+                    onClick={() => setSelectedCam(cam)}
+                    className={`p-2 rounded-xl border text-left font-mono text-[9.5px] transition-all cursor-pointer ${
+                      selectedCam.id === cam.id
+                        ? "bg-orange-500/20 border-[#D95B16] text-white"
+                        : "bg-slate-950 border-slate-800 text-slate-400 hover:text-slate-200"
+                    }`}
+                  >
+                    <div className="font-bold truncate">{cam.label.split(":")[0]}</div>
+                    <div className="text-[8px] text-slate-500 truncate">{cam.zone.split("//")[1]}</div>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="pt-3 border-t border-slate-800 flex items-center justify-between text-[10px] font-mono text-slate-400">
+              <span>STORAGE: <b className="text-emerald-400">RAID-1 NVR 100%</b></span>
+              <span>CODEC: <b className="text-white">H.265+</b></span>
+            </div>
+          </div>
+
+          {/* COLUMN 2: FUJIKURA FIBER SPLICING & OTDR WAVE TRACE */}
+          <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 flex flex-col justify-between space-y-4 hover:border-slate-700 transition-colors">
+            <div>
+              <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+                <div className="flex items-center gap-2">
+                  <Cable size={15} className="text-emerald-400" />
+                  <span className="font-mono text-xs font-bold text-white uppercase tracking-wider">Fiber OTDR Trace</span>
+                </div>
+                <span className="bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-[9px] font-mono font-bold px-2 py-0.5 rounded">
+                  ≤0.02 dB LOSS
+                </span>
+              </div>
+
+              {/* OTDR Simulated Pulse Canvas */}
+              <div className="relative aspect-video rounded-xl overflow-hidden mt-4 border border-slate-800 bg-black p-3 flex flex-col justify-between">
+                <div className="flex items-center justify-between text-[8px] font-mono text-slate-400">
+                  <span>1310/1550nm DUAL LASER</span>
+                  <span className="text-emerald-400 font-bold">FUJIKURA CORE ALIGN</span>
+                </div>
+
+                {/* Dynamic Animated Pulse Bars */}
+                <div className="h-20 w-full flex items-end gap-1 border-b border-l border-emerald-500/40 p-1 my-auto">
+                  {[35, 38, 36, 92, 34, 35, 36, 88, 35, 37, 36, 35, 96, 34, 35, 36].map((val, idx) => (
+                    <motion.div
+                      key={`${pulseKey}-${idx}`}
+                      initial={{ height: "10%" }}
+                      animate={{ height: `${val}%` }}
+                      transition={{ duration: 0.4, delay: idx * 0.03 }}
+                      className="flex-1 bg-gradient-to-t from-emerald-500 to-[#D95B16] rounded-t opacity-85"
+                    />
+                  ))}
+                </div>
+
+                <div className="flex items-center justify-between text-[8px] font-mono text-slate-400">
+                  <span>0.00 km</span>
+                  <span>RANGE: 120 km MAX</span>
+                  <span>±1cm PINPOINT</span>
+                </div>
+              </div>
+
+              {/* Splicing Telemetry Specs */}
+              <div className="grid grid-cols-2 gap-2 mt-4 font-mono text-[9.5px]">
+                <div className="bg-slate-950 border border-slate-800 p-2.5 rounded-xl">
+                  <span className="text-slate-500 block text-[8px]">CORE OFFSET</span>
+                  <span className="font-bold text-emerald-400 mt-0.5 block">&lt;0.1 µm Optimal</span>
+                </div>
+                <div className="bg-slate-950 border border-slate-800 p-2.5 rounded-xl">
+                  <span className="text-slate-500 block text-[8px]">DEAD-ZONE</span>
+                  <span className="font-bold text-white mt-0.5 block">≤0.8m Ultra Short</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Run Laser Diagnostic Scan Button */}
+            <div className="pt-3 border-t border-slate-800">
+              <button
+                onClick={runOtdrScan}
+                disabled={isScanning}
+                className="w-full bg-slate-950 hover:bg-slate-800 border border-emerald-500/40 text-emerald-400 hover:text-white p-2.5 rounded-xl font-mono text-[10px] font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
-                {/* Left Live Visual Feed Simulator */}
-                <div className="lg:col-span-7 relative rounded-2xl overflow-hidden border border-slate-800 bg-black aspect-video flex flex-col justify-between p-4 group">
-                  <img 
-                    src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1200&q=80" 
-                    alt="4K Security Camera Simulation"
-                    className="absolute inset-0 w-full h-full object-cover filter brightness-[0.7] group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/40 pointer-events-none" />
-                  
-                  {/* Top HUD Line */}
-                  <div className="relative z-10 flex items-center justify-between text-[10px] font-mono text-emerald-400">
-                    <div className="flex items-center gap-2 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
-                      <span className="h-2 w-2 rounded-full bg-red-500 animate-ping" />
-                      <span className="font-bold text-white uppercase tracking-wider">LIVE CAM-04: MAIN ENTRANCE</span>
-                    </div>
-                    <span className="bg-emerald-950/80 border border-emerald-500/30 text-emerald-400 font-bold px-2.5 py-0.5 rounded-full">
-                      4K UHD 60FPS
-                    </span>
-                  </div>
+                <RotateCw size={12} className={isScanning ? "animate-spin text-emerald-400" : ""} />
+                <span>{isScanning ? "Running OTDR Laser Sweep..." : "Trigger OTDR Pulse Scan"}</span>
+              </button>
+            </div>
+          </div>
 
-                  {/* AI Vision Detection Box Target */}
-                  <div className="relative z-10 self-center border-2 border-dashed border-[#D95B16] rounded-xl p-3 bg-orange-500/10 backdrop-blur-xs max-w-xs text-center space-y-1">
-                    <div className="text-[9px] font-mono font-bold text-orange-300 uppercase tracking-widest flex items-center justify-center gap-1.5">
-                      <span className="h-1.5 w-1.5 rounded-full bg-[#D95B16] animate-pulse" />
-                      <span>AI RECOGNITION: SECURED ZONE</span>
-                    </div>
-                    <p className="text-[10px] font-mono text-white font-semibold">TARGET VEHICLE/HUMAN: 0.00% DRIFT</p>
-                  </div>
+          {/* COLUMN 3: 10G GIGABIT CORE SWITCH & VLAN ISOLATION */}
+          <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 flex flex-col justify-between space-y-4 hover:border-slate-700 transition-colors">
+            <div>
+              <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+                <div className="flex items-center gap-2">
+                  <Server size={15} className="text-cyan-400" />
+                  <span className="font-mono text-xs font-bold text-white uppercase tracking-wider">10G Core Rack</span>
+                </div>
+                <span className="bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 text-[9px] font-mono font-bold px-2 py-0.5 rounded">
+                  10G SFP+
+                </span>
+              </div>
 
-                  {/* Bottom HUD Line */}
-                  <div className="relative z-10 flex items-center justify-between text-[10px] font-mono text-slate-400 border-t border-white/10 pt-2 bg-black/50 px-3 py-1 rounded-xl backdrop-blur-md">
-                    <span>IR ILLUMINATOR: <b className="text-white">100m ACTIVE</b></span>
-                    <span>STORAGE: <b className="text-emerald-400">RAID NVR 100% HEALTH</b></span>
-                    <span>BITRATE: <b className="text-white">14.2 Mbps</b></span>
-                  </div>
+              {/* 16-Port Interactive Switch Panel */}
+              <div className="rounded-xl border border-slate-800 bg-black p-3 mt-4 space-y-2">
+                <div className="flex items-center justify-between text-[8px] font-mono text-slate-400 border-b border-slate-800 pb-1">
+                  <span>24-PORT MANAGED SWITCH #01</span>
+                  <span className="text-cyan-400">FLUKE CERTIFIED</span>
                 </div>
 
-                {/* Right Specs & Capabilities Breakdown */}
-                <div className="lg:col-span-5 space-y-5">
-                  <div className="space-y-2">
-                    <span className="text-[10px] font-mono text-[#D95B16] uppercase tracking-widest font-black">
-                      SPECIFICATION SUMMARY
-                    </span>
-                    <h3 className="font-display font-black text-2xl text-white tracking-tight">
-                      Ultra 4K IP Surveillance & Neural Analytics
-                    </h3>
-                    <p className="text-slate-400 text-xs leading-relaxed font-sans">
-                      Complete angle laser calculation to eliminate reflection zones and blindspots. Features end-to-end H.265+ stream compression and military-grade SSL/TLS tunnels for authorized smartphone monitoring.
-                    </p>
-                  </div>
-
-                  {/* Hardware Telemetry Grid */}
-                  <div className="grid grid-cols-2 gap-3 font-mono text-xs">
-                    <div className="bg-slate-900/90 border border-slate-800 p-3 rounded-xl">
-                      <span className="block text-[9px] text-slate-500 uppercase tracking-wider">OPTICAL SENSOR</span>
-                      <span className="font-bold text-white text-xs mt-0.5 block">Sony Starvis 4K</span>
-                    </div>
-                    <div className="bg-slate-900/90 border border-slate-800 p-3 rounded-xl">
-                      <span className="block text-[9px] text-slate-500 uppercase tracking-wider">NIGHT VISION</span>
-                      <span className="font-bold text-[#D95B16] text-xs mt-0.5 block">100m Dual Smart IR</span>
-                    </div>
-                    <div className="bg-slate-900/90 border border-slate-800 p-3 rounded-xl">
-                      <span className="block text-[9px] text-slate-500 uppercase tracking-wider">STORAGE BACKPLANE</span>
-                      <span className="font-bold text-white text-xs mt-0.5 block">RAID-1 Redundancy</span>
-                    </div>
-                    <div className="bg-slate-900/90 border border-slate-800 p-3 rounded-xl">
-                      <span className="block text-[9px] text-slate-500 uppercase tracking-wider">WARRANTY SLA</span>
-                      <span className="font-bold text-emerald-400 text-xs mt-0.5 block">3-Year On-Site SLA</span>
-                    </div>
-                  </div>
-
-                  <div className="pt-2 flex items-center gap-3">
-                    <button
-                      onClick={() => onTriggerQuote("cctv-install")}
-                      className="flex-1 bg-[#D95B16] hover:bg-[#C2410C] text-white font-bold py-3 px-4 rounded-xl text-xs uppercase tracking-wider transition-all cursor-pointer flex items-center justify-center gap-2 shadow-lg shadow-orange-500/20"
-                    >
-                      <Sparkles size={13} />
-                      <span>Configure Surveillance Quote</span>
-                    </button>
-                  </div>
-                </div>
-              </motion.div>
-            )}
-
-            {activeTab === "fiber" && (
-              <motion.div
-                key="fiber-hud"
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.25 }}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
-              >
-                {/* Left Live Splicing Graph Simulator */}
-                <div className="lg:col-span-7 relative rounded-2xl overflow-hidden border border-slate-800 bg-black aspect-video flex flex-col justify-between p-4">
-                  <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,255,136,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,255,136,0.05)_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none" />
-                  
-                  {/* Top Line */}
-                  <div className="relative z-10 flex items-center justify-between text-[10px] font-mono">
-                    <span className="text-emerald-400 font-bold flex items-center gap-1.5">
-                      <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-                      OTDR SCANNER: FUJIKURA CORE-ALIGNMENT
-                    </span>
-                    <span className="bg-slate-900 border border-slate-700 text-slate-300 px-2.5 py-0.5 rounded-full">
-                      1310 / 1550 nm DUAL LASER
-                    </span>
-                  </div>
-
-                  {/* Simulated OTDR Pulse Graph */}
-                  <div className="relative z-10 my-auto py-6 px-4">
-                    <div className="h-24 w-full flex items-end gap-1.5 border-b border-l border-emerald-500/40 p-2">
-                      {[40, 42, 41, 40, 85, 38, 39, 41, 40, 42, 41, 95, 39, 40, 41, 40].map((val, idx) => (
-                        <div 
-                          key={idx} 
-                          className="flex-1 bg-gradient-to-t from-emerald-500 to-[#D95B16] rounded-t opacity-80 hover:opacity-100 transition-all"
-                          style={{ height: `${val}%` }}
-                          title={`Sample Point ${idx + 1}: Attenuation Verified`}
-                        />
-                      ))}
-                    </div>
-                    <div className="flex justify-between text-[8px] font-mono text-slate-500 pt-1">
-                      <span>0.00 km</span>
-                      <span>TRACE DISTANCE: 120.00 km MAX</span>
-                      <span>PINPOINT ±1cm</span>
-                    </div>
-                  </div>
-
-                  {/* Bottom Line */}
-                  <div className="relative z-10 flex items-center justify-between text-[10px] font-mono text-slate-300 border-t border-slate-800 pt-2">
-                    <span>INSERTION LOSS: <b className="text-emerald-400">&le; 0.018 dB</b></span>
-                    <span>CORE OFFSET: <b className="text-emerald-400">&lt; 0.1 &mu;m</b></span>
-                    <span>STATUS: <b className="text-[#D95B16]">SPLICED & SEALED</b></span>
-                  </div>
+                {/* Ports Grid */}
+                <div className="grid grid-cols-8 gap-1.5 py-1">
+                  {Array.from({ length: 16 }).map((_, pIdx) => {
+                    const isSelected = activePort === pIdx + 1;
+                    return (
+                      <button
+                        key={pIdx}
+                        onClick={() => setActivePort(pIdx + 1)}
+                        className={`h-7 rounded flex flex-col items-center justify-center font-mono text-[7px] border transition-all cursor-pointer ${
+                          isSelected
+                            ? "bg-cyan-500/20 border-cyan-400 text-cyan-300 shadow-xs"
+                            : "bg-slate-950 border-slate-800 text-slate-400 hover:border-slate-600"
+                        }`}
+                        title={`Port ${pIdx + 1}: Gigabit Active`}
+                      >
+                        <span className={`h-1.5 w-1.5 rounded-full mb-0.5 ${pIdx % 3 === 0 ? "bg-emerald-400 animate-ping" : "bg-emerald-400"}`} />
+                        <span>P{pIdx + 1}</span>
+                      </button>
+                    );
+                  })}
                 </div>
 
-                {/* Right Specs */}
-                <div className="lg:col-span-5 space-y-5">
-                  <div className="space-y-2">
-                    <span className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest font-black">
-                      OPTICAL PRECISION BENCHMARK
-                    </span>
-                    <h3 className="font-display font-black text-2xl text-white tracking-tight">
-                      Sub-Decibel Fusion Splicing & OTDR Trace
-                    </h3>
-                    <p className="text-slate-400 text-xs leading-relaxed font-sans">
-                      Utilizing Japanese Fujikura core-alignment splicers, diamond micro-cleavers, and reflectometers to ensure zero packet drop over kilometer-length optical trunk backbones.
-                    </p>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-3 font-mono text-xs">
-                    <div className="bg-slate-900/90 border border-slate-800 p-3 rounded-xl">
-                      <span className="block text-[9px] text-slate-500 uppercase tracking-wider">MAX DECIBEL LOSS</span>
-                      <span className="font-bold text-emerald-400 text-xs mt-0.5 block">&le; 0.02 dB Certified</span>
-                    </div>
-                    <div className="bg-slate-900/90 border border-slate-800 p-3 rounded-xl">
-                      <span className="block text-[9px] text-slate-500 uppercase tracking-wider">EQUIPMENT STANDARD</span>
-                      <span className="font-bold text-white text-xs mt-0.5 block">Fujikura Japan</span>
-                    </div>
-                    <div className="bg-slate-900/90 border border-slate-800 p-3 rounded-xl">
-                      <span className="block text-[9px] text-slate-500 uppercase tracking-wider">FIBER TYPES</span>
-                      <span className="font-bold text-white text-xs mt-0.5 block">OS2 / OM3 / OM4</span>
-                    </div>
-                    <div className="bg-slate-900/90 border border-slate-800 p-3 rounded-xl">
-                      <span className="block text-[9px] text-slate-500 uppercase tracking-wider">REPORTING</span>
-                      <span className="font-bold text-[#D95B16] text-xs mt-0.5 block">PDF SLA Audit Log</span>
-                    </div>
-                  </div>
-
-                  <div className="pt-2">
-                    <button
-                      onClick={() => onTriggerQuote("fiber-splicing")}
-                      className="w-full bg-[#D95B16] hover:bg-[#C2410C] text-white font-bold py-3 px-4 rounded-xl text-xs uppercase tracking-wider transition-all cursor-pointer flex items-center justify-center gap-2 shadow-lg shadow-orange-500/20"
-                    >
-                      <Sparkles size={13} />
-                      <span>Estimate Fiber Splicing Nodes</span>
-                    </button>
-                  </div>
+                <div className="text-[8px] font-mono text-slate-400 pt-1 flex items-center justify-between">
+                  <span>ACTIVE PORT: <b className="text-cyan-300">PORT #{activePort}</b></span>
+                  <span>THROUGHPUT: <b className="text-white">9.84 Gbps</b></span>
                 </div>
-              </motion.div>
-            )}
+              </div>
 
-            {activeTab === "network" && (
-              <motion.div
-                key="network-hud"
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.25 }}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
-              >
-                {/* Left Live Network Throughput Simulator */}
-                <div className="lg:col-span-7 relative rounded-2xl overflow-hidden border border-slate-800 bg-black aspect-video flex flex-col justify-between p-4">
-                  <div className="relative z-10 flex items-center justify-between text-[10px] font-mono text-cyan-400">
-                    <span className="font-bold flex items-center gap-1.5">
-                      <span className="h-2 w-2 rounded-full bg-cyan-400 animate-pulse" />
-                      ENTERPRISE ROUTING CORE #01
-                    </span>
-                    <span className="bg-slate-900 border border-slate-700 text-slate-300 px-2.5 py-0.5 rounded-full">
-                      10 Gbps SFP+ BACKPLANE
-                    </span>
-                  </div>
-
-                  {/* Network Nodes Visualization */}
-                  <div className="relative z-10 my-auto grid grid-cols-3 gap-3 p-2">
-                    <div className="bg-slate-900/90 border border-cyan-500/30 p-3 rounded-xl text-center space-y-1">
-                      <span className="text-[8px] font-mono text-slate-400">VLAN 10 [CORP]</span>
-                      <span className="block font-mono text-cyan-400 font-bold text-sm">9.84 Gbps</span>
-                      <span className="text-[8px] text-emerald-400">0.00% Loss</span>
-                    </div>
-                    <div className="bg-slate-900/90 border border-orange-500/30 p-3 rounded-xl text-center space-y-1">
-                      <span className="text-[8px] font-mono text-slate-400">VLAN 20 [CCTV]</span>
-                      <span className="block font-mono text-orange-400 font-bold text-sm">4.21 Gbps</span>
-                      <span className="text-[8px] text-emerald-400">ISOLATED</span>
-                    </div>
-                    <div className="bg-slate-900/90 border border-emerald-500/30 p-3 rounded-xl text-center space-y-1">
-                      <span className="text-[8px] font-mono text-slate-400">VLAN 30 [GUEST]</span>
-                      <span className="block font-mono text-emerald-400 font-bold text-sm">1.10 Gbps</span>
-                      <span className="text-[8px] text-cyan-400">FIREWALL ON</span>
-                    </div>
-                  </div>
-
-                  <div className="relative z-10 flex items-center justify-between text-[10px] font-mono text-slate-400 border-t border-slate-800 pt-2">
-                    <span>PING: <b className="text-cyan-400">0.8 ms</b></span>
-                    <span>WIRE: <b className="text-white">Cat6A Fluke Verified</b></span>
-                    <span>FIREWALL: <b className="text-emerald-400">LAYER 3 DEEP PACKET</b></span>
-                  </div>
+              {/* VLAN Routing Cards */}
+              <div className="space-y-2 mt-4 font-mono text-[9px]">
+                <div className="bg-slate-950 border border-slate-800 p-2 rounded-xl flex items-center justify-between">
+                  <span className="text-slate-400">VLAN 10 [CORPORATE CORE]</span>
+                  <span className="text-emerald-400 font-bold">9.84 Gbps • 0% Loss</span>
                 </div>
-
-                {/* Right Specs */}
-                <div className="lg:col-span-5 space-y-5">
-                  <div className="space-y-2">
-                    <span className="text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-black">
-                      STRUCTURED CABLING & ROUTING
-                    </span>
-                    <h3 className="font-display font-black text-2xl text-white tracking-tight">
-                      Gigabit Cat6A Trunking & AP Matrix
-                    </h3>
-                    <p className="text-slate-400 text-xs leading-relaxed font-sans">
-                      Structured modular patch bays with solid copper Cat6/6A wiring, metallic conduits for physical rodent/interference shielding, and zero dead-zone Wi-Fi 6 coverage.
-                    </p>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-3 font-mono text-xs">
-                    <div className="bg-slate-900/90 border border-slate-800 p-3 rounded-xl">
-                      <span className="block text-[9px] text-slate-500 uppercase tracking-wider">CABLE FREQUENCY</span>
-                      <span className="font-bold text-cyan-400 text-xs mt-0.5 block">500 MHz Solid Copper</span>
-                    </div>
-                    <div className="bg-slate-900/90 border border-slate-800 p-3 rounded-xl">
-                      <span className="block text-[9px] text-slate-500 uppercase tracking-wider">CERTIFICATION</span>
-                      <span className="font-bold text-white text-xs mt-0.5 block">Fluke Link Analyzer</span>
-                    </div>
-                    <div className="bg-slate-900/90 border border-slate-800 p-3 rounded-xl">
-                      <span className="block text-[9px] text-slate-500 uppercase tracking-wider">CONDUIT SHIELD</span>
-                      <span className="font-bold text-white text-xs mt-0.5 block">Armored Metallic</span>
-                    </div>
-                    <div className="bg-slate-900/90 border border-slate-800 p-3 rounded-xl">
-                      <span className="block text-[9px] text-slate-500 uppercase tracking-wider">UPTIME SLA</span>
-                      <span className="font-bold text-emerald-400 text-xs mt-0.5 block">99.99% Reliability</span>
-                    </div>
-                  </div>
-
-                  <div className="pt-2">
-                    <button
-                      onClick={() => onTriggerQuote("network-setup")}
-                      className="w-full bg-[#D95B16] hover:bg-[#C2410C] text-white font-bold py-3 px-4 rounded-xl text-xs uppercase tracking-wider transition-all cursor-pointer flex items-center justify-center gap-2 shadow-lg shadow-orange-500/20"
-                    >
-                      <Sparkles size={13} />
-                      <span>Estimate Structured Network Drops</span>
-                    </button>
-                  </div>
+                <div className="bg-slate-950 border border-slate-800 p-2 rounded-xl flex items-center justify-between">
+                  <span className="text-slate-400">VLAN 20 [CCTV TRAFFIC]</span>
+                  <span className="text-[#D95B16] font-bold">ISOLATED • 4.2 Gbps</span>
                 </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+              </div>
+            </div>
+
+            <div className="pt-3 border-t border-slate-800 flex items-center justify-between text-[10px] font-mono text-slate-400">
+              <span>LATENCY: <b className="text-cyan-400">0.4 ms</b></span>
+              <span>FIREWALL: <b className="text-emerald-400">LAYER 3 DEEP PACKET</b></span>
+            </div>
+          </div>
 
         </div>
 
