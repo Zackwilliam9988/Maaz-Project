@@ -169,12 +169,15 @@ export const ContactPage: React.FC<ContactPageProps> = ({ contactInfo, onTrigger
               </div>
             </div>
 
-            {/* GPS Telemetry Block */}
-            <div className="bg-slate-50 border border-slate-100 rounded-2xl p-5 font-mono text-[10px] space-y-2 relative overflow-hidden">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(2,132,199,0.02),transparent_100%)]" />
-              <div className="text-slate-500">LATITUDE COORD: <span className="text-slate-800 font-bold">{contactInfo.latitude}</span></div>
-              <div className="text-slate-500">LONGITUDE COORD: <span className="text-slate-800 font-bold">{contactInfo.longitude}</span></div>
-              <div className="text-slate-500">STATUS: <span className="text-[#0284C7] font-bold">ONLINE (ISLAMABAD SECTOR RUNTIME)</span></div>
+            {/* Operations Hours Block */}
+            <div className="bg-sky-50/60 border border-sky-100 rounded-2xl p-5 text-left space-y-1.5 font-sans">
+              <div className="font-bold text-slate-800 text-xs flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span>Central Operations & Dispatch Active</span>
+              </div>
+              <p className="text-[11px] text-slate-500 font-medium leading-relaxed">
+                Field specialists available across Islamabad & nationwide commercial sectors for site surveys and technical support.
+              </p>
             </div>
           </div>
 

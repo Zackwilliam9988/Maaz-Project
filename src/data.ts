@@ -168,7 +168,7 @@ export const FAQS: FAQItem[] = [
   {
     id: "faq-fiber-dist",
     question: "What is the maximum distance limitation for single-mode fiber splicing before signal degeneration?",
-    answer: "Single-mode fiber (OS2) can transmit data up to 40 kilometers (approximately 25 miles) without active amplification. During installation, our fusion splicing maintains an incredibly low attenuation average of ≤0.02 dB per splice, keeping overall link loss well within the standard enterprise budget and ensuring ultra-fast packet transfers."
+    answer: "Single-mode fiber (OS2) can transmit data up to 40 kilometers (approximately 25 miles) without active amplification. During installation, our Japanese fusion splicing maintains pristine loss-free core alignment per splice, keeping overall link quality optimal and ensuring ultra-fast packet transfers."
   },
   {
     id: "faq-poe-standards",

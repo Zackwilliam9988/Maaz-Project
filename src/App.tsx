@@ -580,10 +580,10 @@ export default function App() {
                   </button>
                 </div>
 
-                {/* Micro-Metrics */}
-                <div className="mt-4 pt-3 border-t border-slate-200 text-[10px] font-mono text-slate-500 space-y-1">
-                  <div>SLA: <b className="text-emerald-600 font-bold">100% Guaranteed</b></div>
-                  <div>LOSS BOUND: <b className="text-[#0284C7] font-bold">&le;0.02 dB</b></div>
+                {/* Quality & Response Commitments */}
+                <div className="mt-4 pt-3 border-t border-slate-200 text-[10px] font-mono text-slate-500 flex items-center justify-between">
+                  <div>SLA: <b className="text-emerald-600 font-bold">100% Verified</b></div>
+                  <div>DISPATCH: <b className="text-[#0284C7] font-bold">Rapid Response</b></div>
                 </div>
               </div>
             </div>
@@ -617,33 +617,29 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Column 2: Clients & Hardware Standards */}
+              {/* Column 2: Commercial Sectors */}
               <div className="inove-bbox inove-clients">
                 <h2 className="font-['Open_Sans_Condensed'] text-3xl sm:text-4xl font-light text-black mb-8">
-                  Hardware Standards
+                  Commercial Sectors
                 </h2>
 
-                <div className="world">
-                  <div className="inove-topic">World OEM Hardware Partners</div>
-                  <div className="grid grid-cols-2 gap-2.5 py-2 font-mono text-[11px] font-bold text-slate-700">
-                    <div className="p-2.5 border border-slate-200 bg-slate-50 text-center hover:border-emerald-400 hover:text-emerald-600 transition-all rounded-lg">ZKTeco</div>
-                    <div className="p-2.5 border border-slate-200 bg-slate-50 text-center hover:border-red-400 hover:text-red-600 transition-all rounded-lg">HIKVISION</div>
-                    <div className="p-2.5 border border-slate-200 bg-slate-50 text-center hover:border-sky-400 hover:text-[#0284C7] transition-all rounded-lg">DAHUA</div>
-                    <div className="p-2.5 border border-slate-200 bg-slate-50 text-center hover:border-amber-400 hover:text-amber-600 transition-all rounded-lg">IMOU</div>
-                    <div className="p-2.5 border border-slate-200 bg-slate-50 text-center hover:border-rose-400 hover:text-rose-600 transition-all rounded-lg">HUAWEI</div>
-                    <div className="p-2.5 border border-slate-200 bg-slate-50 text-center hover:border-cyan-400 hover:text-cyan-600 transition-all rounded-lg">CISCO</div>
-                    <div className="p-2.5 border border-slate-200 bg-slate-50 text-center hover:border-sky-400 hover:text-sky-600 transition-all rounded-lg">VIVANCO</div>
-                    <div className="p-2.5 border border-slate-200 bg-slate-50 text-center hover:border-indigo-400 hover:text-indigo-600 transition-all rounded-lg">CORNING</div>
+                <div className="space-y-4">
+                  <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                    <span className="block font-bold text-xs text-black uppercase tracking-wider mb-1">Corporate High-Rises</span>
+                    <p className="text-[11px] text-slate-500 font-sans leading-relaxed">Integrated biometric checkpoints, perimeter surveillance, and building-wide Gigabit fiber backbones.</p>
                   </div>
-                </div>
+                  <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                    <span className="block font-bold text-xs text-black uppercase tracking-wider mb-1">Industrial Logistics & Warehouses</span>
+                    <p className="text-[11px] text-slate-500 font-sans leading-relaxed">Wide-angle thermal PTZ cameras, license-plate recognition, and heavy armored cabling conduits.</p>
+                  </div>
+                  <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                    <span className="block font-bold text-xs text-black uppercase tracking-wider mb-1">Residential Compounds & Embassies</span>
+                    <p className="text-[11px] text-slate-500 font-sans leading-relaxed">Low-profile 4K multi-lens cameras, smart intercoms, and redundant fiber internet loops.</p>
+                  </div>
 
-                <div className="local mt-6">
-                  <div className="inove-topic">Local Site Infrastructure</div>
-                  <div className="grid grid-cols-2 gap-3 py-2 font-mono text-xs font-bold text-slate-700">
-                    <div className="p-3 border border-slate-200 bg-slate-50 text-center hover:border-sky-300 hover:text-[#0284C7] transition-all">Corporate HQs</div>
-                    <div className="p-3 border border-slate-200 bg-slate-50 text-center hover:border-sky-300 hover:text-[#0284C7] transition-all">Commercial Hubs</div>
+                  <div className="grid grid-cols-2 gap-2 pt-2 text-xs font-bold text-slate-700">
                     <div className="p-3 border border-slate-200 bg-slate-50 text-center hover:border-sky-300 hover:text-[#0284C7] transition-all">Datacenters</div>
-                    <div className="p-3 border border-slate-200 bg-slate-50 text-center hover:border-sky-300 hover:text-[#0284C7] transition-all">Industrial Campuses</div>
+                    <div className="p-3 border border-slate-200 bg-slate-50 text-center hover:border-sky-300 hover:text-[#0284C7] transition-all">Commercial Plazas</div>
                   </div>
                 </div>
               </div>
@@ -688,7 +684,7 @@ export default function App() {
                     { text: "Cat6A Solid Copper", isLarge: false },
                     { text: "Biometric AI", isLarge: true },
                     { text: "VLAN Isolation", isLarge: false },
-                    { text: "Sub-Decibel Loss", isLarge: true },
+                    { text: "Ultra-High Uptime", isLarge: true },
                     { text: "Remote Cloud DDNS", isLarge: false },
                     { text: "Fluke Tested", isLarge: true },
                     { text: "RAID NVR Storage", isLarge: false },

@@ -200,7 +200,7 @@ export const LiveOperationsHub: React.FC<LiveOperationsHubProps> = ({
                   <span className="font-mono text-xs font-bold text-white uppercase tracking-wider">Fiber OTDR Trace</span>
                 </div>
                 <span className="bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-[9px] font-mono font-bold px-2 py-0.5 rounded">
-                  ≤0.02 dB LOSS
+                  LOSS-FREE CERTIFIED
                 </span>
               </div>
 

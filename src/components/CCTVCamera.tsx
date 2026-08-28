@@ -57,23 +57,14 @@ export const CCTVCamera: React.FC = () => {
         </div>
       </div>
 
-      {/* Futuristic Mouse Tracking Status Console Tag */}
+      {/* Clean Live Status Indicator Badge */}
       <div 
-        className={`mt-2.5 mr-1 transition-all duration-300 flex flex-col items-end gap-1 bg-white/95 border border-sky-200 text-xs font-mono p-2.5 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.08)] backdrop-blur-md ${
+        className={`mt-2.5 mr-1 transition-all duration-300 flex items-center gap-2 bg-white/95 border border-slate-200 text-xs px-3 py-1.5 rounded-xl shadow-md backdrop-blur-md ${
           hovered ? 'opacity-100 translate-y-0 scale-100 pointer-events-auto' : 'opacity-0 -translate-y-1 scale-95 pointer-events-none'
         }`}
       >
-        <div className="flex items-center gap-1.5 text-[#0284C7]">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#0284C7] animate-ping" />
-          <span className="font-extrabold tracking-widest text-[9px]">CCTV CAM-01 SECURE</span>
-        </div>
-        
-        <div className="text-[8px] text-slate-500 space-y-0.5 text-right font-medium">
-          <div>FEED QUALITY: <span className="text-[#0284C7] font-bold">4K UHD HDR</span></div>
-          <div>SWIVEL AXIS: <span className="text-[#0284C7]">SECURE STATIONARY</span></div>
-          <div>FPS: <span className="text-[#0284C7]">60.00 HZ</span></div>
-          <div className="text-[#0284C7] font-bold">STATUS: STREAMING LIVE</div>
-        </div>
+        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+        <span className="font-bold text-slate-800 text-[11px] font-sans">4K Live CCTV Feed Active</span>
       </div>
     </div>
   );

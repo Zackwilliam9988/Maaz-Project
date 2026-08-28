@@ -59,15 +59,15 @@ const serviceSpecs: Record<string, {
   },
   "fiber-splicing": {
     categoryLabel: "OPTICAL TRUNKING",
-    badgeType: "SUB-DECIBEL",
+    badgeType: "JAPANESE FUSION",
     chips: [
       { label: "Fujikura Thermal Fusion", highlight: true },
-      { label: "≤0.02 dB Decibel Loss" },
+      { label: "Loss-Free Splice Validation" },
       { label: "ITU-T OS2 Single-Mode" }
     ],
     telemetry: [
       { label: "Splicer Engine", val: "Fujikura Core-Alignment" },
-      { label: "Insertion Loss", val: "<0.02 dB Certified" },
+      { label: "Insertion Loss", val: "Loss-Free Certified" },
       { label: "Protection", val: "Micro Heat-Shrink" }
     ],
     guaranteeText: "Japanese Fusion Precision"
@@ -282,8 +282,8 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               </div>
               <div className="h-9 w-px bg-slate-200" />
               <div>
-                <span className="block text-2xl sm:text-3xl font-black text-[#0284C7] tracking-tight">≤0.02dB</span>
-                <span className="text-[9px] font-mono uppercase tracking-wider text-slate-400 font-bold mt-1 block">Optic Loss Bound</span>
+                <span className="block text-2xl sm:text-3xl font-black text-[#0284C7] tracking-tight">4K UHD</span>
+                <span className="text-[9px] font-mono uppercase tracking-wider text-slate-400 font-bold mt-1 block">Hardware Grade</span>
               </div>
               <div className="h-9 w-px bg-slate-200" />
               <div>
