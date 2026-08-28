@@ -513,22 +513,26 @@ export default function App() {
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.35, ease: "easeInOut" }}
           >
-            {/* HERO SECTION - Premium, light-colored professional CCTV security parallax background */}
+            {/* HERO SECTION - Premium, light-colored professional surveillance video background */}
             <section id="home" className="relative min-h-[92vh] flex items-center pt-32 pb-24 overflow-hidden z-10 bg-slate-50">
-              {/* Parallax Background Container */}
-              <div 
-                className="absolute inset-0 z-0 bg-no-repeat transition-all duration-500"
-                style={{
-                  backgroundImage: `url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=2560&q=100')`,
-                  backgroundAttachment: 'fixed',
-                  backgroundPosition: 'center',
-                  backgroundSize: 'cover'
-                }}
-              />
+              {/* Video Background Container */}
+              <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  poster="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=2560&q=100"
+                  className="w-full h-full object-cover object-center scale-105 filter brightness-[0.95]"
+                >
+                  <source src="https://assets.mixkit.co/videos/preview/mixkit-futuristic-urban-traffic-at-night-44855-large.mp4" type="video/mp4" />
+                  <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4" />
+                </video>
+              </div>
 
               {/* Light-colored premium semi-transparent overlays for high contrast readability of dark text */}
-              <div className="absolute inset-0 bg-white/70 backdrop-blur-[0.5px] z-1" />
-              <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-white/80 to-slate-50 z-1" />
+              <div className="absolute inset-0 bg-white/75 backdrop-blur-[1px] z-1 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/85 to-slate-50 z-1 pointer-events-none" />
 
 
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
