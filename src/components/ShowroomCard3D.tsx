@@ -49,24 +49,24 @@ export const ShowroomCard3D: React.FC<ShowroomCard3DProps> = ({
   // Alternating scroll entry direction (0: Left, 1: Right, 2: Top, 3: Bottom)
   const pattern = index % 4;
   const getInitialProps = () => {
-    if (pattern === 0) return { x: -65, y: 0, rotateY: -10, rotateX: 0 };
-    if (pattern === 1) return { x: 65, y: 0, rotateY: 10, rotateX: 0 };
-    if (pattern === 2) return { y: -45, x: 0, rotateX: 10, rotateY: 0 };
-    return { y: 45, x: 0, rotateX: -10, rotateY: 0 };
+    if (pattern === 0) return { x: -85, y: 0, rotateY: -12, rotateX: 0 };
+    if (pattern === 1) return { x: 85, y: 0, rotateY: 12, rotateX: 0 };
+    if (pattern === 2) return { y: -65, x: 0, rotateX: 12, rotateY: 0 };
+    return { y: 65, x: 0, rotateX: -12, rotateY: 0 };
   };
   const initialAnim = getInitialProps();
 
   return (
     <motion.div
-      initial={{ opacity: 0, ...initialAnim }}
-      whileInView={{ opacity: 1, x: 0, y: 0, rotateY: 0, rotateX: 0 }}
+      initial={{ opacity: 0, ...initialAnim, scale: 0.94 }}
+      whileInView={{ opacity: 1, x: 0, y: 0, rotateY: 0, rotateX: 0, scale: 1 }}
       viewport={{ once: false, amount: 0.15 }}
       transition={{ 
         type: "spring",
-        stiffness: 100,
-        damping: 16,
-        mass: 0.8,
-        delay: (index % 3) * 0.06
+        stiffness: 75,
+        damping: 14,
+        mass: 0.85,
+        delay: (index % 3) * 0.07
       }}
       className="w-full mb-3.5"
       style={{ perspective: "1000px" }}

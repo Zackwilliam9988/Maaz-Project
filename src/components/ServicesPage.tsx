@@ -360,13 +360,13 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                   guaranteeText: "Enterprise Certified"
                 };
 
-                // Directional scroll animation pattern for mobile and desktop (Left, Right, Top, Bottom)
+                // High-visibility directional scroll animation pattern (Left, Right, Top, Bottom)
                 const animPattern = idx % 4;
                 const getInitialDirection = () => {
-                  if (animPattern === 0) return { x: -60, y: 0 }; // From Left
-                  if (animPattern === 1) return { x: 60, y: 0 };  // From Right
-                  if (animPattern === 2) return { y: -50, x: 0 }; // From Top
-                  return { y: 50, x: 0 };                         // From Bottom
+                  if (animPattern === 0) return { x: -110, y: 0, rotate: -2 }; // Visible slide from Left
+                  if (animPattern === 1) return { x: 110, y: 0, rotate: 2 };   // Visible slide from Right
+                  if (animPattern === 2) return { y: -90, x: 0, rotate: 0 };   // Visible slide from Top
+                  return { y: 90, x: 0, rotate: 0 };                           // Visible slide from Bottom
                 };
                 const initialDir = getInitialDirection();
 
@@ -374,19 +374,19 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                   <motion.div
                     layout
                     key={service.id}
-                    initial={{ opacity: 0, ...initialDir, scale: 0.96 }}
-                    whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
-                    viewport={{ once: false, amount: 0.12 }}
+                    initial={{ opacity: 0, ...initialDir, scale: 0.90, filter: "blur(4px)" }}
+                    whileInView={{ opacity: 1, x: 0, y: 0, rotate: 0, scale: 1, filter: "blur(0px)" }}
+                    viewport={{ once: false, amount: 0.18 }}
                     transition={{ 
                       type: "spring", 
-                      stiffness: 110, 
-                      damping: 16, 
-                      mass: 0.8,
-                      delay: (idx % 2) * 0.08
+                      stiffness: 65, 
+                      damping: 14, 
+                      mass: 0.85,
+                      delay: (idx % 3) * 0.09
                     }}
-                    whileHover={{ y: -8 }}
+                    whileHover={{ y: -12, scale: 1.02, transition: { duration: 0.25, ease: "easeOut" } }}
                     onClick={() => onSelectService(service)}
-                    className="group relative bg-white border border-slate-200/90 hover:border-[#0284C7]/80 rounded-3xl overflow-hidden flex flex-col justify-between shadow-[0_4px_24px_rgba(15,23,42,0.03)] hover:shadow-[0_28px_60px_rgba(2,132,199,0.12),0_8px_24px_rgba(0,0,0,0.04)] transition-all duration-500 cursor-pointer select-none"
+                    className="group relative bg-white border border-slate-200/90 hover:border-[#0284C7] rounded-3xl overflow-hidden flex flex-col justify-between shadow-[0_4px_24px_rgba(15,23,42,0.03)] hover:shadow-[0_32px_64px_rgba(2,132,199,0.18),0_12px_28px_rgba(0,0,0,0.06)] transition-all duration-500 cursor-pointer select-none"
                   >
                     {/* Top Dahua Accent Glow Bar */}
                     <div className="absolute top-0 inset-x-0 h-1 bg-slate-100 group-hover:bg-gradient-to-r group-hover:from-sky-400 group-hover:via-[#0284C7] group-hover:to-blue-600 transition-all duration-500 z-30" />

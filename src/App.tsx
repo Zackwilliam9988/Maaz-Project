@@ -526,67 +526,129 @@ export default function App() {
               <HeroVideoBackground />
             </div>
 
-            {/* INOVE BLOCK 1: ABOUT / MANIFEST (.block.tri.about) */}
-            <div className="inove-block inove-tri about text-left">
-              {/* Column 1 */}
-              <div className="inove-bbox font-['Open_Sans'] text-[13.5px] leading-relaxed text-black">
-                <div className="whitespace-nowrap">We believe that we are here</div>
-                <div className="whitespace-nowrap">to explore, learn and grow,</div>
-                <div className="whitespace-nowrap mb-5">to push the boundaries towards better things.</div>
-                <h2 className="font-['Open_Sans_Condensed'] text-3xl sm:text-4xl font-light text-black uppercase tracking-tight whitespace-nowrap">
-                  We are Core Vision Pakistan
-                </h2>
-              </div>
+            {/* INOVE BLOCK 1: ABOUT / MANIFEST WITH SWIPE-LEFT SCROLL ANIMATION */}
+            <motion.div 
+              initial={{ opacity: 0, x: 80 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, amount: 0.15 }}
+              transition={{ type: "spring", stiffness: 90, damping: 16, mass: 0.9 }}
+              className="w-[85%] max-w-[1500px] mx-auto py-16 sm:py-20 text-left"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-start">
+                
+                {/* Column 1: Core Vision Purpose Statement */}
+                <motion.div 
+                  initial={{ opacity: 0, x: 70 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: false, amount: 0.2 }}
+                  transition={{ type: "spring", stiffness: 90, damping: 16, delay: 0.05 }}
+                  className="md:col-span-4 bg-white border border-slate-200/90 rounded-3xl p-8 shadow-[0_4px_24px_rgba(0,0,0,0.03)] hover:border-[#0284C7]/50 transition-all duration-300 flex flex-col justify-between min-h-[260px] group"
+                >
+                  <div className="space-y-2.5">
+                    <span className="text-[10px] font-mono font-bold text-[#0284C7] uppercase tracking-widest bg-sky-50 px-2.5 py-1 rounded-full border border-sky-100 inline-block">
+                      Our Philosophy
+                    </span>
+                    <p className="font-['Open_Sans'] text-sm sm:text-base leading-relaxed text-slate-600 font-normal pt-1">
+                      We believe that we are here to explore, learn and grow, to push the boundaries towards better things.
+                    </p>
+                  </div>
+                  
+                  <div className="pt-6 border-t border-slate-100">
+                    <h2 className="font-['Open_Sans_Condensed'] text-2xl sm:text-3xl font-light text-slate-900 uppercase tracking-tight group-hover:text-[#0284C7] transition-colors">
+                      We are <span className="font-bold text-[#0284C7]">Core Vision Pakistan</span>
+                    </h2>
+                  </div>
+                </motion.div>
 
-              {/* Column 2 */}
-              <div className="inove-bbox font-['Open_Sans'] text-[13.5px] leading-relaxed text-black">
-                <div className="whitespace-nowrap">Welcome in our world,</div>
-                <h2 className="font-['Open_Sans_Condensed'] text-3xl sm:text-4xl font-light text-black my-2.5 whitespace-nowrap">
-                  we live in “precision”;
-                </h2>
-                <div className="whitespace-nowrap">we engineer and map out physical & optical</div>
-                <div className="whitespace-nowrap">networks and their possibilities:</div>
-                <div className="whitespace-nowrap">We study them, we secure them, we make them accessible to others.</div>
-              </div>
+                {/* Column 2: Engineering & Precision Manifesto */}
+                <motion.div 
+                  initial={{ opacity: 0, x: 80 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: false, amount: 0.2 }}
+                  transition={{ type: "spring", stiffness: 90, damping: 16, delay: 0.12 }}
+                  className="md:col-span-5 bg-white border border-slate-200/90 rounded-3xl p-8 shadow-[0_4px_24px_rgba(0,0,0,0.03)] hover:border-[#0284C7]/50 transition-all duration-300 flex flex-col justify-between min-h-[260px] group"
+                >
+                  <div className="space-y-2">
+                    <span className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">
+                      Welcome in our world
+                    </span>
+                    <h3 className="font-['Open_Sans_Condensed'] text-3xl sm:text-4xl font-light text-slate-900 my-1 leading-tight">
+                      we live in <span className="text-[#0284C7] font-semibold italic">“precision”</span>;
+                    </h3>
+                    <p className="font-['Open_Sans'] text-xs sm:text-sm leading-relaxed text-slate-600 font-normal">
+                      we engineer and map out physical & optical networks and their possibilities:
+                    </p>
+                  </div>
 
-              {/* Column 3: Follow us & Quick Channels */}
-              <div className="inove-bbox followus text-left">
-                <h3 className="font-['Open_Sans_Condensed'] text-2xl font-light text-black mb-4">
-                  Direct Channels
-                </h3>
-                <div className="flex items-center gap-3">
-                  <a 
-                    href={`https://wa.me/${contactInfo.phone.replace(/\D/g, "")}`} 
-                    target="_blank" 
-                    rel="noreferrer"
-                    className="p-2.5 rounded-xl border border-slate-300 hover:border-emerald-500 hover:bg-emerald-50 text-emerald-600 transition-all shadow-xs"
-                    title="Direct WhatsApp Support"
-                  >
-                    <MessageSquare size={18} />
-                  </a>
-                  <a 
-                    href={`tel:${contactInfo.phone.replace(/\D/g, "")}`} 
-                    className="p-2.5 rounded-xl border border-slate-300 hover:border-[#0284C7] hover:bg-sky-50 text-[#0284C7] transition-all shadow-xs"
-                    title="Priority Hotline"
-                  >
-                    <Phone size={18} />
-                  </a>
-                  <button 
-                    onClick={() => triggerQuote()}
-                    className="p-2.5 rounded-xl border border-slate-300 hover:border-[#0284C7] hover:bg-sky-50 text-[#0284C7] transition-all shadow-xs cursor-pointer"
-                    title="Launch Quote Simulator"
-                  >
-                    <Sparkles size={18} />
-                  </button>
-                </div>
+                  <div className="pt-4 border-t border-slate-100">
+                    <p className="font-['Open_Sans'] text-xs sm:text-sm font-semibold text-slate-800 leading-relaxed">
+                      We study them, we secure them, we make them accessible to others.
+                    </p>
+                  </div>
+                </motion.div>
 
-                {/* Quality & Response Commitments */}
-                <div className="mt-4 pt-3 border-t border-slate-200 text-[10px] font-mono text-slate-500 flex items-center justify-between">
-                  <div>SLA: <b className="text-emerald-600 font-bold">100% Verified</b></div>
-                  <div>DISPATCH: <b className="text-[#0284C7] font-bold">Rapid Response</b></div>
-                </div>
+                {/* Column 3: Direct Channels & SLA Commitments */}
+                <motion.div 
+                  initial={{ opacity: 0, x: 90 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: false, amount: 0.2 }}
+                  transition={{ type: "spring", stiffness: 90, damping: 16, delay: 0.18 }}
+                  className="md:col-span-3 bg-white border border-slate-200/90 rounded-3xl p-8 shadow-[0_4px_24px_rgba(0,0,0,0.03)] hover:border-[#0284C7]/50 transition-all duration-300 flex flex-col justify-between min-h-[260px]"
+                >
+                  <div>
+                    <h3 className="font-['Open_Sans_Condensed'] text-2xl font-light text-slate-900 mb-4 tracking-wide uppercase">
+                      Direct Channels
+                    </h3>
+                    
+                    <div className="flex items-center gap-3 pt-1">
+                      <a 
+                        href={`https://wa.me/${contactInfo.phone.replace(/\D/g, "")}`} 
+                        target="_blank" 
+                        rel="noreferrer"
+                        className="flex-1 p-3 rounded-2xl border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50 text-emerald-600 transition-all duration-300 shadow-xs flex items-center justify-center gap-2 font-mono text-xs font-bold"
+                        title="Direct WhatsApp Support"
+                      >
+                        <MessageSquare size={16} />
+                        <span className="text-[11px]">Chat</span>
+                      </a>
+
+                      <a 
+                        href={`tel:${contactInfo.phone.replace(/\D/g, "")}`} 
+                        className="flex-1 p-3 rounded-2xl border border-slate-200 hover:border-[#0284C7] hover:bg-sky-50 text-[#0284C7] transition-all duration-300 shadow-xs flex items-center justify-center gap-2 font-mono text-xs font-bold"
+                        title="Priority Hotline"
+                      >
+                        <Phone size={16} />
+                        <span className="text-[11px]">Call</span>
+                      </a>
+
+                      <button 
+                        onClick={() => triggerQuote()}
+                        className="p-3 rounded-2xl border border-slate-200 hover:border-[#0284C7] hover:bg-[#0284C7] hover:text-white text-[#0284C7] transition-all duration-300 shadow-xs cursor-pointer"
+                        title="Launch Quote Simulator"
+                      >
+                        <Sparkles size={16} />
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Quality & Response Commitments */}
+                  <div className="mt-6 pt-4 border-t border-slate-100 text-[11px] font-mono text-slate-500 space-y-1.5">
+                    <div className="flex items-center justify-between">
+                      <span>SLA:</span>
+                      <b className="text-emerald-600 font-bold flex items-center gap-1">
+                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                        100% Verified
+                      </b>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span>DISPATCH:</span>
+                      <b className="text-[#0284C7] font-bold">Rapid Response</b>
+                    </div>
+                  </div>
+                </motion.div>
+
               </div>
-            </div>
+            </motion.div>
 
             {/* HORIZONTAL LINE DIVIDER */}
             <div className="inove-hline" />
