@@ -313,9 +313,8 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({ service, o
             <div className="lg:col-span-5 flex justify-center">
               <div className="relative w-full max-w-md h-[280px] sm:h-[340px] rounded-3xl overflow-hidden border border-slate-100 shadow-md group">
                 <img 
-                  src={service.imageUrl || "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80"} 
+                  src={service.imageUrl} 
                   alt={service.title} 
-                  referrerPolicy="no-referrer"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent" />
