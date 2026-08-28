@@ -43,11 +43,13 @@ export const PARTNERS_DATA: PartnerBrand[] = [
     name: "HIKVISION",
     category: "4K AI Surveillance",
     tagline: "ColorVu & AcuSense Ultra NVR",
-    accentColor: "#EF4444",
+    accentColor: "#E51C24",
     svgIcon: (
-      <div className="flex items-center h-7">
-        <svg viewBox="0 0 160 36" fill="currentColor" className="h-6 sm:h-7 w-auto">
-          <text x="0" y="26" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="24" letterSpacing="2">HIK<tspan fill="#EF4444">VISION</tspan></text>
+      <div className="flex items-center h-7 sm:h-8">
+        <svg viewBox="0 0 170 36" fill="currentColor" className="h-6 sm:h-7 w-auto" role="img" aria-label="Hikvision Logo">
+          <text x="0" y="27" fontFamily="Arial, Helvetica, sans-serif" fontWeight="900" fontSize="25" letterSpacing="1.5">
+            <tspan fill="#0F172A">HIK</tspan><tspan fill="#E51C24">VISION</tspan>
+          </text>
         </svg>
       </div>
     )
