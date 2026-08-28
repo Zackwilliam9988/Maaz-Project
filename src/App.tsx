@@ -649,28 +649,77 @@ export default function App() {
               </div>
 
               {/* Column 3: Project Tags */}
-              <div className="inove-bbox inove-tags">
-                <h2 className="font-['Open_Sans_Condensed'] text-3xl sm:text-4xl font-light text-black mb-8">
-                  Project Tags
-                </h2>
-
-                <div className="inove-tag-list">
-                  <h4>4K Surveillance</h4>
-                  <h5>Fujikura Fusion</h5>
-                  <h4>OTDR Diagnostics</h4>
-                  <h5>Cat6A Solid Copper</h5>
-                  <h4>Biometric AI</h4>
-                  <h5>VLAN Isolation</h5>
-                  <h4>Sub-Decibel Loss</h4>
-                  <h5>Remote Cloud DDNS</h5>
-                  <h4>Fluke Tested</h4>
-                  <h5>RAID NVR Storage</h5>
-                  <h4>Smart PTZ Tracking</h4>
-                  <h5>Armored Conduit</h5>
-                  <h4>H.265+ Compression</h4>
-                  <h5>Patch Bay Modular</h5>
-                  <h4>Zero Dead-Zones</h4>
+              <motion.div 
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="inove-bbox inove-tags"
+              >
+                <div className="flex items-center justify-between mb-8">
+                  <h2 className="font-['Open_Sans_Condensed'] text-3xl sm:text-4xl font-light text-black">
+                    Project Tags
+                  </h2>
+                  <span className="text-[10px] font-mono font-bold text-[#0284C7] uppercase tracking-widest bg-sky-50 px-2 py-0.5 rounded-full border border-sky-100">
+                    Live Taxonomy
+                  </span>
                 </div>
+
+                <motion.div 
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true, margin: "-40px" }}
+                  variants={{
+                    hidden: { opacity: 0 },
+                    show: {
+                      opacity: 1,
+                      transition: {
+                        staggerChildren: 0.04,
+                        delayChildren: 0.1
+                      }
+                    }
+                  }}
+                  className="inove-tag-list"
+                >
+                  {[
+                    { text: "4K Surveillance", isLarge: true },
+                    { text: "Fujikura Fusion", isLarge: false },
+                    { text: "OTDR Diagnostics", isLarge: true },
+                    { text: "Cat6A Solid Copper", isLarge: false },
+                    { text: "Biometric AI", isLarge: true },
+                    { text: "VLAN Isolation", isLarge: false },
+                    { text: "Sub-Decibel Loss", isLarge: true },
+                    { text: "Remote Cloud DDNS", isLarge: false },
+                    { text: "Fluke Tested", isLarge: true },
+                    { text: "RAID NVR Storage", isLarge: false },
+                    { text: "Smart PTZ Tracking", isLarge: true },
+                    { text: "Armored Conduit", isLarge: false },
+                    { text: "H.265+ Compression", isLarge: true },
+                    { text: "Patch Bay Modular", isLarge: false },
+                    { text: "Zero Dead-Zones", isLarge: true }
+                  ].map((tag, idx) => (
+                    <motion.span
+                      key={idx}
+                      variants={{
+                        hidden: { opacity: 0, x: 50, filter: "blur(4px)" },
+                        show: { 
+                          opacity: 1, 
+                          x: 0, 
+                          filter: "blur(0px)",
+                          transition: { type: "spring", stiffness: 140, damping: 15 }
+                        }
+                      }}
+                      whileHover={{ scale: 1.08, x: -3, transition: { duration: 0.15 } }}
+                      className="inline-block cursor-pointer select-none"
+                    >
+                      {tag.isLarge ? (
+                        <h4>{tag.text}</h4>
+                      ) : (
+                        <h5>{tag.text}</h5>
+                      )}
+                    </motion.span>
+                  ))}
+                </motion.div>
 
                 {/* Action Blueprint Button */}
                 <div className="mt-8 pt-6 border-t border-slate-200">
@@ -682,7 +731,7 @@ export default function App() {
                     <span>Generate Instant Quote</span>
                   </button>
                 </div>
-              </div>
+              </motion.div>
             </div>
 
             {/* HORIZONTAL LINE DIVIDER */}
