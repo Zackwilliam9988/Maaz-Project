@@ -19,11 +19,11 @@ export const PARTNERS_DATA: PartnerBrand[] = [
     tagline: "Facial Recognition & Relays",
     accentColor: "#10B981",
     svgIcon: (
-      <div className="flex items-center h-7">
+      <div className="w-full flex items-center justify-center h-9">
         <img 
           src="https://www.zkteco.com/en/public/static/modules/cms/images/logo.png" 
           alt="ZKTeco Logo" 
-          className="h-6 sm:h-7 w-auto object-contain max-w-[120px]"
+          className="max-h-7 max-w-[105px] w-auto object-contain mx-auto"
           referrerPolicy="no-referrer"
           onError={(e) => {
             e.currentTarget.style.display = 'none';
@@ -32,8 +32,8 @@ export const PARTNERS_DATA: PartnerBrand[] = [
             }
           }}
         />
-        <svg viewBox="0 0 120 36" fill="currentColor" className="h-7 w-auto hidden items-center">
-          <text x="0" y="26" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="26" letterSpacing="1.5">ZKT<tspan fill="#10B981">eco</tspan></text>
+        <svg viewBox="0 0 120 36" fill="currentColor" className="h-6 w-auto hidden items-center mx-auto">
+          <text x="50%" y="26" textAnchor="middle" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="24" letterSpacing="1.5">ZKT<tspan fill="#10B981">eco</tspan></text>
         </svg>
       </div>
     )
@@ -45,9 +45,9 @@ export const PARTNERS_DATA: PartnerBrand[] = [
     tagline: "ColorVu & AcuSense Ultra NVR",
     accentColor: "#E51C24",
     svgIcon: (
-      <div className="flex items-center h-7 sm:h-8">
-        <svg viewBox="0 0 170 36" fill="currentColor" className="h-6 sm:h-7 w-auto" role="img" aria-label="Hikvision Logo">
-          <text x="0" y="27" fontFamily="Arial, Helvetica, sans-serif" fontWeight="900" fontSize="25" letterSpacing="1.5">
+      <div className="w-full flex items-center justify-center h-9">
+        <svg viewBox="0 0 160 36" fill="currentColor" className="max-h-7 max-w-[115px] w-auto mx-auto" role="img" aria-label="Hikvision Logo">
+          <text x="50%" y="26" textAnchor="middle" fontFamily="Arial, Helvetica, sans-serif" fontWeight="900" fontSize="22" letterSpacing="1.5">
             <tspan fill="#0F172A">HIK</tspan><tspan fill="#E51C24">VISION</tspan>
           </text>
         </svg>
@@ -61,11 +61,11 @@ export const PARTNERS_DATA: PartnerBrand[] = [
     tagline: "WizSense & Thermal Optics",
     accentColor: "#E51C24",
     svgIcon: (
-      <div className="flex items-center h-7">
+      <div className="w-full flex items-center justify-center h-9">
         <img 
           src="https://www.dahuasecurity.com/logo.png" 
           alt="Dahua Technology Logo" 
-          className="h-6 sm:h-7 w-auto object-contain max-w-[120px]"
+          className="max-h-7 max-w-[105px] w-auto object-contain mx-auto"
           referrerPolicy="no-referrer"
           onError={(e) => {
             e.currentTarget.style.display = 'none';
@@ -74,10 +74,10 @@ export const PARTNERS_DATA: PartnerBrand[] = [
             }
           }}
         />
-        <svg viewBox="0 0 130 36" fill="currentColor" className="h-6 w-auto hidden items-center">
-          <circle cx="10" cy="18" r="8" fill="#E51C24" />
-          <path d="M10 10 A 8 8 0 0 1 18 18 L 14 18 A 4 4 0 0 0 10 14 Z" fill="#FFFFFF" />
-          <text x="24" y="26" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="22" letterSpacing="1.5">
+        <svg viewBox="0 0 130 36" fill="currentColor" className="h-6 w-auto hidden items-center mx-auto">
+          <circle cx="16" cy="18" r="8" fill="#E51C24" />
+          <path d="M16 10 A 8 8 0 0 1 24 18 L 20 18 A 4 4 0 0 0 16 14 Z" fill="#FFFFFF" />
+          <text x="32" y="26" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="22" letterSpacing="1.5">
             <tspan fill="#E51C24">d</tspan>ahua
           </text>
         </svg>
@@ -91,11 +91,11 @@ export const PARTNERS_DATA: PartnerBrand[] = [
     tagline: "Smart IoT & Wireless PTZ",
     accentColor: "#F59E0B",
     svgIcon: (
-      <div className="flex items-center h-7">
+      <div className="w-full flex items-center justify-center h-9">
         <img 
           src="https://static-website.imou.com/2e28bfa8429aa649f84f3ef8bed7028f.png" 
           alt="Imou Logo" 
-          className="h-6 sm:h-7 w-auto object-contain max-w-[110px]"
+          className="max-h-7 max-w-[100px] w-auto object-contain mx-auto"
           referrerPolicy="no-referrer"
           onError={(e) => {
             e.currentTarget.style.display = 'none';
@@ -104,8 +104,8 @@ export const PARTNERS_DATA: PartnerBrand[] = [
             }
           }}
         />
-        <svg viewBox="0 0 110 36" fill="currentColor" className="h-6 w-auto hidden items-center">
-          <text x="0" y="26" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="26" letterSpacing="2"><tspan fill="#F59E0B">Im</tspan>ou</text>
+        <svg viewBox="0 0 110 36" fill="currentColor" className="h-6 w-auto hidden items-center mx-auto">
+          <text x="50%" y="26" textAnchor="middle" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="24" letterSpacing="2"><tspan fill="#F59E0B">Im</tspan>ou</text>
         </svg>
       </div>
     )
@@ -117,11 +117,11 @@ export const PARTNERS_DATA: PartnerBrand[] = [
     tagline: "OptiX Optical & AirEngine APs",
     accentColor: "#CE1126",
     svgIcon: (
-      <div className="flex items-center h-7">
+      <div className="w-full flex items-center justify-center h-9">
         <img 
           src="https://www.huawei.com/-/media/hcomponent-header/1.0.1.20260519084135/component/img/huawei_logo.png" 
           alt="Huawei Logo" 
-          className="h-6 sm:h-7 w-auto object-contain max-w-[125px]"
+          className="max-h-7 max-w-[110px] w-auto object-contain mx-auto"
           referrerPolicy="no-referrer"
           onError={(e) => {
             e.currentTarget.style.display = 'none';
@@ -130,8 +130,17 @@ export const PARTNERS_DATA: PartnerBrand[] = [
             }
           }}
         />
-        <svg viewBox="0 0 150 36" fill="currentColor" className="h-6 w-auto hidden items-center">
-          <text x="0" y="26" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="23" letterSpacing="2">HUA<tspan fill="#CE1126">WEI</tspan></text>
+        <svg viewBox="0 0 140 36" fill="currentColor" className="h-6 w-auto hidden items-center mx-auto">
+          <g fill="#CE1126">
+            <path d="M18,3 C16,7 16,11 18,14 C20,11 20,7 18,3 Z" />
+            <path d="M12,5 C11,9 12,13 15,15 C16,12 15,8 12,5 Z" />
+            <path d="M24,5 C21,8 20,12 21,15 C24,13 25,9 24,5 Z" />
+            <path d="M8,9 C8,13 10,16 13,17 C13,14 11,10 8,9 Z" />
+            <path d="M28,9 C25,10 23,14 23,17 C26,16 28,13 28,9 Z" />
+          </g>
+          <text x="36" y="24" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="18" letterSpacing="1.5" fill="#CE1126">
+            HUAWEI
+          </text>
         </svg>
       </div>
     )
@@ -143,8 +152,8 @@ export const PARTNERS_DATA: PartnerBrand[] = [
     tagline: "Catalyst Switches & Meraki",
     accentColor: "#02C8FF",
     svgIcon: (
-      <div className="flex items-center h-7 sm:h-8">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 57" className="h-6 sm:h-7 w-auto" role="img">
+      <div className="w-full flex items-center justify-center h-9">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 57" className="max-h-7 max-w-[80px] w-auto mx-auto" role="img">
           <title id="fw-c-header__logo-title">Cisco.com Worldwide</title>
           <defs>
             <path d="M0 22.769a2.348 2.348 0 0 0 3.935 1.545c.434-.403.7-.955.744-1.545v-5.2a2.34 2.34 0 0 0-4.679 0v5.2" id="bar_short" className="bar" />
@@ -177,11 +186,11 @@ export const PARTNERS_DATA: PartnerBrand[] = [
     tagline: "German Cat6A & Modular Racks",
     accentColor: "#0284C7",
     svgIcon: (
-      <div className="flex items-center h-7">
+      <div className="w-full flex items-center justify-center h-9">
         <img 
           src="https://www.vivanco.com/cdn/shop/files/vivanco_white.svg?v=1770213998&width=600" 
           alt="Vivanco Logo" 
-          className="h-6 sm:h-7 w-auto object-contain max-w-[120px] brightness-0"
+          className="max-h-7 max-w-[105px] w-auto object-contain mx-auto brightness-0"
           referrerPolicy="no-referrer"
           onError={(e) => {
             e.currentTarget.style.display = 'none';
@@ -190,8 +199,8 @@ export const PARTNERS_DATA: PartnerBrand[] = [
             }
           }}
         />
-        <svg viewBox="0 0 150 36" fill="currentColor" className="h-6 w-auto hidden items-center">
-          <text x="0" y="26" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="22" letterSpacing="3">VIVAN<tspan fill="#0284C7">CO</tspan></text>
+        <svg viewBox="0 0 150 36" fill="currentColor" className="h-6 w-auto hidden items-center mx-auto">
+          <text x="50%" y="26" textAnchor="middle" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="22" letterSpacing="3">VIVAN<tspan fill="#0284C7">CO</tspan></text>
         </svg>
       </div>
     )
@@ -203,14 +212,14 @@ export const PARTNERS_DATA: PartnerBrand[] = [
     tagline: "Single-Mode OS2 & OM4 Core",
     accentColor: "#0284C7",
     svgIcon: (
-      <div className="relative flex items-center justify-center h-8 px-2 overflow-hidden rounded-md group-hover:scale-105 transition-transform">
+      <div className="relative w-full flex items-center justify-center h-9 px-2 overflow-hidden rounded-md group-hover:scale-105 transition-transform mx-auto">
         <img 
           src="https://www.corning.com/etc.clientlibs/settings/wcm/designs/corning/resources/images/global/logo-glass-bg.png" 
           alt="Corning Glass Background" 
           className="absolute inset-0 w-full h-full object-cover opacity-80"
           referrerPolicy="no-referrer"
         />
-        <span className="relative z-10 font-sans font-black text-[15px] sm:text-[17px] tracking-[2.5px] text-slate-900 drop-shadow-xs">
+        <span className="relative z-10 font-sans font-black text-[14px] sm:text-[15px] tracking-[2.5px] text-slate-900 drop-shadow-xs">
           CORNING
         </span>
       </div>
@@ -248,15 +257,15 @@ export const PartnersShowcase: React.FC<{ className?: string }> = ({ className =
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.05 }}
-              className="bg-white border border-slate-200 hover:border-[#0284C7] rounded-2xl p-4 flex flex-col justify-between text-left hover:shadow-[0_12px_30px_rgba(2,132,199,0.1)] transition-all duration-300 group cursor-default select-none"
+              className="bg-white border border-slate-200 hover:border-[#0284C7] rounded-2xl p-4 flex flex-col items-center justify-between text-center hover:shadow-[0_12px_30px_rgba(2,132,199,0.1)] transition-all duration-300 group cursor-default select-none min-h-[140px]"
             >
-              {/* Logo Area */}
-              <div className="text-slate-900 group-hover:text-black transition-colors flex items-center justify-start h-8">
+              {/* Centered Logo Area */}
+              <div className="w-full text-slate-900 group-hover:text-black transition-colors flex items-center justify-center h-10 py-1">
                 {partner.svgIcon}
               </div>
 
-              {/* Info Details */}
-              <div className="mt-3 pt-2.5 border-t border-slate-100 space-y-0.5">
+              {/* Centered Info Details */}
+              <div className="w-full mt-3 pt-2.5 border-t border-slate-100 space-y-0.5 text-center">
                 <span className="block font-['Open_Sans'] font-bold text-[11px] text-black group-hover:text-[#0284C7] transition-colors uppercase tracking-wider truncate">
                   {partner.name}
                 </span>
