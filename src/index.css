@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Open+Sans+Condensed:wght@300;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Open Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-condensed: "Open Sans Condensed", sans-serif;
   --font-display: "Space Grotesk", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
   
@@ -185,6 +186,203 @@ body {
   display: inline-block;
   animation: marquee 25s linear infinite;
   will-change: transform;
+}
+
+/* ==========================================================================
+   INOVE EUROPEAN AGENCY DESIGN SYSTEM
+   ========================================================================== */
+
+.inove-hlogo {
+  height: 116px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inove-himage {
+  height: 480px;
+  position: relative;
+  border-width: 1px 0;
+  border-color: rgb(190, 190, 190);
+  border-style: solid;
+  overflow: hidden;
+  background-color: #030712;
+}
+
+@media (max-width: 640px) {
+  .inove-himage {
+    height: 360px;
+  }
+}
+
+.inove-hline {
+  height: 1px;
+  background-color: rgb(190, 190, 190);
+  width: 85%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.inove-block {
+  margin: 70px auto;
+  position: relative;
+  box-sizing: border-box;
+  width: 85%;
+  max-width: 1500px;
+}
+
+.inove-tri {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 5%;
+}
+
+.inove-tri .inove-bbox {
+  flex: 1;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.inove-tri .inove-bbox.followus {
+  flex: 0 0 200px;
+}
+
+.inove-gallery .inove-btn {
+  height: 94px;
+  width: 100%;
+  position: relative;
+  display: block;
+  margin-bottom: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.inove-gallery .inove-btn .inove-btn-l {
+  position: absolute;
+  left: 0;
+  right: 52%;
+  top: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  border: 1px solid #000;
+  border-right-width: 0;
+  font-weight: 600;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  background: #fff;
+  color: #000;
+  transition: all 0.2s ease;
+  z-index: 2;
+  text-align: center;
+}
+
+.inove-gallery .inove-btn:hover .inove-btn-l {
+  border-color: #D95B16;
+  color: #D95B16;
+  background-color: #FFF7ED;
+}
+
+.inove-gallery .inove-btn .inove-btn-r {
+  position: absolute;
+  left: 48%;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 1px solid #000;
+  border-left-width: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.inove-gallery .inove-btn:hover .inove-btn-r {
+  border-color: #D95B16;
+}
+
+/* White Triangle Cut at bottom-right corner */
+.inove-gallery .inove-btn .inove-btn-r::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 18px;
+  border-color: transparent;
+  right: 0;
+  bottom: 0;
+  border-top-width: 0;
+  border-right-width: 0;
+  border-bottom-color: #fff;
+  z-index: 5;
+}
+
+.inove-clients .inove-topic {
+  text-transform: uppercase;
+  background-color: rgb(242, 242, 242);
+  line-height: 100%;
+  padding: 6px 10px;
+  margin: 24px 0 16px 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #555;
+  font-family: var(--font-mono);
+}
+
+.inove-tags .inove-tag-list {
+  margin: -10px -4px;
+  text-align: justify;
+}
+
+.inove-tags .inove-tag-list h4,
+.inove-tags .inove-tag-list h5 {
+  margin: 0 5px;
+  line-height: 44px;
+  display: inline-block;
+  cursor: default;
+  transition: color 0.2s;
+}
+
+.inove-tags .inove-tag-list h4 {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  color: #111;
+}
+
+.inove-tags .inove-tag-list h5 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #666;
+}
+
+.inove-tags .inove-tag-list h4:hover,
+.inove-tags .inove-tag-list h5:hover {
+  color: #D95B16;
+}
+
+@media (max-width: 900px) {
+  .inove-tri {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .inove-tri .inove-bbox,
+  .inove-tri .inove-bbox.followus {
+    width: 100%;
+    flex: auto;
+  }
 }
 
 

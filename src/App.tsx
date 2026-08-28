@@ -514,674 +514,255 @@ export default function App() {
         ) : (
           <motion.div
             key="home-page"
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -15 }}
-            transition={{ duration: 0.35, ease: "easeInOut" }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="bg-white min-h-screen text-black font-['Open_Sans']"
           >
-            {/* HERO SECTION - Futuristic AI Surveillance & Optical Video Background */}
-            <section id="home" className="relative min-h-[94vh] flex items-center pt-32 pb-24 overflow-hidden z-10 bg-slate-50">
-              {/* Dynamic AI-Generated / Surveillance Looping Background Video with HUD */}
+            {/* INOVE TOP HEADER LOGO (hlogo) */}
+            <div className="inove-hlogo pt-8 pb-4">
+              <div className="flex flex-col sm:flex-row items-center justify-between w-[85%] max-w-[1500px] mx-auto gap-4">
+                <div className="flex items-center gap-3.5">
+                  <div className="relative w-12 h-12 rounded-full overflow-hidden border border-slate-300 bg-white shadow-xs">
+                    <img src={logo} alt="CoreGuard" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="text-left">
+                    <h1 className="font-['Open_Sans_Condensed'] text-3xl sm:text-4xl font-light text-black tracking-wide uppercase leading-none">
+                      CORE<span className="text-[#D95B16] font-bold">GUARD</span>
+                    </h1>
+                    <span className="block font-['Open_Sans'] text-[10px] uppercase tracking-widest text-slate-500 font-semibold mt-1">
+                      PRECISION SURVEILLANCE & OPTICAL INFRASTRUCTURE
+                    </span>
+                  </div>
+                </div>
+
+                {/* Professional Operations Badge */}
+                <div className="hidden md:flex items-center gap-4 text-left font-mono text-[10px] border-l border-slate-200 pl-4 py-1">
+                  <div>
+                    <span className="flex items-center gap-1.5 font-bold text-slate-800 uppercase tracking-wider">
+                      <span className="h-2 w-2 rounded-full bg-emerald-500 animate-ping" />
+                      Field Dispatch Active
+                    </span>
+                    <span className="text-slate-400 block mt-0.5">Islamabad & Rawalpindi HQs</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* INOVE HEADER IMAGE / AI VIDEO SHOWCASE (himage) */}
+            <div className="inove-himage shadow-xs">
               <HeroVideoBackground />
-
-              {/* Ambient Floating Micro-Telemetry Badges */}
-              <div className="hidden xl:block absolute top-36 left-12 z-20 pointer-events-none animate-float-up">
-                <div className="bg-white/90 backdrop-blur-md border border-orange-200/90 px-3.5 py-2 rounded-2xl shadow-md flex items-center gap-2.5 font-mono text-[10px]">
-                  <span className="h-2 w-2 rounded-full bg-emerald-500 animate-ping" />
-                  <span className="font-bold text-slate-800">Fujikura Core Thermal:</span>
-                  <span className="text-[#D95B16] font-bold">&le;0.02 dB Loss</span>
-                </div>
-              </div>
-
-              <div className="hidden xl:block absolute top-40 right-12 z-20 pointer-events-none animate-float-down">
-                <div className="bg-white/90 backdrop-blur-md border border-slate-200/90 px-3.5 py-2 rounded-2xl shadow-md flex items-center gap-2.5 font-mono text-[10px]">
-                  <Camera size={13} className="text-[#D95B16]" />
-                  <span className="font-bold text-slate-800">4K Sony Starvis:</span>
-                  <span className="text-emerald-600 font-bold">60 FPS HDR</span>
-                </div>
-              </div>
-
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-                <div className="flex flex-col items-center justify-center text-center space-y-7 max-w-4xl mx-auto">
-                  
-                  {/* Glowing Top Pill Badge */}
-                  <motion.div
-                    initial={{ opacity: 0, y: -20, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="inline-flex items-center gap-2 bg-orange-50/90 border border-orange-200/90 rounded-full px-4 py-1.5 text-[10.5px] text-[#D95B16] font-mono font-extrabold uppercase tracking-widest shadow-xs backdrop-blur-md"
-                  >
-                    <Sparkles size={13} className="text-[#D95B16] animate-pulse" />
-                    <span>AI-POWERED SURVEILLANCE & OPTICAL INFRASTRUCTURE</span>
-                  </motion.div>
-
-                  {/* Main Display Headline */}
-                  <motion.h1 
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-                    className="font-display font-black text-4xl sm:text-6xl lg:text-7.5xl text-slate-900 tracking-tight leading-[1.02]"
-                  >
-                    <span className="block text-transparent bg-clip-text bg-gradient-to-r from-slate-950 via-slate-800 to-slate-900 drop-shadow-xs">
-                      {heroInfo.title1}
-                    </span>
-                    <span className="block text-slate-800 font-bold mt-1 text-2xl sm:text-4xl lg:text-5xl font-sans tracking-tight">
-                      {heroInfo.title2}
-                    </span>
-                    <span className="block font-black text-transparent bg-clip-text bg-gradient-to-r from-[#D95B16] via-orange-500 to-amber-600 font-sans tracking-normal uppercase text-4.5xl sm:text-6xl lg:text-7.5xl mt-2 px-2 pb-1 drop-shadow-sm">
-                      {heroInfo.highlightText}
-                    </span>
-                  </motion.h1>
-
-                  {/* Hero Tagline Subtext */}
-                  <motion.p 
-                    initial={{ opacity: 0, y: 25 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.25 }}
-                    className="text-slate-700 text-sm sm:text-lg leading-relaxed max-w-2xl font-normal bg-white/85 px-6 py-3 rounded-2xl border border-slate-200/70 backdrop-blur-md shadow-xs"
-                  >
-                    {heroInfo.tagline}
-                  </motion.p>
-
-                  {/* Interactive Action Buttons */}
-                  <motion.div 
-                    initial={{ opacity: 0, y: 25 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.35 }}
-                    className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2 w-full max-w-md mx-auto"
-                  >
-                    <button 
-                      onClick={() => triggerQuote()}
-                      className="w-full sm:w-auto flex-1 relative overflow-hidden rounded-xl bg-[#D95B16] hover:bg-[#C2410C] text-white font-extrabold py-4 px-8 transition-all duration-300 shadow-md hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] cursor-pointer text-center text-xs uppercase tracking-wider flex items-center justify-center gap-2 group"
-                    >
-                      <Sparkles size={15} className="animate-spin" style={{ animationDuration: "6s" }} />
-                      <span>Launch Quote Simulator</span>
-                      <ChevronRight size={15} className="group-hover:translate-x-1 transition-transform stroke-[2.5]" />
-                    </button>
-                    
-                    <button 
-                      onClick={() => navigateTo({ page: "services" })}
-                      className="w-full sm:w-auto bg-white/90 hover:bg-white text-slate-800 border border-slate-300/80 font-bold py-4 px-7 rounded-xl transition-all duration-300 text-center text-xs hover:scale-[1.02] active:scale-[0.98] shadow-xs hover:shadow-md tracking-wider uppercase cursor-pointer backdrop-blur-md"
-                    >
-                      {heroInfo.cta2}
-                    </button>
-                  </motion.div>
-
-                  {/* Live Animated Metrics Bar */}
-                  <motion.div 
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.45 }}
-                    className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 pt-8 border-t border-slate-200/80 w-full max-w-4xl mx-auto"
-                  >
-                    <div className="bg-white/85 backdrop-blur-md border border-slate-200/80 p-4 rounded-2xl shadow-xs text-center">
-                      <span className="block font-sans font-black text-2xl sm:text-3xl text-slate-900 tracking-tight">
-                        <AnimatedCounter value={500} suffix="+" duration={1800} />
-                      </span>
-                      <span className="block text-[9.5px] font-mono uppercase tracking-wider text-slate-400 mt-1 font-bold">HQ Deployments</span>
-                    </div>
-                    
-                    <div className="bg-white/85 backdrop-blur-md border border-slate-200/80 p-4 rounded-2xl shadow-xs text-center">
-                      <span className="block font-sans font-black text-2xl sm:text-3xl text-emerald-600 tracking-tight">
-                        <AnimatedCounter value={300} suffix="+" duration={1800} />
-                      </span>
-                      <span className="block text-[9.5px] font-mono uppercase tracking-wider text-slate-400 mt-1 font-bold">Active Sites</span>
-                    </div>
-
-                    <div className="bg-white/85 backdrop-blur-md border border-slate-200/80 p-4 rounded-2xl shadow-xs text-center">
-                      <span className="block font-sans font-black text-2xl sm:text-3xl text-[#D95B16] tracking-tight">
-                        &le;0.02dB
-                      </span>
-                      <span className="block text-[9.5px] font-mono uppercase tracking-wider text-slate-400 mt-1 font-bold">Optic Loss Bound</span>
-                    </div>
-
-                    <div className="bg-white/85 backdrop-blur-md border border-slate-200/80 p-4 rounded-2xl shadow-xs text-center">
-                      <span className="block font-sans font-black text-2xl sm:text-3xl text-slate-900 tracking-tight">
-                        <AnimatedCounter value={100} suffix="%" duration={1800} />
-                      </span>
-                      <span className="block text-[9.5px] font-mono uppercase tracking-wider text-slate-400 mt-1 font-bold">SLA Guarantee</span>
-                    </div>
-                  </motion.div>
-
-                </div>
-              </div>
-            </section>
-
-            {/* INTERACTIVE LIVE HARDWARE & TELEMETRY SIMULATOR */}
-            <LiveOperationsHub 
-              onTriggerQuote={(srvId) => triggerQuote(srvId)}
-              onExploreServices={() => navigateTo({ page: "services" })}
-            />
-
-            {/* BRIEF INTRODUCTION SECTION - High-End Overview, Get Quote & Support Hub */}
-            <section id="introduction" className="py-24 bg-white border-b border-slate-200/60 relative overflow-hidden">
-              {/* Subtle grid decoration */}
-              <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(217,91,22,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(217,91,22,0.015)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
-              
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                  <span className="text-[11px] font-mono text-[#D95B16] uppercase tracking-widest font-extrabold bg-orange-50 border border-orange-100 px-4 py-1.5 rounded-full inline-block">
-                    INTEGRATION ARCHITECTURE
-                  </span>
-                  <h2 className="font-display font-black text-3xl sm:text-5xl text-slate-900 tracking-tight mt-4">
-                    Premium CCTV, Fiber & Datacenter Solutions
-                  </h2>
-                  <p className="text-slate-500 text-base mt-4 leading-relaxed font-sans">
-                    CoreGuard engineers high-integrity surveillance, precision optical loops, and robust biometric directories. We deliver certified enterprise-grade infrastructure tailored to withstand critical modern demands.
-                  </p>
-                </div>
-
-                {/* Quick Pillars Overview */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-                  <div className="bg-white border border-slate-200/70 rounded-3xl p-7 text-left relative overflow-hidden group hover:shadow-[0_20px_40px_rgba(217,91,22,0.08)] hover:border-orange-300 hover:-translate-y-1.5 transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.02)] cursor-pointer" onClick={() => navigateTo({ page: "services" })}>
-                    {/* Dynamic decorative hover bar */}
-                    <div className="absolute top-0 inset-x-0 h-[3.5px] bg-transparent group-hover:bg-gradient-to-r group-hover:from-[#D95B16] group-hover:to-orange-500 rounded-t-3xl transition-all duration-300" />
-                    <div className="h-10 w-10 rounded-xl bg-orange-50 border border-orange-200/80 text-[#D95B16] flex items-center justify-center mb-4 group-hover:bg-[#D95B16] group-hover:text-white transition-colors duration-300">
-                      <Camera size={18} />
-                    </div>
-                    <h3 className="font-display font-bold text-lg text-slate-900 mb-2">Secure 4K Surveillance</h3>
-                    <p className="text-slate-500 text-xs leading-relaxed">
-                      Professional 4K IP camera setups with advanced neural motion triggers, infrared night-vision, and encrypted smartphone live feeds.
-                    </p>
-                  </div>
-
-                  <div className="bg-white border border-slate-200/70 rounded-3xl p-7 text-left relative overflow-hidden group hover:shadow-[0_20px_40px_rgba(217,91,22,0.08)] hover:border-orange-300 hover:-translate-y-1.5 transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.02)] cursor-pointer" onClick={() => navigateTo({ page: "services" })}>
-                    {/* Dynamic decorative hover bar */}
-                    <div className="absolute top-0 inset-x-0 h-[3.5px] bg-transparent group-hover:bg-gradient-to-r group-hover:from-[#D95B16] group-hover:to-orange-500 rounded-t-3xl transition-all duration-300" />
-                    <div className="h-10 w-10 rounded-xl bg-emerald-50 border border-emerald-200/80 text-emerald-600 flex items-center justify-center mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300">
-                      <Cable size={18} />
-                    </div>
-                    <h3 className="font-display font-bold text-lg text-slate-900 mb-2">Precision Fiber Splicing</h3>
-                    <p className="text-slate-500 text-xs leading-relaxed">
-                      Core-alignment fusion splicing, OTDR optical distance mapping, and precise ribbon terminations to achieve micro-decibel loss ratings.
-                    </p>
-                  </div>
-
-                  <div className="bg-white border border-slate-200/70 rounded-3xl p-7 text-left relative overflow-hidden group hover:shadow-[0_20px_40px_rgba(217,91,22,0.08)] hover:border-orange-300 hover:-translate-y-1.5 transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.02)] cursor-pointer" onClick={() => navigateTo({ page: "services" })}>
-                    {/* Dynamic decorative hover bar */}
-                    <div className="absolute top-0 inset-x-0 h-[3.5px] bg-transparent group-hover:bg-gradient-to-r group-hover:from-[#D95B16] group-hover:to-orange-500 rounded-t-3xl transition-all duration-300" />
-                    <div className="h-10 w-10 rounded-xl bg-cyan-50 border border-cyan-200/80 text-cyan-600 flex items-center justify-center mb-4 group-hover:bg-cyan-600 group-hover:text-white transition-colors duration-300">
-                      <Server size={18} />
-                    </div>
-                    <h3 className="font-display font-bold text-lg text-slate-900 mb-2">10G Structured Cabling</h3>
-                    <p className="text-slate-500 text-xs leading-relaxed">
-                      Gigabit Cat6 modular structured cabling layouts, custom hardware routing, and enterprise firewall setup for seamless bandwidth coverage.
-                    </p>
-                  </div>
-                </div>
-
-                {/* DUAL ACTION HERO ENGAGEMENT CENTER */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
-                  
-                  {/* GET A QUOTE CARD */}
-                  <div className="bg-gradient-to-br from-white to-slate-50 border border-slate-200 rounded-3xl p-8 sm:p-10 text-left relative overflow-hidden shadow-md group">
-                    <div className="absolute top-0 right-0 h-48 w-48 rounded-full bg-orange-500/5 blur-3xl pointer-events-none" />
-                    <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(217,91,22,0.01)_1px,transparent_1px),linear-gradient(to_bottom,rgba(217,91,22,0.01)_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none" />
-                    
-                    <h3 className="font-sans font-black text-2xl text-slate-900 mb-3">
-                      Get a Professional Quote
-                    </h3>
-                    
-                    <p className="text-slate-650 text-slate-600 text-xs leading-relaxed mb-8 max-w-md font-sans">
-                      Need customized cost projections for your site? Access our interactive quote generator to compile budget estimates based on camera unit count, splicing nodes, and structural wire lengths.
-                    </p>
-                    
-                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                      <button 
-                        onClick={() => triggerQuote()}
-                        className="bg-[#D95B16] hover:bg-[#C2410C] text-white font-extrabold py-3.5 px-6 rounded-xl transition-all shadow-md hover:shadow-lg cursor-pointer text-xs uppercase tracking-wider text-center flex items-center justify-center gap-2"
-                      >
-                        <span>Launch Quote Simulator</span>
-                        <ChevronRight size={14} className="stroke-[2.5]" />
-                      </button>
-                      <button 
-                        onClick={() => navigateTo({ page: "services" })}
-                        className="bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200/80 text-xs py-3.5 px-6 rounded-xl font-bold transition-all text-center uppercase tracking-wider cursor-pointer"
-                      >
-                        Browse Full Catalog
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* EXPLORE SERVICES CARD - REPLACED SUPPORT OPTIONS CARD */}
-                  <div className="bg-gradient-to-br from-white to-slate-50 border border-slate-200 rounded-3xl p-8 sm:p-10 text-left relative overflow-hidden shadow-md group">
-                    <div className="absolute top-0 right-0 h-48 w-48 rounded-full bg-orange-500/5 blur-3xl pointer-events-none" />
-                    <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(217,91,22,0.01)_1px,transparent_1px),linear-gradient(to_bottom,rgba(217,91,22,0.01)_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none" />
-                    
-                    <h3 className="font-sans font-black text-2xl text-slate-900 mb-3">
-                      Explore Full Systems Catalog
-                    </h3>
-                    
-                    <p className="text-slate-650 text-slate-600 text-xs leading-relaxed mb-8 max-w-md font-sans">
-                      Dive into our complete separate database of technical solutions. Inspect hardware standards, 4K camera options, OTDR fiber testing specifications, and request immediate custom site blueprints.
-                    </p>
-                    
-                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                      <button 
-                        onClick={() => navigateTo({ page: "services" })}
-                        className="bg-[#D95B16] hover:bg-[#C2410C] text-white font-extrabold py-3.5 px-7 rounded-xl transition-all shadow-md hover:shadow-lg cursor-pointer text-xs uppercase tracking-wider text-center flex items-center justify-center gap-2"
-                      >
-                        <Sparkles size={14} className="stroke-[2.5]" />
-                        <span>Explore Services Now</span>
-                      </button>
-                      <a 
-                        href="#contact"
-                        className="bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200/80 text-xs py-3.5 px-6 rounded-xl font-bold transition-all text-center uppercase tracking-wider text-center"
-                      >
-                        Contact Support Direct
-                      </a>
-                    </div>
-                  </div>
-
-                </div>
-
-              </div>
-            </section>
-
-
-      {/* ABOUT US DIVISION SECTION - Modern Tech Stylings */}
-      <section id="about" className="py-24 relative overflow-hidden bg-[#F8FAFC] z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 sm:gap-16 items-center">
-            
-            {/* Left Column visual high-quality equipment checklist */}
-            <div className="lg:col-span-5 relative">
-              <div className="bg-white border border-slate-200/80 shadow-[0_20px_50px_rgba(15,23,42,0.04),0_1px_3px_rgba(0,0,0,0.01)] rounded-3xl p-8 text-left relative overflow-hidden group hover:border-orange-200 transition-all duration-300">
-                <div className="absolute top-0 inset-x-0 h-[4px] bg-gradient-to-r from-[#D95B16] to-orange-450 text-orange-500 bg-orange-500" />
-                <div className="absolute top-0 right-0 h-32 w-32 rounded-full bg-orange-500/5 blur-2xl pointer-events-none" />
-                
-                <h3 className="font-display font-bold text-xl text-slate-900 tracking-tight mb-5">
-                  Why Professional Installation Outperforms DIY
-                </h3>
-
-                <ul className="space-y-3.5 text-xs text-slate-600 leading-relaxed">
-                  <li className="flex items-start gap-3 p-3 rounded-xl bg-slate-50/60 border border-slate-100/50 hover:bg-slate-50 hover:border-slate-200/60 transition-all duration-200">
-                    <CheckCircle2 size={14} className="text-[#D95B16] shrink-0 mt-0.5" />
-                    <span><b className="text-slate-850 text-slate-800">Proper Angle Mapping:</b> CCTV camera field calculations to completely bypass blindspots or high glare reflection planes.</span>
-                  </li>
-                  <li className="flex items-start gap-3 p-3 rounded-xl bg-slate-50/60 border border-slate-100/50 hover:bg-slate-50 hover:border-slate-200/60 transition-all duration-200">
-                    <CheckCircle2 size={14} className="text-[#D95B16] shrink-0 mt-0.5" />
-                    <span><b className="text-slate-850 text-slate-800">Structured Conduits:</b> Protective metallic trunking shields Cat6/fiber cables against physical rodents, sun cracking, or high voltage interference.</span>
-                  </li>
-                  <li className="flex items-start gap-3 p-3 rounded-xl bg-slate-50/60 border border-slate-100/50 hover:bg-slate-50 hover:border-slate-200/60 transition-all duration-200">
-                    <CheckCircle2 size={14} className="text-[#D95B16] shrink-0 mt-0.5" />
-                    <span><b className="text-slate-850 text-slate-800">Certified Fusion Splicing:</b> Standard mechanical connectors lose over 0.5dB signal, while fusion splicing maintains standard 0.02dB.</span>
-                  </li>
-                  <li className="flex items-start gap-3 p-3 rounded-xl bg-slate-50/60 border border-slate-100/50 hover:bg-slate-50 hover:border-slate-200/60 transition-all duration-200">
-                    <CheckCircle2 size={14} className="text-[#D95B16] shrink-0 mt-0.5" />
-                    <span><b className="text-slate-850 text-slate-800">DDNS Firewalls Mappings:</b> Secure configurations to isolate camera remote networks from third-party botnets or ransomware.</span>
-                  </li>
-                </ul>
-
-                <div className="mt-6 pt-4 border-t border-slate-100 text-[10px] font-mono text-slate-400 font-medium">
-                  Approved under certified physical networking criteria.
-                </div>
-              </div>
             </div>
 
-            {/* Right Column details copy editable dynamically */}
-            <div className="lg:col-span-7 text-left space-y-6">
-              
-              <div className="inline-flex items-center gap-1.5 bg-orange-50 border border-orange-100 rounded-full px-3.5 py-1 text-[11px] text-[#D95B16] font-mono font-bold uppercase tracking-wider">
-                <span>{aboutInfo.title}</span>
-              </div>
-
-              <h2 className="font-display font-medium text-3xl sm:text-4xl text-slate-900 tracking-tight">
-                {aboutInfo.headline}
-              </h2>
-
-              <div className="space-y-4 text-slate-500 text-sm leading-relaxed">
-                <p>{aboutInfo.description1}</p>
-                <p>{aboutInfo.description2}</p>
-              </div>
-
-              <div className="flex gap-4 pt-4 border-t border-slate-200/60">
-                <div className="text-left">
-                  <span className="block text-[10.5px] font-mono uppercase tracking-wider text-slate-400 font-bold">Main Headquarters</span>
-                  <span className="block text-sm text-slate-800 font-bold mt-1 pr-1">{contactInfo.address}</span>
-                </div>
-                <div className="h-10 w-px bg-slate-200 self-center" />
-                <div className="text-left">
-                  <span className="block text-[10.5px] font-mono uppercase tracking-wider text-slate-400 font-bold">Priority Mail</span>
-                  <a href={`mailto:${contactInfo.email}`} className="block text-sm text-[#D95B16] font-bold hover:underline mt-1">
-                    {contactInfo.email}
-                  </a>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* WHY CHOOSE US Promise section */}
-      <section id="why-choose-us" className="py-24 bg-white border-y border-slate-200/60 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[11px] font-mono text-[#D95B16] uppercase tracking-widest font-extrabold bg-orange-50 border border-orange-100 px-3.5 py-1 rounded-full inline-block">
-              Why Choose CoreGuard
-            </span>
-            <h2 className="font-display font-medium text-3xl sm:text-4xl text-slate-900 tracking-tight mt-3">
-              We Guarantee Zero Weakness in Fiber & Security Links
-            </h2>
-            <p className="text-slate-500 text-sm mt-3 leading-relaxed">
-              We utilize certified enterprise testing equipment to assure maximum physical protection and optical performance parameters.
-            </p>
-          </div>
-
-          {/* Benefits Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
-            {benefits.map((b) => (
-              <div 
-                key={b.id}
-                className="bg-white border border-slate-200/60 hover:border-orange-300 p-6 rounded-2xl text-left hover:bg-white hover:shadow-[0_12px_36px_rgba(217,91,22,0.06)] transition-all duration-300 relative group"
-              >
-                {/* Visual Accent point */}
-                <div className="absolute top-4 right-4 h-1.5 w-1.5 rounded-full bg-[#D95B16] opacity-0 group-hover:opacity-100 transition-opacity" />
-                
-                {/* Context copy */}
-                <div>
-                  <h4 className="font-display font-semibold text-slate-900 group-hover:text-[#D95B16] transition-colors mb-1.5 leading-snug">
-                    {b.title}
-                  </h4>
-                  <p className="text-slate-500 text-xs leading-relaxed">
-                    {b.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Compliance Logos trust stripe */}
-          <div className="mt-16 bg-slate-50 p-6 rounded-2xl border border-slate-200/80 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="text-left md:max-w-md">
-              <span className="block text-[8px] font-mono text-[#D95B16] uppercase tracking-widest font-black">Global Hardware Handshake Standards</span>
-              <span className="block text-xs text-slate-500 font-semibold mt-0.5">Configured exclusively with certified telecom, coax, and optical patch cords.</span>
-            </div>
-            <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 text-[10.5px] text-slate-400 font-mono tracking-widest font-bold">
-              <span className="hover:text-[#D95B16] transition-colors cursor-pointer">HIKVISION</span>
-              <span className="h-1 w-1 rounded-full bg-slate-300" />
-              <span className="hover:text-[#D95B16] transition-colors cursor-pointer">DAHUA</span>
-              <span className="h-1 w-1 rounded-full bg-slate-300" />
-              <span className="hover:text-[#D95B16] transition-colors cursor-pointer">UBIQUITI</span>
-              <span className="h-1 w-1 rounded-full bg-slate-300" />
-              <span className="hover:text-[#D95B16] transition-colors cursor-pointer">CISCO CO.</span>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* FREQUENTLY ASKED QUESTIONS (FAQ) ACCORDION SECTION */}
-      <section id="faq" className="py-24 bg-[#F8FAFC] border-b border-slate-200/60 relative overflow-hidden z-10">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(217,91,22,0.008)_1px,transparent_1px),linear-gradient(to_bottom,rgba(217,91,22,0.008)_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[11px] font-mono text-[#D95B16] uppercase tracking-widest font-extrabold bg-orange-50 border border-orange-100 px-3.5 py-1 rounded-full inline-block">
-              Frequently Asked Questions
-            </span>
-            <h2 className="font-display font-medium text-3xl sm:text-4xl text-slate-900 tracking-tight mt-3">
-              Certified Technical Intelligence & Support Answers
-            </h2>
-            <p className="text-slate-500 text-sm mt-3 leading-relaxed">
-              Have technical questions about optical distribution parameters, security system integrity, or active networks? Explore answers curated by our senior field engineers.
-            </p>
-          </div>
-
-          {/* Accordion Layout */}
-          <div className="space-y-4">
-            {faqs.map((faq, idx) => {
-              const isOpen = openFaqIdx === idx;
-              return (
-                <div 
-                  key={faq.id} 
-                  className={`bg-white border rounded-2xl transition-all duration-300 overflow-hidden shadow-[0_2px_10px_rgba(15,23,42,0.01)] ${
-                    isOpen ? "border-orange-300 shadow-[0_4px_20px_rgba(217,91,22,0.05)]" : "border-slate-200/80 hover:border-slate-300"
-                  }`}
-                >
-                  <button
-                    onClick={() => setOpenFaqIdx(isOpen ? null : idx)}
-                    className="w-full flex items-center justify-between p-5 sm:p-6 text-left outline-none cursor-pointer group"
-                  >
-                    <div className="flex items-center gap-4 pr-4">
-                      <div className={`p-2 rounded-xl border shrink-0 transition-all duration-300 ${
-                        isOpen ? "bg-orange-50 border-orange-200 text-[#D95B16]" : "bg-slate-50 border-slate-100 text-slate-400 group-hover:text-[#D95B16] group-hover:bg-orange-50/50"
-                      }`}>
-                        <HelpCircle size={16} />
-                      </div>
-                      <span className={`font-sans font-semibold text-sm sm:text-base leading-snug transition-colors duration-200 ${
-                        isOpen ? "text-[#D95B16] font-bold" : "text-slate-800"
-                      }`}>
-                        {faq.question}
-                      </span>
-                    </div>
-                    <div className={`p-1 rounded-lg border transition-all duration-300 ${
-                      isOpen ? "bg-orange-50 border-orange-100 text-[#D95B16]" : "bg-slate-50 border-slate-100 text-slate-400"
-                    }`}>
-                      <ChevronDown 
-                        size={16} 
-                        className={`transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} 
-                      />
-                    </div>
-                  </button>
-
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.28, ease: "easeInOut" }}
-                        className="overflow-hidden"
-                      >
-                        <div className="px-5 sm:px-6 pb-5 sm:pb-6 pt-1 text-slate-600 text-xs sm:text-sm leading-relaxed border-t border-slate-100/80 bg-slate-50/30">
-                          {faq.answer}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              );
-            })}
-          </div>
-
-        </div>
-      </section>
-
-      {/* CONTACT ESTIMATOR DISPATCH SECTION */}
-      <section id="contact" className="py-24 sm:py-28 bg-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 sm:gap-16 items-stretch">
-            
-            {/* Left Column: Coordinates details */}
-            <div className="lg:col-span-5 flex flex-col justify-center gap-8 text-left">
-              <div className="text-left space-y-4">
-                <div className="inline-flex items-center gap-1.5 bg-orange-50 border border-orange-100 rounded-full px-3.5 py-1 text-[11px] text-[#D95B16] font-mono font-bold uppercase tracking-wider">
-                  <span>Contact Hub</span>
-                </div>
-                
-                <h2 className="font-display font-medium text-3xl sm:text-4xl text-slate-900 tracking-tight">
-                  Initiate System Infrastructure
+            {/* INOVE BLOCK 1: ABOUT / MANIFEST (.block.tri.about) */}
+            <div className="inove-block inove-tri about text-left">
+              {/* Column 1 */}
+              <div className="inove-bbox font-['Open_Sans'] text-[13.5px] leading-relaxed text-black">
+                <div className="whitespace-nowrap">We believe that we are here</div>
+                <div className="whitespace-nowrap">to explore, learn and grow,</div>
+                <div className="whitespace-nowrap mb-5">to push the boundaries towards better things.</div>
+                <h2 className="font-['Open_Sans_Condensed'] text-3xl sm:text-4xl font-light text-black uppercase tracking-tight whitespace-nowrap">
+                  We are CoreGuard
                 </h2>
-                
-                <p className="text-slate-500 text-sm leading-relaxed">
-                  Ready to deploy high performance optical loops, biometric log systems, or HD CCTVs? Fill out our system inspection request or contact our Islamabad headquarters.
-                </p>
+              </div>
 
-                <div className="space-y-4 pt-4">
-                  <div className="flex items-center gap-3.5">
-                    <div className="h-11 w-11 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-[#D95B16] shadow-xs shrink-0">
-                      <Phone size={16} />
+              {/* Column 2 */}
+              <div className="inove-bbox font-['Open_Sans'] text-[13.5px] leading-relaxed text-black">
+                <div className="whitespace-nowrap">Welcome in our world,</div>
+                <h2 className="font-['Open_Sans_Condensed'] text-3xl sm:text-4xl font-light text-black my-2.5 whitespace-nowrap">
+                  we live in “precision”;
+                </h2>
+                <div className="whitespace-nowrap">we engineer and map out physical & optical</div>
+                <div className="whitespace-nowrap">networks and their possibilities:</div>
+                <div className="whitespace-nowrap">We study them, we secure them, we make them accessible to others.</div>
+              </div>
+
+              {/* Column 3: Follow us & Quick Channels */}
+              <div className="inove-bbox followus text-left">
+                <h3 className="font-['Open_Sans_Condensed'] text-2xl font-light text-black mb-4">
+                  Direct Channels
+                </h3>
+                <div className="flex items-center gap-3">
+                  <a 
+                    href={`https://wa.me/${contactInfo.phone.replace(/\D/g, "")}`} 
+                    target="_blank" 
+                    rel="noreferrer"
+                    className="p-2.5 rounded-xl border border-slate-300 hover:border-emerald-500 hover:bg-emerald-50 text-emerald-600 transition-all shadow-xs"
+                    title="Direct WhatsApp Support"
+                  >
+                    <MessageSquare size={18} />
+                  </a>
+                  <a 
+                    href={`tel:${contactInfo.phone.replace(/\D/g, "")}`} 
+                    className="p-2.5 rounded-xl border border-slate-300 hover:border-[#D95B16] hover:bg-orange-50 text-[#D95B16] transition-all shadow-xs"
+                    title="Priority Hotline"
+                  >
+                    <Phone size={18} />
+                  </a>
+                  <button 
+                    onClick={() => triggerQuote()}
+                    className="p-2.5 rounded-xl border border-slate-300 hover:border-[#D95B16] hover:bg-orange-50 text-[#D95B16] transition-all shadow-xs cursor-pointer"
+                    title="Launch Quote Simulator"
+                  >
+                    <Sparkles size={18} />
+                  </button>
+                </div>
+
+                {/* Micro-Metrics */}
+                <div className="mt-4 pt-3 border-t border-slate-200 text-[10px] font-mono text-slate-500 space-y-1">
+                  <div>SLA: <b className="text-emerald-600 font-bold">100% Guaranteed</b></div>
+                  <div>LOSS BOUND: <b className="text-[#D95B16] font-bold">&le;0.02 dB</b></div>
+                </div>
+              </div>
+            </div>
+
+            {/* HORIZONTAL LINE DIVIDER */}
+            <div className="inove-hline" />
+
+            {/* INOVE BLOCK 2: SHOWROOM GALLERY, CLIENTS & PROJECT TAGS (.block.tri.showroom) */}
+            <div className="inove-block inove-tri showroom text-left">
+              {/* Column 1: Showroom Gallery (Strictly User's 8 Services) */}
+              <div className="inove-bbox inove-gallery">
+                <h2 className="font-['Open_Sans_Condensed'] text-3xl sm:text-4xl font-light text-black mb-8">
+                  Showroom Gallery
+                </h2>
+
+                <div className="space-y-3.5">
+                  {services.map((service) => (
+                    <div
+                      key={service.id}
+                      onClick={() => selectServiceDetail(service)}
+                      className="inove-btn group"
+                    >
+                      <div className="inove-btn-l">
+                        <span className="label font-['Open_Sans'] font-semibold text-xs uppercase tracking-wider group-hover:text-[#D95B16] transition-colors">
+                          {service.title}
+                        </span>
+                        <span className="text-[9px] text-slate-400 font-mono mt-0.5">&rarr; Inspect Specs</span>
+                      </div>
+                      <div 
+                        className="inove-btn-r group-hover:scale-102 transition-transform duration-300"
+                        style={{ backgroundImage: `url('${service.imageUrl}')` }}
+                      />
                     </div>
-                    <div>
-                      <span className="block text-[8px] font-mono uppercase tracking-wider text-slate-450 font-bold">Direct Hotline</span>
-                      <a href={`tel:${contactInfo.phone.replace(/\s+/g, "")}`} className="text-sm font-bold text-slate-900 hover:text-[#D95B16] transition-colors font-sans">
-                        {contactInfo.phone}
-                      </a>
-                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Column 2: Clients & Hardware Standards */}
+              <div className="inove-bbox inove-clients">
+                <h2 className="font-['Open_Sans_Condensed'] text-3xl sm:text-4xl font-light text-black mb-8">
+                  Hardware Standards
+                </h2>
+
+                <div className="world">
+                  <div className="inove-topic">World OEM Hardware</div>
+                  <div className="grid grid-cols-2 gap-3 py-2 font-mono text-xs font-bold text-slate-700">
+                    <div className="p-3 border border-slate-200 bg-slate-50 text-center hover:border-orange-300 hover:text-[#D95B16] transition-all">HIKVISION 4K</div>
+                    <div className="p-3 border border-slate-200 bg-slate-50 text-center hover:border-orange-300 hover:text-[#D95B16] transition-all">FUJIKURA JAPAN</div>
+                    <div className="p-3 border border-slate-200 bg-slate-50 text-center hover:border-orange-300 hover:text-[#D95B16] transition-all">DAHUA MATRIX</div>
+                    <div className="p-3 border border-slate-200 bg-slate-50 text-center hover:border-orange-300 hover:text-[#D95B16] transition-all">UBIQUITI UNIFI</div>
+                    <div className="p-3 border border-slate-200 bg-slate-50 text-center hover:border-orange-300 hover:text-[#D95B16] transition-all">CISCO SYSTEMS</div>
+                    <div className="p-3 border border-slate-200 bg-slate-50 text-center hover:border-orange-300 hover:text-[#D95B16] transition-all">CORNING OPTICS</div>
                   </div>
+                </div>
 
-                  <div className="flex items-center gap-3.5">
-                    <div className="h-11 w-11 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-[#D95B16] shadow-xs shrink-0">
-                      <Mail size={16} />
-                    </div>
-                    <div>
-                      <span className="block text-[8px] font-mono uppercase tracking-wider text-slate-450 font-bold">Mailbox</span>
-                      <a href={`mailto:${contactInfo.email}`} className="text-sm font-bold text-slate-900 hover:text-[#D95B16] transition-colors font-sans">
-                        {contactInfo.email}
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-3.5">
-                    <div className="h-11 w-11 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-[#D95B16] shadow-xs shrink-0">
-                      <MapPin size={16} />
-                    </div>
-                    <div>
-                      <span className="block text-[8px] font-mono uppercase tracking-wider text-slate-450 font-bold">Islamabad Head Office</span>
-                      <span className="text-sm font-bold text-slate-900">
-                        {contactInfo.address}
-                      </span>
-                    </div>
+                <div className="local mt-6">
+                  <div className="inove-topic">Local Site Infrastructure</div>
+                  <div className="grid grid-cols-2 gap-3 py-2 font-mono text-xs font-bold text-slate-700">
+                    <div className="p-3 border border-slate-200 bg-slate-50 text-center hover:border-orange-300 hover:text-[#D95B16] transition-all">Corporate HQs</div>
+                    <div className="p-3 border border-slate-200 bg-slate-50 text-center hover:border-orange-300 hover:text-[#D95B16] transition-all">Commercial Hubs</div>
+                    <div className="p-3 border border-slate-200 bg-slate-50 text-center hover:border-orange-300 hover:text-[#D95B16] transition-all">Datacenters</div>
+                    <div className="p-3 border border-slate-200 bg-slate-50 text-center hover:border-orange-300 hover:text-[#D95B16] transition-all">Industrial Campuses</div>
                   </div>
                 </div>
               </div>
 
-            </div>
+              {/* Column 3: Project Tags */}
+              <div className="inove-bbox inove-tags">
+                <h2 className="font-['Open_Sans_Condensed'] text-3xl sm:text-4xl font-light text-black mb-8">
+                  Project Tags
+                </h2>
 
-            {/* Right Column: Dynamic Contact Dispatch form */}
-            <div className="lg:col-span-7">
-              <div className="border border-slate-200/80 bg-white shadow-[0_25px_60px_-15px_rgba(15,23,42,0.06)] rounded-3xl p-7 sm:p-9 text-left relative overflow-hidden">
-                {/* Tech bar accent top */}
-                <div className="absolute top-0 inset-x-0 h-[4px] bg-gradient-to-r from-[#D95B16] via-orange-500 to-orange-400" />
-                
-                <h3 className="font-display font-bold text-xl sm:text-2xl text-slate-900 tracking-tight">
-                  Schedule Technical Inspection
-                </h3>
-                <p className="text-[#D95B16] text-[10.5px] tracking-wider font-mono uppercase mb-6 font-bold mt-0.5">
-                  No-obligation site estimation parameters
-                </p>
+                <div className="inove-tag-list">
+                  <h4>4K Surveillance</h4>
+                  <h5>Fujikura Fusion</h5>
+                  <h4>OTDR Diagnostics</h4>
+                  <h5>Cat6A Solid Copper</h5>
+                  <h4>Biometric AI</h4>
+                  <h5>VLAN Isolation</h5>
+                  <h4>Sub-Decibel Loss</h4>
+                  <h5>Remote Cloud DDNS</h5>
+                  <h4>Fluke Tested</h4>
+                  <h5>RAID NVR Storage</h5>
+                  <h4>Smart PTZ Tracking</h4>
+                  <h5>Armored Conduit</h5>
+                  <h4>H.265+ Compression</h4>
+                  <h5>Patch Bay Modular</h5>
+                  <h4>Zero Dead-Zones</h4>
+                </div>
 
-                {contactSuccess ? (
-                  <div className="py-12 text-center text-slate-700">
-                    <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-orange-50 border border-orange-200 text-[#D95B16] shadow-sm">
-                      <CheckCircle size={28} className="animate-bounce" />
-                    </div>
-                    <h4 className="font-display font-bold text-lg text-slate-950 mb-1.5">Dispatch Request Created!</h4>
-                    <p className="text-slate-500 text-xs max-w-sm mx-auto leading-relaxed">
-                      We have compiled your submission values. An experienced site analyst will address your needs within 60 minutes.
-                    </p>
-                    <button 
-                      onClick={() => setContactSuccess(false)}
-                      className="mt-6 text-xs text-[#D95B16] font-semibold underline hover:text-orange-700"
-                    >
-                      Submit separate inquiry route
-                    </button>
-                  </div>
-                ) : (
-                  <form onSubmit={handleContactSubmit} className="space-y-4">
-                    <div>
-                      <label className="block text-[10.5px] font-mono uppercase tracking-wider text-slate-500 font-bold mb-1.5">
-                        Client Name
-                      </label>
-                      <input 
-                        type="text" 
-                        required
-                        value={contactForm.name}
-                        onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })}
-                        placeholder="John Doe"
-                        className="w-full bg-slate-50/50 hover:bg-slate-50 focus:bg-white border border-slate-200/80 rounded-xl px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/10 transition-all duration-200"
-                        disabled={contactSubmitting}
-                      />
-                    </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-[10.5px] font-mono uppercase tracking-wider text-slate-500 font-bold mb-1.5">
-                          Phone Stream
-                        </label>
-                        <input 
-                          type="tel" 
-                          required
-                          value={contactForm.phone}
-                          onChange={(e) => setContactForm({ ...contactForm, phone: e.target.value })}
-                          placeholder="e.g. +92 300 0000000"
-                          className="w-full bg-slate-50/50 hover:bg-slate-50 focus:bg-white border border-slate-200/80 rounded-xl px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/10 transition-all duration-200"
-                          disabled={contactSubmitting}
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-[10.5px] font-mono uppercase tracking-wider text-slate-500 font-bold mb-1.5">
-                          Mail Channel
-                        </label>
-                        <input 
-                          type="email" 
-                          required
-                          value={contactForm.email}
-                          onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })}
-                          placeholder="name@company.com"
-                          className="w-full bg-slate-50/50 hover:bg-slate-50 focus:bg-white border border-slate-200/80 rounded-xl px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/10 transition-all duration-200"
-                          disabled={contactSubmitting}
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-[10.5px] font-mono uppercase tracking-wider text-slate-500 font-bold mb-1.5">
-                        Scope Description
-                      </label>
-                      <textarea 
-                        required
-                        rows={3}
-                        value={contactForm.message}
-                        onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}
-                        placeholder="Tell us about camera layouts, biometrics nodes, or networking obstacles..."
-                        className="w-full bg-slate-50/50 hover:bg-slate-50 focus:bg-white border border-slate-200/80 rounded-xl px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/10 transition-all duration-200 resize-none"
-                        disabled={contactSubmitting}
-                      />
-                    </div>
-
-                    <button 
-                      type="submit"
-                      disabled={contactSubmitting}
-                      className="w-full bg-[#D95B16] hover:bg-[#C2410C] text-white font-bold py-3.5 px-5 rounded-xl transition-all shadow-[0_4px_20px_rgba(217,91,22,0.15)] hover:shadow-[0_4px_25px_rgba(217,91,22,0.25)] hover:-translate-y-0.5 cursor-pointer text-center text-sm flex items-center justify-center gap-2 disabled:opacity-85 disabled:pointer-events-none active:scale-[0.98]"
-                    >
-                      {contactSubmitting ? (
-                        <>
-                          <svg className="animate-spin -ml-1 mr-3 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
-                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                          </svg>
-                          <span>Initiating technical dispatch channels...</span>
-                        </>
-                      ) : (
-                        <span>Request Inspection & Estimate</span>
-                      )}
-                    </button>
-                  </form>
-                )}
-
+                {/* Action Blueprint Button */}
+                <div className="mt-8 pt-6 border-t border-slate-200">
+                  <button
+                    onClick={() => triggerQuote()}
+                    className="w-full bg-[#D95B16] hover:bg-[#C2410C] text-white font-['Open_Sans'] font-bold text-xs py-3.5 px-4 rounded-xl uppercase tracking-wider transition-all shadow-sm hover:shadow-md cursor-pointer text-center flex items-center justify-center gap-2"
+                  >
+                    <Sparkles size={14} />
+                    <span>Generate Instant Quote</span>
+                  </button>
+                </div>
               </div>
             </div>
 
-          </div>
+            {/* HORIZONTAL LINE DIVIDER */}
+            <div className="inove-hline" />
 
-        </div>
-      </section>
+            {/* INTERACTIVE OPERATIONS HUB & LIVE SIMULATOR */}
+            <div className="py-12 bg-slate-50/50">
+              <LiveOperationsHub 
+                onTriggerQuote={(srvId) => triggerQuote(srvId)}
+                onExploreServices={() => navigateTo({ page: "services" })}
+              />
+            </div>
 
+            {/* HORIZONTAL LINE DIVIDER */}
+            <div className="inove-hline" />
+
+            {/* INTERACTIVE SCOPE ESTIMATOR */}
+            <div className="py-12 bg-white">
+              <QuickQuoteEstimator 
+                onTriggerQuote={(srvId) => triggerQuote(srvId)}
+              />
+            </div>
+
+            {/* HORIZONTAL LINE DIVIDER */}
+            <div className="inove-hline" />
+
+            {/* INOVE BLOCK 3: FOOTER (.block.footer) */}
+            <div className="inove-block inove-footer text-center py-12 space-y-4">
+              <a 
+                className="font-['Open_Sans'] text-sm sm:text-base text-black hover:text-[#D95B16] font-medium tracking-wide transition-colors block"
+                href={`mailto:${contactInfo.email}`}
+              >
+                {contactInfo.email.replace("@", " @ ")}
+              </a>
+              <div className="w-12 h-12 mx-auto rounded-full overflow-hidden border border-slate-300 bg-white shadow-xs">
+                <img src={logo} alt="CoreGuard" className="w-full h-full object-cover" />
+              </div>
+              <div className="font-['Open_Sans'] text-xs text-slate-400 font-bold tracking-widest uppercase">
+                2026 &bull; CoreGuard Digital Infrastructure &bull; Islamabad HQ
+              </div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* DETAILED PREMIUM LIGHT ENTERPRISE FOOTER */}
-      <footer className="bg-slate-100 text-slate-600 pt-16 pb-8 text-left relative border-t border-slate-200 z-10 font-sans">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* DETAILED PREMIUM LIGHT ENTERPRISE FOOTER (For Subpages) */}
+      {currentRoute.page !== "home" && (
+        <footer className="bg-slate-100 text-slate-600 pt-16 pb-8 text-left relative border-t border-slate-200 z-10 font-sans">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-slate-200 text-sm">
             
@@ -1265,6 +846,7 @@ export default function App() {
 
         </div>
       </footer>
+      )}
       {/* ESTIMATE QUOTE TRIGGER OVERLAY */}
       <QuoteDialog 
         isOpen={quoteDialogOpen}
