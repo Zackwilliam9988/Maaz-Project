@@ -46,15 +46,27 @@ export const ShowroomCard3D: React.FC<ShowroomCard3DProps> = ({
     y.set(0);
   };
 
+  // Alternating scroll entry direction (0: Left, 1: Right, 2: Top, 3: Bottom)
+  const pattern = index % 4;
+  const getInitialProps = () => {
+    if (pattern === 0) return { x: -65, y: 0, rotateY: -10, rotateX: 0 };
+    if (pattern === 1) return { x: 65, y: 0, rotateY: 10, rotateX: 0 };
+    if (pattern === 2) return { y: -45, x: 0, rotateX: 10, rotateY: 0 };
+    return { y: 45, x: 0, rotateX: -10, rotateY: 0 };
+  };
+  const initialAnim = getInitialProps();
+
   return (
     <motion.div
-      initial={{ opacity: 0, x: -70, rotateY: -15 }}
-      whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
+      initial={{ opacity: 0, ...initialAnim }}
+      whileInView={{ opacity: 1, x: 0, y: 0, rotateY: 0, rotateX: 0 }}
       viewport={{ once: false, amount: 0.15 }}
       transition={{ 
-        duration: 0.6, 
-        delay: (index % 4) * 0.09, 
-        ease: [0.25, 0.46, 0.45, 0.94] 
+        type: "spring",
+        stiffness: 100,
+        damping: 16,
+        mass: 0.8,
+        delay: (index % 3) * 0.06
       }}
       className="w-full mb-3.5"
       style={{ perspective: "1000px" }}

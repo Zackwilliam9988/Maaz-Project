@@ -360,13 +360,31 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                   guaranteeText: "Enterprise Certified"
                 };
 
+                // Directional scroll animation pattern for mobile and desktop (Left, Right, Top, Bottom)
+                const animPattern = idx % 4;
+                const getInitialDirection = () => {
+                  if (animPattern === 0) return { x: -60, y: 0 }; // From Left
+                  if (animPattern === 1) return { x: 60, y: 0 };  // From Right
+                  if (animPattern === 2) return { y: -50, x: 0 }; // From Top
+                  return { y: 50, x: 0 };                         // From Bottom
+                };
+                const initialDir = getInitialDirection();
+
                 return (
                   <motion.div
                     layout
                     key={service.id}
-                    variants={cardVariants}
+                    initial={{ opacity: 0, ...initialDir, scale: 0.96 }}
+                    whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
+                    viewport={{ once: false, amount: 0.12 }}
+                    transition={{ 
+                      type: "spring", 
+                      stiffness: 110, 
+                      damping: 16, 
+                      mass: 0.8,
+                      delay: (idx % 2) * 0.08
+                    }}
                     whileHover={{ y: -8 }}
-                    transition={{ type: "spring", stiffness: 220, damping: 20 }}
                     onClick={() => onSelectService(service)}
                     className="group relative bg-white border border-slate-200/90 hover:border-[#0284C7]/80 rounded-3xl overflow-hidden flex flex-col justify-between shadow-[0_4px_24px_rgba(15,23,42,0.03)] hover:shadow-[0_28px_60px_rgba(2,132,199,0.12),0_8px_24px_rgba(0,0,0,0.04)] transition-all duration-500 cursor-pointer select-none"
                   >
