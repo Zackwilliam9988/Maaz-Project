@@ -238,7 +238,7 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({ service, o
 
   const openWhatsAppContact = () => {
     const message = `Hello, I would like to contact CoreGuard about the ${service.title} service.`;
-    window.open(`https://wa.me/923185826202?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+    window.open(`https://wa.me/923064422550?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
   };
 
   // Scroll to top on mount

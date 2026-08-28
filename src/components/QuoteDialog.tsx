@@ -325,7 +325,7 @@ export const QuoteDialog: React.FC<QuoteDialogProps> = ({
                 {/* Priority action link */}
                 <div>
                   <a
-                    href={`https://wa.me/923001234567?text=Hi%20CoreGuard,%20I%20just%20submitted%20a%20callback%20request%20for%20${encodeURIComponent(selectedService?.title || "security services")}`}
+                    href={`https://wa.me/923064422550?text=Hi%20CoreGuard,%20I%20just%20submitted%20a%20callback%20request%20for%20${encodeURIComponent(selectedService?.title || "security services")}`}
                     target="_blank"
                     rel="noreferrer"
                     className="w-full rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white py-2.5 px-3.5 text-xs font-bold font-mono tracking-wide flex items-center justify-center gap-2 transition-all shadow-[0_4px_12px_rgba(16,185,129,0.2)] border-none text-center justify-center"

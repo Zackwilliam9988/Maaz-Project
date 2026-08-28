@@ -62,12 +62,12 @@ export default function App() {
   
   // Manageable Contact Details
   const [contactInfo, setContactInfo] = useState({
-    phone: "+92 318 5826202",
-    email: "support@coreguard.com",
-    address: "I-8 Markaz, Executive Tower, Islamabad",
-    latitude: "33.6844",
-    longitude: "73.0479",
-    whatsapp: "+92 318 5826202"
+    phone: "0306 4422550",
+    email: "corevisionpk@gmail.com",
+    address: "Flat #2, Ist Floor, Abdullah Plaza, Phase 4-A, Ghouri Town, Islamabad",
+    latitude: "33.6186",
+    longitude: "73.1368",
+    whatsapp: "+92 306 4422550"
   });
 
   // Manageable Hero & About Config
@@ -176,7 +176,22 @@ export default function App() {
     const savedContact = localStorage.getItem("coreguard_contact_db");
     if (savedContact) {
       try {
-        setContactInfo(JSON.parse(savedContact));
+        const parsed = JSON.parse(savedContact);
+        if (parsed.email === "support@coreguard.com" || parsed.phone?.includes("5826202") || parsed.address?.includes("I-8")) {
+          const updated = {
+            ...parsed,
+            phone: "0306 4422550",
+            email: "corevisionpk@gmail.com",
+            address: "Flat #2, Ist Floor, Abdullah Plaza, Phase 4-A, Ghouri Town, Islamabad",
+            latitude: "33.6186",
+            longitude: "73.1368",
+            whatsapp: "+92 306 4422550"
+          };
+          setContactInfo(updated);
+          localStorage.setItem("coreguard_contact_db", JSON.stringify(updated));
+        } else {
+          setContactInfo(parsed);
+        }
       } catch (e) {}
     }
 

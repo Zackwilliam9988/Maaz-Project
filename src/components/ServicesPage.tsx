@@ -274,7 +274,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                       </button>
                       
                       <a 
-                        href={`https://wa.me/923185826202?text=${encodeURIComponent(`Hello, I would like to contact CoreGuard about the ${service.title} service.`)}`}
+                        href={`https://wa.me/923064422550?text=${encodeURIComponent(`Hello, I would like to contact CoreGuard about the ${service.title} service.`)}`}
                         target="_blank"
                         rel="noreferrer"
                         onClick={(e) => e.stopPropagation()}

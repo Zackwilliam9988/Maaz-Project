@@ -81,7 +81,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute, onNavigate, contac
               <span>Get a Quote</span>
             </button>
 
-            <a href="https://wa.me/923185826202" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center p-2 rounded-md bg-emerald-50 text-[#25D366] hover:bg-emerald-100">
+            <a href="https://wa.me/923064422550" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center p-2 rounded-md bg-emerald-50 text-[#25D366] hover:bg-emerald-100">
               <WhatsAppIcon className="w-5 h-5" />
             </a>
 
