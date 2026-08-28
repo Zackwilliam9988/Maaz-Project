@@ -179,24 +179,18 @@ export const PARTNERS_DATA: PartnerBrand[] = [
     name: "CORNING",
     category: "Optical Fiber Systems",
     tagline: "Single-Mode OS2 & OM4 Core",
-    accentColor: "#6366F1",
+    accentColor: "#0284C7",
     svgIcon: (
-      <div className="flex items-center h-7">
+      <div className="relative flex items-center justify-center h-8 px-2 overflow-hidden rounded-md group-hover:scale-105 transition-transform">
         <img 
           src="https://www.corning.com/etc.clientlibs/settings/wcm/designs/corning/resources/images/global/logo-glass-bg.png" 
-          alt="Corning Optical Logo" 
-          className="h-6 sm:h-7 w-auto object-contain max-w-[120px]"
+          alt="Corning Glass Background" 
+          className="absolute inset-0 w-full h-full object-cover opacity-80"
           referrerPolicy="no-referrer"
-          onError={(e) => {
-            e.currentTarget.style.display = 'none';
-            if (e.currentTarget.nextElementSibling) {
-              (e.currentTarget.nextElementSibling as HTMLElement).style.display = 'flex';
-            }
-          }}
         />
-        <svg viewBox="0 0 150 36" fill="currentColor" className="h-6 w-auto hidden items-center">
-          <text x="0" y="26" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="23" letterSpacing="2">CORN<tspan fill="#6366F1">ING</tspan></text>
-        </svg>
+        <span className="relative z-10 font-sans font-black text-[15px] sm:text-[17px] tracking-[2.5px] text-slate-900 drop-shadow-xs">
+          CORNING
+        </span>
       </div>
     )
   }
