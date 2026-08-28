@@ -8,7 +8,7 @@ export const SERVICES: Service[] = [
     fullDescription: "Secure your home or workplace with our expert surveillance setup. We offer ultra-high-definition cameras including dome, bullet, and PTZ models featuring active smart tracking, continuous cloud or local NVR archiving, night-vision infrared sensors, and direct smartphone notifications.",
     iconName: "Camera",
     hot: true,
-    imageUrl: "https://6a4d00acb793a9afadfb9df6.imgix.net/sandbox/CCtv%20installation%20.jpeg",
+    imageUrl: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "fiber-splicing",
@@ -17,7 +17,7 @@ export const SERVICES: Service[] = [
     fullDescription: "Minimize db-loss ratios with premium Fujikura core-alignment fusion splicing. We execute precise mechanical or thermal terminations, protect splices with physical heat-shrink tubes, and handle multi-core single-mode or multi-mode indoor/outdoor cable links for maximum structural throughput.",
     iconName: "Cable",
     hot: true,
-    imageUrl: "https://6a4d00acb793a9afadfb9df6.imgix.net/sandbox/Fiber%20Splicing%20.jpeg",
+    imageUrl: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "network-setup",
@@ -26,7 +26,7 @@ export const SERVICES: Service[] = [
     fullDescription: "Gain strong wireless coverage and high data speeds. We configure customized router channels, assign VLAN segments, deploy smart AP systems, setup firewalls, and address physical connectivity problems to eradicate signal dead zones entirely.",
     iconName: "Network",
     hot: false,
-    imageUrl: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "cctv-repair",
@@ -35,7 +35,7 @@ export const SERVICES: Service[] = [
     fullDescription: "Ensure 24/7 security continuity with our proactive maintenance sweeps. We check visual noise degradation, re-terminate loose coaxial or Ethernet plugs, restore corrupt hard drives on storage systems, and update camera firmware properties.",
     iconName: "Wrench",
     hot: false,
-    imageUrl: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "fiber-testing",
@@ -44,7 +44,7 @@ export const SERVICES: Service[] = [
     fullDescription: "Identify micro-bends, tension points, and physical fiber fractures precisely. Utilizing modern Optical Time-Domain Reflectometer technology, we plot exact optical distance graphs to pinpoint cable faults deep inside structural conduits.",
     iconName: "Activity",
     hot: true,
-    imageUrl: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "biometric-system",
@@ -53,7 +53,7 @@ export const SERVICES: Service[] = [
     fullDescription: "Streamline employee clock-ins and increase floor security. We configure robust standalone fingerprint or contactless IR face recognition scanners, integrate door locking mechanisms, and install intuitive admin desktop software platforms.",
     iconName: "Fingerprint",
     hot: false,
-    imageUrl: "https://6a4d00acb793a9afadfb9df6.imgix.net/sandbox/Biomatric.jpeg",
+    imageUrl: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "structured-cabling",
@@ -62,7 +62,7 @@ export const SERVICES: Service[] = [
     fullDescription: "Build a physical framework that scales happily. We construct detailed modular network racks, manage neat patch panels, install protective wire channels, and certify every cable path using advanced network analyzers.",
     iconName: "Shuffle",
     hot: false,
-    imageUrl: "https://img1.wsimg.com/isteam/stock/ZzOweak/:/rs=w:1240,h:620,cg:true,m/cr=w:1240,h:620",
+    imageUrl: "https://images.unsplash.com/photo-1548092372-0d1bd40894a3?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "remote-cctv",
@@ -71,7 +71,7 @@ export const SERVICES: Service[] = [
     fullDescription: "Access security camera loops from any location. We setup virtual host configurations on network routers, implement secure credential policies to prevent data hijacking, and install and authorize viewers on iOS and Android mobiles.",
     iconName: "Smartphone",
     hot: false,
-    imageUrl: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80",
   },
 ];
 

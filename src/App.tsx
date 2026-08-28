@@ -122,8 +122,9 @@ export default function App() {
       try {
         const parsed = JSON.parse(savedServices) as Service[];
         const migrated = parsed.map(s => {
-          if (s.id === "biometric-system" && (!s.imageUrl || s.imageUrl.includes("imimg.com") || s.imageUrl.includes("photo-1563986768609-322da13575f3"))) {
-            return { ...s, imageUrl: "https://images.unsplash.com/photo-1601597111158-2fceff270190?auto=format&fit=crop&w=600&q=80" };
+          const defaultService = DEFAULT_SERVICES.find(ds => ds.id === s.id);
+          if (defaultService) {
+            return { ...s, imageUrl: defaultService.imageUrl };
           }
           return s;
         });
