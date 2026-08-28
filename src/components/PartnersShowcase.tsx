@@ -19,9 +19,23 @@ export const PARTNERS_DATA: PartnerBrand[] = [
     tagline: "Facial Recognition & Relays",
     accentColor: "#10B981",
     svgIcon: (
-      <svg viewBox="0 0 120 36" fill="currentColor" className="h-7 w-auto">
-        <text x="0" y="26" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="26" letterSpacing="1.5">ZKT<tspan fill="#10B981">eco</tspan></text>
-      </svg>
+      <div className="flex items-center h-7">
+        <img 
+          src="https://www.zkteco.com/en/public/static/modules/cms/images/logo.png" 
+          alt="ZKTeco Logo" 
+          className="h-6 sm:h-7 w-auto object-contain max-w-[120px]"
+          referrerPolicy="no-referrer"
+          onError={(e) => {
+            e.currentTarget.style.display = 'none';
+            if (e.currentTarget.nextElementSibling) {
+              (e.currentTarget.nextElementSibling as HTMLElement).style.display = 'flex';
+            }
+          }}
+        />
+        <svg viewBox="0 0 120 36" fill="currentColor" className="h-7 w-auto hidden items-center">
+          <text x="0" y="26" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="26" letterSpacing="1.5">ZKT<tspan fill="#10B981">eco</tspan></text>
+        </svg>
+      </div>
     )
   },
   {
@@ -31,9 +45,11 @@ export const PARTNERS_DATA: PartnerBrand[] = [
     tagline: "ColorVu & AcuSense Ultra NVR",
     accentColor: "#EF4444",
     svgIcon: (
-      <svg viewBox="0 0 160 36" fill="currentColor" className="h-7 w-auto">
-        <text x="0" y="26" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="24" letterSpacing="2">HIK<tspan fill="#EF4444">VISION</tspan></text>
-      </svg>
+      <div className="flex items-center h-7">
+        <svg viewBox="0 0 160 36" fill="currentColor" className="h-6 sm:h-7 w-auto">
+          <text x="0" y="26" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="24" letterSpacing="2">HIK<tspan fill="#EF4444">VISION</tspan></text>
+        </svg>
+      </div>
     )
   },
   {
@@ -47,10 +63,9 @@ export const PARTNERS_DATA: PartnerBrand[] = [
         <img 
           src="https://www.dahuasecurity.com/logo.png" 
           alt="Dahua Technology Logo" 
-          className="h-6 w-auto object-contain max-w-[110px]"
+          className="h-6 sm:h-7 w-auto object-contain max-w-[120px]"
           referrerPolicy="no-referrer"
           onError={(e) => {
-            // Fallback SVG if image is blocked
             e.currentTarget.style.display = 'none';
             if (e.currentTarget.nextElementSibling) {
               (e.currentTarget.nextElementSibling as HTMLElement).style.display = 'flex';
@@ -74,9 +89,23 @@ export const PARTNERS_DATA: PartnerBrand[] = [
     tagline: "Smart IoT & Wireless PTZ",
     accentColor: "#F59E0B",
     svgIcon: (
-      <svg viewBox="0 0 110 36" fill="currentColor" className="h-7 w-auto">
-        <text x="0" y="26" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="26" letterSpacing="2"><tspan fill="#F59E0B">Im</tspan>ou</text>
-      </svg>
+      <div className="flex items-center h-7">
+        <img 
+          src="https://static-website.imou.com/2e28bfa8429aa649f84f3ef8bed7028f.png" 
+          alt="Imou Logo" 
+          className="h-6 sm:h-7 w-auto object-contain max-w-[110px]"
+          referrerPolicy="no-referrer"
+          onError={(e) => {
+            e.currentTarget.style.display = 'none';
+            if (e.currentTarget.nextElementSibling) {
+              (e.currentTarget.nextElementSibling as HTMLElement).style.display = 'flex';
+            }
+          }}
+        />
+        <svg viewBox="0 0 110 36" fill="currentColor" className="h-6 w-auto hidden items-center">
+          <text x="0" y="26" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="26" letterSpacing="2"><tspan fill="#F59E0B">Im</tspan>ou</text>
+        </svg>
+      </div>
     )
   },
   {
@@ -86,9 +115,23 @@ export const PARTNERS_DATA: PartnerBrand[] = [
     tagline: "OptiX Optical & AirEngine APs",
     accentColor: "#CE1126",
     svgIcon: (
-      <svg viewBox="0 0 150 36" fill="currentColor" className="h-7 w-auto">
-        <text x="0" y="26" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="23" letterSpacing="2">HUA<tspan fill="#CE1126">WEI</tspan></text>
-      </svg>
+      <div className="flex items-center h-7">
+        <img 
+          src="https://www.huawei.com/-/media/hcomponent-header/1.0.1.20260519084135/component/img/huawei_logo.png" 
+          alt="Huawei Logo" 
+          className="h-6 sm:h-7 w-auto object-contain max-w-[125px]"
+          referrerPolicy="no-referrer"
+          onError={(e) => {
+            e.currentTarget.style.display = 'none';
+            if (e.currentTarget.nextElementSibling) {
+              (e.currentTarget.nextElementSibling as HTMLElement).style.display = 'flex';
+            }
+          }}
+        />
+        <svg viewBox="0 0 150 36" fill="currentColor" className="h-6 w-auto hidden items-center">
+          <text x="0" y="26" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="23" letterSpacing="2">HUA<tspan fill="#CE1126">WEI</tspan></text>
+        </svg>
+      </div>
     )
   },
   {
@@ -98,9 +141,11 @@ export const PARTNERS_DATA: PartnerBrand[] = [
     tagline: "Catalyst Switches & Meraki",
     accentColor: "#049FD9",
     svgIcon: (
-      <svg viewBox="0 0 130 36" fill="currentColor" className="h-7 w-auto">
-        <text x="0" y="26" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="24" letterSpacing="3">CIS<tspan fill="#049FD9">CO</tspan></text>
-      </svg>
+      <div className="flex items-center h-7">
+        <svg viewBox="0 0 130 36" fill="currentColor" className="h-6 sm:h-7 w-auto">
+          <text x="0" y="26" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="24" letterSpacing="3">CIS<tspan fill="#049FD9">CO</tspan></text>
+        </svg>
+      </div>
     )
   },
   {
@@ -110,9 +155,23 @@ export const PARTNERS_DATA: PartnerBrand[] = [
     tagline: "German Cat6A & Modular Racks",
     accentColor: "#0284C7",
     svgIcon: (
-      <svg viewBox="0 0 150 36" fill="currentColor" className="h-7 w-auto">
-        <text x="0" y="26" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="22" letterSpacing="3">VIVAN<tspan fill="#0284C7">CO</tspan></text>
-      </svg>
+      <div className="flex items-center h-7">
+        <img 
+          src="https://www.vivanco.com/cdn/shop/files/vivanco_white.svg?v=1770213998&width=600" 
+          alt="Vivanco Logo" 
+          className="h-6 sm:h-7 w-auto object-contain max-w-[120px] brightness-0"
+          referrerPolicy="no-referrer"
+          onError={(e) => {
+            e.currentTarget.style.display = 'none';
+            if (e.currentTarget.nextElementSibling) {
+              (e.currentTarget.nextElementSibling as HTMLElement).style.display = 'flex';
+            }
+          }}
+        />
+        <svg viewBox="0 0 150 36" fill="currentColor" className="h-6 w-auto hidden items-center">
+          <text x="0" y="26" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="22" letterSpacing="3">VIVAN<tspan fill="#0284C7">CO</tspan></text>
+        </svg>
+      </div>
     )
   },
   {
@@ -122,9 +181,23 @@ export const PARTNERS_DATA: PartnerBrand[] = [
     tagline: "Single-Mode OS2 & OM4 Core",
     accentColor: "#6366F1",
     svgIcon: (
-      <svg viewBox="0 0 150 36" fill="currentColor" className="h-7 w-auto">
-        <text x="0" y="26" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="23" letterSpacing="2">CORN<tspan fill="#6366F1">ING</tspan></text>
-      </svg>
+      <div className="flex items-center h-7">
+        <img 
+          src="https://www.corning.com/etc.clientlibs/settings/wcm/designs/corning/resources/images/global/logo-glass-bg.png" 
+          alt="Corning Optical Logo" 
+          className="h-6 sm:h-7 w-auto object-contain max-w-[120px]"
+          referrerPolicy="no-referrer"
+          onError={(e) => {
+            e.currentTarget.style.display = 'none';
+            if (e.currentTarget.nextElementSibling) {
+              (e.currentTarget.nextElementSibling as HTMLElement).style.display = 'flex';
+            }
+          }}
+        />
+        <svg viewBox="0 0 150 36" fill="currentColor" className="h-6 w-auto hidden items-center">
+          <text x="0" y="26" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="23" letterSpacing="2">CORN<tspan fill="#6366F1">ING</tspan></text>
+        </svg>
+      </div>
     )
   }
 ];
